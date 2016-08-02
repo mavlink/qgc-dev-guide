@@ -7,6 +7,7 @@
   * [Font and Palette](FontPalette.md)
   * [Controls](UIControls.md)
 * [Fact System](FactSystem.md)
+* [Communication Flow](CommunicationFlow.md)
 * File Formats
 * Code submission
   * Coding guidlines

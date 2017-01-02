@@ -14,6 +14,11 @@
   * [Plan View](PlanView.md)
   * [Fly View](FlyView.md)
 * File Formats
+	* [Parameters](ParametersFileFormat.md)
+	* [Mission](MissionFileFormat.md)
+	* [Survey](SurveyFileFormat.md)
+	* [Rally Points](RallyFileFormat.md)
+	* [GeoFence](FenceFileFormat.md)
 * Code submission
   * [Coding Style](CodingStyle.md)
   * [Unit tests](UnitTests.md)

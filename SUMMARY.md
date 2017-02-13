@@ -5,6 +5,7 @@
 * [Firmware plugins](FirmwarePlugin.md)
 * [High level class hierarchy](ClassHierarchy.md)
 * [User Interface design](UIDesign.md)
+  * [Multi-Device Design Pattern](UIDesignPattern.md)
   * [Font and Palette](FontPalette.md)
   * [Controls](UIControls.md)
 * [Fact System](FactSystem.md)

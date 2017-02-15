@@ -32,6 +32,7 @@ QGC ui is developed from a base set of reusable controls and ui elements. This w
 * The QGC user interface ends up being a hybrid style of desktop/latop/tablet/phone. Hence not necessarily looking or feeling like it is optimized to any of these. 
 * Given the target device priority list and the fact that QGC tends to just re-layout the same ui elements to fit different form factors you will find this hybrid approach gets worse as you get farther away from the priority target. Hence small phone sized screens taking the worst hit on usability.
 * The QGC reusable control set may not provide the absolute best ui in some cases. But it is still used to prevent the creation of additional maintenance surface area.
+* Since the QGC UI uses the same ui code for all OSes, QGC does not follow the ui design guidelines specified by the OS itself. It has it's own visual style which is somewhat of a hybrid of things picked from each OS. Hence the UI looks and works mostly the same on all OS. Once again this means for example that QGC running on Android won't necessarily look like an android app. Or QGC running on an iPhone will not look or work like most other iPhone apps. That said the QGC visual/functional style should be understandable to these OS users.
 
 ## Pros for this design pattern
 

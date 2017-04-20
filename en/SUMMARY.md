@@ -8,7 +8,7 @@
   * [Multi-Device Design Pattern](ui_design/multi_device_pattern.md)
   * [Font and Colour Palette](ui_design/font_palette.md)
   * [UI Controls](ui_design/controls.md)
-* [Fact System](FactSystem.md)
+* [Fact System](fact_system.md)
 * [Top Level Views](views/README.md)
   * [Settings View](views/settings.md)
   * [Setup View](views/setup.md)

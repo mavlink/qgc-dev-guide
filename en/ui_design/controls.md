@@ -1,6 +1,6 @@
-# Controls
+# User Interface Controls
 
-QGC provides a base set of controls for building user interface. In general they tend to be thin layers above the base Qml Controls supported by Qt which respect the QGC color palette.
+QGC provides a base set of controls for building user interface. In general they tend to be thin layers above the base QML Controls supported by Qt which respect the QGC color palette.
 
 ```
 import QGroundControl.Controls 1.0
@@ -8,7 +8,7 @@ import QGroundControl.Controls 1.0
 
 ## Qt Controls
 
-The following controls are QGC variants of standard Qt Qml Controls. They provide the same functionality as the corresponding Qt controls except for the fact that they are drawn using the QGC palette.
+The following controls are QGC variants of standard Qt QML Controls. They provide the same functionality as the corresponding Qt controls except for the fact that they are drawn using the QGC palette.
 
 * QGCButton
 * QGCCheckBox
@@ -23,10 +23,10 @@ The following controls are QGC variants of standard Qt Qml Controls. They provid
 
 ## QGC Controls
 
-These custom controls are exclusive to QGC and are used to create standard ui elements.
+These custom controls are exclusive to QGC and are used to create standard UI elements.
 
 * DropButton - RoundButton which drops out a panel of options when clicked. Example is Sync button in Plan view.
-* ExclusiveGroupItem - Used a a base Item for custom controls which supports the Qml ExclusiveGroup concept.
+* ExclusiveGroupItem - Used a a base Item for custom controls which supports the QML ExclusiveGroup concept.
 * QGCView - Base control for all top level views in the system. Provides support for FactPanels and displaying QGCViewDialogs and QGCViewMessages.
 * QGCViewDialog - Dialog which pops out from the right side of a QGCView. You can specific the accept/reject buttons for the dialog as well as the dialog contents. Example usage is when you click on a parameter and it brings up the value editor dialog.
 * QGCViewMessage - A simplified version of QGCViewDialog which allows you to specify buttons and a simple text message.

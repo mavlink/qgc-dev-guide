@@ -6,7 +6,7 @@ Note: All values unless otherwise specified are in meters.
     "firmwareType": 3,
     "groundStation": "QGroundControl",
     "items": [ 
-    	... 
+        ... 
     ],
     "plannedHomePosition": [
         47.633033699999999,
@@ -21,11 +21,11 @@ Above you can see the top level format of a mission file. Mission files are stor
 
 The following values are required:
 
-* ```firmwareType ``` The firmware type that this mission was created for using the ```MAV_AUTOPILOT_*``` MAVLink enum values. This allows you to distinguish between a mission which was created for PX4 or ArduPilot firmware. This can be important since each firmware handles mission command slightly differently.
-* ```groundStation``` The name of the ground station which created this file.
-* ```items``` The list of mission item objects associated with this mission. The format of these is described below.
-* ```plannedHomePosition``` The planned home position to show on the map when you are editing this mission. Values with array are latitude, longitude and altitude.
-* ```version``` The version for this file. Current version is 2.
+* `firmwareType` The firmware type that this mission was created for using the `MAV_AUTOPILOT_*` MAVLink enum values. This allows you to distinguish between a mission which was created for PX4 or ArduPilot firmware. This can be important since each firmware handles mission command slightly differently.
+* `groundStation` The name of the ground station which created this file.
+* `items` The list of mission item objects associated with this mission. The format of these is described below.
+* `plannedHomePosition` The planned home position to show on the map when you are editing this mission. Values with array are latitude, longitude and altitude.
+* `version` The version for this file. Current version is 2.
 
 ## Mission Items
 The ```items`` values contains an array of mission item objects. 
@@ -36,9 +36,9 @@ The ```items`` values contains an array of mission item objects.
     ...
 },
 ```
-The ```type``` value within a mission item specifies the type of the item. There are two types of mission items: ```SimpleItem``` and ```ComplexItem```.
+The `type` value within a mission item specifies the type of the item. There are two types of mission items: `SimpleItem` and `ComplexItem`.
 
-## Mission Item - ```SimpleItem```
+## Mission Item - `SimpleItem`
 A simple item represents a single MAVLink [MISSION_ITEM](http://mavlink.org/messages/common#MISSION_ITEM). It contains all the values needed to store a [MISSION_ITEM](http://mavlink.org/messages/common#MISSION_ITEM).
 
 ```
@@ -61,7 +61,7 @@ A simple item represents a single MAVLink [MISSION_ITEM](http://mavlink.org/mess
 },
 ```
 
-The values in a ```SimpleItem``` map directly to the values in [MISSION_ITEM](http://mavlink.org/messages/common#MISSION_ITEM):
+The values in a `SimpleItem` map directly to the values in [MISSION_ITEM](http://mavlink.org/messages/common#MISSION_ITEM):
 
 * ```autoContinue``` MISSION_ITEM.autoContinue
 * ```command``` MISSION_ITEM.command
@@ -92,12 +92,12 @@ First you must assign an identifier to the mission item you want to jump to:
 
 ```
 {
-	...
-	"doJumpId": 100
+    ...
+    "doJumpId": 100
 }
 ```
 
-The ```doJumpId``` can be any value greater than 0 and must uniquely identify a DO_JUMP target.
+The `doJumpId` can be any value greater than 0 and must uniquely identify a DO_JUMP target.
 
 Then in the actual DO_JUMP mission item you reference this unique id in the MISSION_ITEM.param1 value:
 

@@ -1,5 +1,6 @@
 # Mission File Format (v2)
-Note: All values unless otherwise specified are in meters.
+
+> **Note** All values unless otherwise specified are in meters.
 
 ```
 {
@@ -28,6 +29,7 @@ The following values are required:
 * `version` The version for this file. Current version is 2.
 
 ## Mission Items
+
 The ```items`` values contains an array of mission item objects. 
 
 ```
@@ -82,7 +84,7 @@ A complex item is a higher level encapsulation of multiple MISSION_ITEMS treated
 ```
 Complex items have two additional values associated with them:
 
-* ```complexItemType``` Specifies the type of complex item. QGroundControl currently supports only one complex item type: [Survey](SurveyFileFormat.md)
+* ```complexItemType``` Specifies the type of complex item. QGroundControl currently supports only one complex item type: [Survey](../file_formats/survey.md)
 * ```version``` Specifies the version for this complex item.
 
 ## Special handling for DO_JUMP mission item

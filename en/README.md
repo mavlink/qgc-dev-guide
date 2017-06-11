@@ -2,10 +2,17 @@
 
 This guide explains how *QGroundControl* (QGC) works internally, and provides guidelines for contributing code to the project. It is intended for use by developers!
 
-> **Tip** To learn how to **use** *QGroundControl*, see the [User Guide](https://donlakeflyer.gitbooks.io/qgroundcontrol-user-guide/content/).
+> **Tip** To learn how to **use** *QGroundControl*, see the [User Guide](https://docs.qgroundcontrol.com/en/).
 
-&nbsp;
+<span></span>
 > **Note** This guide is an active work in progress. The information provided should be correct, but you may find missing information or incomplete pages.
+
+
+## Support
+
+This developer guide will eventually be the main provider of information about *QGroundControl* development. If you find that it is missing helpful information and/or has incorrect information please raise an [issue](https://github.com/mavlink/qgc-dev-guide/issues).
+
+Development questions can be raised in the [QGroundControl Developer](http://discuss.px4.io/c/qgroundcontrol/qgroundcontrol-developers) discuss category or in the *QGroundControl* [Gitter](https://gitter.im/mavlink/qgroundcontrol) channel. 
 
 ## Design Philosophy
 

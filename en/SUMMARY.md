@@ -16,7 +16,7 @@
   * [Fly View](views/fly.md)
 * [File Formats](file_formats/README.md)
     * [Parameters](file_formats/parameters.md)
-    * [Mission](file_formats/mission.md)
+    * [Plan](file_formats/plan.md)
     * [Survey](file_formats/survey.md)
     * [Rally Points](file_formats/rally.md)
     * [GeoFence](file_formats/fence.md)

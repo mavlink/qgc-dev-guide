@@ -22,6 +22,7 @@
     * [GeoFence](file_formats/fence.md)
 * [Developer Tools](tools/README.md)
   * [Mock Link](tools/mock_link.md)
+  * [Custom Command Widgets](tools/custom_command_widget.md)
 * [Code Submission](contribute/README.md)
   * [Coding Style](contribute/coding_style.md)
   * [Unit Tests](contribute/unit_tests.md)

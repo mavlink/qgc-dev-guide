@@ -28,10 +28,10 @@
   * [Unit Tests](contribute/unit_tests.md)
   * [Pull Requests](contribute/pull_requests.md)
 
-
 ## Dronecode Shortcuts
 
 * [QGroundControl User Guide](https://docs.qgroundcontrol.com/en/)
 * [PX4 User Guide](https://docs.px4.io/en/)
 * [PX4 Developer Guide](https://dev.px4.io/en/)
+* [DroneCore Guide](https://docs.dronecore.io/en/)
 * [MAVLink Developer Guide](https://mavlink.io/en/)

@@ -27,6 +27,7 @@
   * [Coding Style](contribute/coding_style.md)
   * [Unit Tests](contribute/unit_tests.md)
   * [Pull Requests](contribute/pull_requests.md)
+  * [Licenses](contribute/licences.md)
 
 ## Dronecode Shortcuts
 

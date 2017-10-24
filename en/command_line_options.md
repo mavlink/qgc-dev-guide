@@ -26,11 +26,15 @@ The options/command line arguments are listed in the table below.
 
 Option | Description
 --- | ---
-`--clear-settings` | Clears the app settings.
+`--clear-settings` | Clears the app settings (reverts *QGroundControl* back to default settings).
 `--logging:full` | Turns on full logging. See [Console Logging](https://docs.qgroundcontrol.com/en/SettingsView/console_logging.html#logging-from-the-command-line).
 `--logging:full,LinkManagerVerboseLog,ParameterLoaderLog` | Turns on full logging and turns off the following listed comma-separated logging options.
-`--logging:LinkManagerLog,PraameterLoaderLog` | Turns on the specified comma separated logging options
-`--unittest:name` | Runs the specified unit test. Leave off `:name` to run all tests.
-`--unittest-stress:name` | Runs the specified unit test 20 times in a row. Leave off :name to run all tests.
+`--logging:LinkManagerLog,ParameterLoaderLog` | Turns on the specified comma separated logging options
+`--unittest:name` | (Debug builds only) Runs the specified unit test. Leave off `:name` to run all tests. 
+`--unittest-stress:name` | (Debug builds only) Runs the specified unit test 20 times in a row. Leave off :name to run all tests.
 `--fake-mobile` | Simulates running on a mobile device.
 `--test-high-dpi` | Simulates running *QGroundControl* on a high DPI device.
+
+
+Notes:
+* Unit tests are included in debug builds automatically (as part of *QGroundControl*). *QGroundControl* runs under the control of the unit test (it does not start normally).

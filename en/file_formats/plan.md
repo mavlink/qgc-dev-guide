@@ -1,5 +1,6 @@
 # Plan File Format
-> **Note** All values unless otherwise specified are in meters.
+
+> **Note** All values are in meters, unless otherwise specified.
 
 ```
 {
@@ -56,6 +57,7 @@ items | The list of mission item objects associated with the mission.
 plannedHomePosition | The planned home position to show on the map when you are editing the mission. Values with array are latitude, longitude and altitude.
 
 ## Mission Item - `SimpleItem`
+
 A simple item represents a single MAVLink [MISSION_ITEM](http://mavlink.org/messages/common#MISSION_ITEM) command.
 
 ```
@@ -100,10 +102,11 @@ Complex items have two additional values associated with them:
 
 Key | Description
 ----|------------
-complexItemType | Specifies the type of complex item. QGroundControl currently supports the following types: [survey](../file_formats/survey.md), [fwLandingPattern](../file_formats/fwLandingPattern.md)
+complexItemType | Specifies the type of complex item. QGroundControl currently supports the following types: [survey](../file_formats/survey.md), fwLandingPattern
 version | Specifies the version for this complex item.
 
 ## Special handling for DO_JUMP mission item
+
 Since DO_JUMP command requires you to specify the sequence number to jump to and the mission file format does not specify sequence numbers it require special handling.
 
 First you must assign a unique identifier to the mission item you want to jump to:

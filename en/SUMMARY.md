@@ -20,7 +20,7 @@
     * [Survey](file_formats/survey.md)
     * [Rally Points](file_formats/rally.md)
     * [GeoFence](file_formats/fence.md)
-    * [MAVLink/Logs](file_formats/mavlink.md)
+    * [MAVLink Logs](file_formats/mavlink.md)
 * [Developer Tools](tools/README.md)
   * [Mock Link](tools/mock_link.md)
   * [Custom Command Widgets](tools/custom_command_widget.md)

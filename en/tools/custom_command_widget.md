@@ -89,21 +89,26 @@ The example custom command widget QML file below combines the controls documente
 ```qml
 import QtQuick 2.2
 
-import QGroundControl.Controls 1.0
-import QGroundControl.FactSystem 1.0
-import QGroundControl.FactControls 1.0
-import QGroundControl.Controllers 1.0
+import QGroundControl.Controls      1.0
+import QGroundControl.FactSystem    1.0
+import QGroundControl.FactControls  1.0
+import QGroundControl.Palette       1.0
+import QGroundControl.ScreenTools   1.0
+import QGroundControl.Controllers   1.0
 
-FactPanel {
-    id: panel
-    
-    property var qgcView: null // Temporary hack for broken QGC parameter validation implementation
+Rectangle {
+    anchors.fill:   parent
+    color:          qgcPal.window
 
-    CustomCommandWidgetController { id: controller; factPanel: panel }
+    CustomCommandWidgetController {
+        id:         controller
+        factPanel:  panel
+    }
 
-    // Your own custom changes start here - everything else above is always required
+    QGCPalette { id: qgcPal; colorGroupEnabled: enabled }
 
     Column {
+        spacing: ScreenTools.defaultFontPixelHeight
 
         QGCButton {
             text: "Set Home to current position"

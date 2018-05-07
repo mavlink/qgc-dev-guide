@@ -9,7 +9,7 @@ To run unit tests:
 1. Copy the **deploy/qgroundcontrol-start.sh** script in the **debug** directory
 1. Run *all* unit tests from the command line using the `--unittest` command line option:
    ```
-   qgroundcontrol-start.sh --unittests
+   qgroundcontrol-start.sh --unittest
    ```
 1. Run *individual* unit tests by specifying the test name as shown:
    ```

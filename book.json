@@ -2,7 +2,8 @@
     "gitbook": ">= 3.2.2",
     "title": "QGroundControl Developer Guide",
     "variables": {
-        "logo": "./assets/site/logo_qgc_rgb_horizontal.png"
+        "logo": "./assets/site/logo_qgc_rgb_horizontal.png",
+        "qt_version": "5.9.3"
     },
     "plugins": [
         "youtube",

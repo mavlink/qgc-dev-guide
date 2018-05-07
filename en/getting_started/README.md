@@ -28,12 +28,11 @@ To get the source files:
 *QGroundControl* builds are supported for OSX, Linux, Windows, iOS and Android. *QGroundControl* uses [Qt](http://www.qt.io) as its cross-platform support library and uses [QtCreator](http://doc.qt.io/qtcreator/index.html) as its default build environment.
 
 - **OSX:** OSX 10.7 or higher, 64 bit, clang compiler
-  > **Warning** XCode 8 requires a workaround described below.
 - **Ubuntu:** 64 bit, gcc compiler
 - **Windows:** Vista or higher, 32 bit, [Visual Studio 2015 compiler](http://www.visualstudio.com/downloads/download-visual-studio-vs#d-express-windows-desktop)
 - **iOS:** 8.0 and higher
 - **Android:** Jelly Bean (4.1) and higher. Standard QGC is built against ndk version 19.
-- <span id="qt_version"></span>**Qt version:** 5.9.3 **only**
+- **Qt version:** {{ book.qt_version }} **(only)**  <!-- NOTE {{ book.qt_version }} is set in the variabls section of gitbook file https://github.com/mavlink/qgc-dev-guide/blob/master/book.json -->
 
 #### Install Qt
 
@@ -53,12 +52,12 @@ You **need to install Qt as described below** instead of using pre-built package
 
 1. Launch *Qt Creator* and open the **qgroundcontrol.pro** project.
 1. Select the appropriate kit for your needs:
-  - **OSX:** Desktop Qt 5.9.3 clang 64 bit
-  - **Ubuntu:** Desktop Qt 5.9.3 GCC bit
-  - **Windows:** Desktop Qt 5.9.3 MSVC2015 32bit
-  - **Android:** Android for armeabi-v7a (GCC 4.9, Qt 5.9.3)
-1. *Run Qmake* from the context menu for your target
-   > **Note** iOS builds must be built using [XCode](http://doc.qt.io/qt-5/ios-support.html).
+  - **OSX:** Desktop Qt {{ book.qt_version }} clang 64 bit
+    > **Note** iOS builds must be built using [XCode](http://doc.qt.io/qt-5/ios-support.html).
+  - **Ubuntu:** Desktop Qt {{ book.qt_version }} GCC bit
+  - **Windows:** Desktop Qt {{ book.qt_version }} MSVC2015 32bit
+  - **Android:** Android for armeabi-v7a (GCC 4.9, Qt {{ book.qt_version }})
+
 
 ### Vagrant
 

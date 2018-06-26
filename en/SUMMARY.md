@@ -26,6 +26,8 @@
   * [Mock Link](tools/mock_link.md)
   * [Custom Command Widgets](tools/custom_command_widget.md)
 * [Command Line Options](command_line_options.md)
+* [Custom Builds](custom_build/custom_build.md)
+  * [Updating custom builds from QGC repro](custom_build/upstream_merge.md) 
 * [Code Submission](contribute/README.md)
   * [Coding Style](contribute/coding_style.md)
   * [Unit Tests](contribute/unit_tests.md)

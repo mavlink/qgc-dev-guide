@@ -21,10 +21,18 @@ The QGC UI targets itself more towards a tablet+touch style of UI than a desktop
 
 ## Support
 
-Development questions can be raised in the [QGroundControl Developer](http://discuss.px4.io/c/qgroundcontrol/qgroundcontrol-developers) discuss category or in the *QGroundControl* [Gitter](https://gitter.im/mavlink/qgroundcontrol) channel. 
+Development questions can be raised in the [QGroundControl Developer](http://discuss.px4.io/c/qgroundcontrol/qgroundcontrol-developers) discuss category or in the *QGroundControl* [Gitter](https://gitter.im/mavlink/qgroundcontrol) channel.
+
+## Contribution
+
+Information about contributing, including coding styles, testing and licenses can be found in [Code Submissions](contribute/README.md).
+
+> **Tip** We expect all contributors to adhere to the [QGroundControl code of conduct](https://github.com/mavlink/qgroundcontrol/blob/master/CODE_OF_CONDUCT.md). 
+  This code aims to foster an open and welcoming environment.
 
 
 ## License
 
 *QGroundControl* source code is [dual-licensed under Apache 2.0 and GPLv3](https://github.com/mavlink/qgroundcontrol/blob/master/COPYING.md).
+For more information see: [Licenses](contribute/licences.md).
 

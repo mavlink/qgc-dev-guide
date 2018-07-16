@@ -93,3 +93,12 @@ To disable XBee support you may add `DEFINES+=DISABLE_XBEE` to *qmake*.
 ### Video Streaming
 
 Check the [Video Streaming](https://github.com/mavlink/qgroundcontrol/tree/master/src/VideoStreaming) directory for further instructions.
+
+
+## Download last development version
+
+QGroundControl mantains this download links to allow test and usage of the last updates in main code.
+ - [Windows (QGroundControl-installer.exe)](https://s3-us-west-2.amazonaws.com/qgroundcontrol/builds/master/QGroundControl-installer.exe)
+ - [MAC OS (QGroundControl.dmg)](https://s3-us-west-2.amazonaws.com/qgroundcontrol/builds/master/QGroundControl.dmg)
+ - [Linux (QGroundControl.AppImage)](https://s3-us-west-2.amazonaws.com/qgroundcontrol/builds/master/QGroundControl.AppImage)
+ - [Android (QGroundControl.apk)](https://s3-us-west-2.amazonaws.com/qgroundcontrol/builds/master/QGroundControl.apk)

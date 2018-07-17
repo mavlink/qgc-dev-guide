@@ -3,6 +3,10 @@
 This topic explains how to get the *QGroundControl* source code and build it either natively or within a *Vagrant* environment. 
 It also provides information about optional or OS specific functionality.
 
+## Daily Builds
+
+If you just want to test (and not debug) a recent build of *QGroundControl* you can use the [Daily Build](https://docs.qgroundcontrol.com/en/releases/daily_builds.html). Versions are provided for all platforms. 
+
 ## Source Code
 
 Source code for *QGroundControl* is kept on GitHub here: https://github.com/mavlink/qgroundcontrol.
@@ -94,11 +98,3 @@ To disable XBee support you may add `DEFINES+=DISABLE_XBEE` to *qmake*.
 
 Check the [Video Streaming](https://github.com/mavlink/qgroundcontrol/tree/master/src/VideoStreaming) directory for further instructions.
 
-
-## Download last development version
-
-QGroundControl mantains this download links to allow test and usage of the last updates in main code.
- - [Windows (QGroundControl-installer.exe)](https://s3-us-west-2.amazonaws.com/qgroundcontrol/builds/master/QGroundControl-installer.exe)
- - [MAC OS (QGroundControl.dmg)](https://s3-us-west-2.amazonaws.com/qgroundcontrol/builds/master/QGroundControl.dmg)
- - [Linux (QGroundControl.AppImage)](https://s3-us-west-2.amazonaws.com/qgroundcontrol/builds/master/QGroundControl.AppImage)
- - [Android (QGroundControl.apk)](https://s3-us-west-2.amazonaws.com/qgroundcontrol/builds/master/QGroundControl.apk)

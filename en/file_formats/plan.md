@@ -283,7 +283,7 @@ Key | Description
 
 #### `TransectStyleComplexItem` {#TransectStyleComplexItem}
 
-`TransectStyleComplexItem` contains the common base definition for Survey and CorridorScan complex items.
+`TransectStyleComplexItem` contains the common base definition for [`survey`](#survey) and [`CorridorScan`](#CorridorScan) complex items.
 
 ```json
                 "TransectStyleComplexItem": {
@@ -329,7 +329,7 @@ Key | Description
 
 ##### CameraCalc {#CameraCalc}
 
-TBD
+The `CameraCalc` contains camera information used for a survey, corridor or structure scan.
 
 ```
                     "CameraCalc": {

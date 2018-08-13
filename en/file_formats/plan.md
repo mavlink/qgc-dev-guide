@@ -185,9 +185,9 @@ Key | Description
 `type` | `ComplexItem` (this is a complex item).
 `complexItemType` | `survey`
 [`TransectStyleComplexItem`](#TransectStyleComplexItem) | The common base definition for Survey and CorridorScan complex items.
-`angle` | The angle in degrees for the transect paths.
+`angle` | The angle for the transect paths (degrees).
 `entryLocation` | ?
-`flyAlternateTransects` | ?
+`flyAlternateTransects` | If true, the vehicle will skip every other transect and then come back at the end and fly these alternates. This can be used for fixed wing aircraft whn the turnaround would be too acute for the vehicle to make the turn.
 `polygon` | The polygon array which represents the polygonal survey area. Each point is a latitude, longitude pair for a polygon vertex.
 
 

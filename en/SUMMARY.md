@@ -18,7 +18,6 @@
 * [File Formats](file_formats/README.md)
     * [Parameters](file_formats/parameters.md)
     * [Plan](file_formats/plan.md)
-    * [Survey](file_formats/survey.md)
     * [MAVLink Logs](file_formats/mavlink.md)
 * [Developer Tools](tools/README.md)
   * [Mock Link](tools/mock_link.md)

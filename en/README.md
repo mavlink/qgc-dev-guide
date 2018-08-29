@@ -19,7 +19,7 @@ The QGC user interface is implemented using [Qt QML](http://doc.qt.io/qt-5/qtqml
 
 The QGC UI targets itself more towards a tablet+touch style of UI than a desktop mouse-based UI. This make a single UI easier to create since tablet style UI also tends to work fine on desktop/laptops.
 
-## Support
+## Support {#support}
 
 Development questions can be raised in the [QGroundControl Developer](http://discuss.px4.io/c/qgroundcontrol/qgroundcontrol-developers) discuss category or in the *QGroundControl* [Gitter](https://gitter.im/mavlink/qgroundcontrol) channel.
 
@@ -29,6 +29,17 @@ Information about contributing, including coding styles, testing and licenses ca
 
 > **Tip** We expect all contributors to adhere to the [QGroundControl code of conduct](https://github.com/mavlink/qgroundcontrol/blob/master/CODE_OF_CONDUCT.md). 
   This code aims to foster an open and welcoming environment.
+  
+### Translations
+
+We use [Crowdin](https://crowdin.com) to make it easier to manage translation for both *QGroundControl* and the documentation.
+
+The translation projects (and join links) are listed below:
+* [QGroundControl](https://crowdin.com/project/qgroundcontrol) ([join](https://crwd.in/qgroundcontrol))
+* [QGroundControl User Guide](https://crowdin.com/project/qgroundcontrol-user-guide) ([join](https://crwd.in/qgroundcontrol-user-guide))
+* *QGroundControl Developer Guide* - Not yet ready for translation
+
+If you would us to add support for a new language, then ask for it in the [discussion channels](#support).
 
 
 ## License

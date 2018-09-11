@@ -47,3 +47,10 @@ If you would us to add support for a new language, then ask for it in the [discu
 *QGroundControl* source code is [dual-licensed under Apache 2.0 and GPLv3](https://github.com/mavlink/qgroundcontrol/blob/master/COPYING.md).
 For more information see: [Licenses](contribute/licences.md).
 
+## Governance
+
+The QGroundControl mission planner is hosted under the governance of the [Dronecode Project](https://www.dronecode.org/).
+
+<a href="https://www.dronecode.org/" style="padding:20px" ><img src="https://mavlink.io/assets/site/logo_dronecode.png" alt="Dronecode Logo" width="110px"/></a>
+<a href="https://www.linuxfoundation.org/projects" style="padding:20px;"><img src="https://mavlink.io/assets/site/logo_linux_foundation.png" alt="Linux Foundation Logo" width="80px" /></a>
+<div style="padding:10px">&nbsp</div>

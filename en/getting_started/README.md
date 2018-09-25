@@ -37,7 +37,7 @@ To get the source files:
 #### Install Qt
 
 You **need to install Qt as described below** instead of using pre-built packages from say, a Linux distribution, because *QGroundControl* needs access to private Qt headers.
-1. Download the [Qt installer](http://www.qt.io/download-open-source) for the [supported Qt version)[#qt_version]. You will also need to install the *Qt Speech* package.
+1. Download the [Qt installer](http://www.qt.io/download-open-source) (version {{ book.qt_version }}). You will also need to install the *Qt Speech* package.
    - **Ubuntu:** Set the downloaded file to executable using:`chmod +x`. Install to default location for use with **./qgroundcontrol-start.sh.** If you install Qt to a non-default location you will need to modify **qgroundcontrol-start.sh** in order to run downloaded builds.
    - **Windows:** Make sure to install *VS 2015 32 bit* package.
 

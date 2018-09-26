@@ -15,3 +15,4 @@ Tools include:
 - **[Custom Command Widget](https://docs.qgroundcontrol.com/en/app_menu/custom_command_widget.html)** - Load custom/test QML UI at runtime.
 - **[Onboard Files](https://docs.qgroundcontrol.com/en/app_menu/onboard_files.html)** - Navigate vehicle file system and upload/download files.
 - **[HIL Config Widget](https://docs.qgroundcontrol.com/en/app_menu/hil_config.html)** - Settings for HIL simulators.
+- **[MAVLink Console](https://docs.qgroundcontrol.com/en/analyze_view/mavlink_console.html)** (PX4 Only) - Connect to the PX4 nsh shell and send commands.

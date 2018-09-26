@@ -37,10 +37,14 @@ To get the source files:
 #### Install Qt
 
 You **need to install Qt as described below** instead of using pre-built packages from say, a Linux distribution, because *QGroundControl* needs access to private Qt headers.
-1. Download the [Qt installer](http://www.qt.io/download-open-source) (version {{ book.qt_version }}). You will also need to install the *Qt Speech* package.
-   - **Ubuntu:** Set the downloaded file to executable using:`chmod +x`. Install to default location for use with **./qgroundcontrol-start.sh.** If you install Qt to a non-default location you will need to modify **qgroundcontrol-start.sh** in order to run downloaded builds.
-   - **Windows:** Make sure to install *VS 2015 32 bit* package.
 
+To install Qt:
+1. Download and run the [Qt Online Installer](http://www.qt.io/download-open-source)
+   - **Ubuntu:** 
+     - Set the downloaded file to executable using: `chmod +x`. 
+     - Install to default location for use with **./qgroundcontrol-start.sh.** If you install Qt to a non-default location you will need to modify **qgroundcontrol-start.sh** in order to run downloaded builds.
+1. In the installer *Select Components* dialog choose: {{ book.qt_version }}.
+   > **Tip** On Windows make sure to select the component package: *MCVC 2015 32 bit*.
 1. Install Additional Packages (Platform Specific)
    - **Ubuntu:** `sudo apt-get install speech-dispatcher libudev-dev libsdl2-dev`
    - **Fedora:** `sudo dnf install speech-dispatcher SDL2-devel SDL2 systemd-devel`

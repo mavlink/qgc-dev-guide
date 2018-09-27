@@ -11,11 +11,11 @@ It is [dual-licensed under Apache 2.0 and GPLv3](https://github.com/mavlink/qgro
 To get the source files:
 1. Clone the repo (or your fork):
    ```
-   git clone --recursive https://github.com/mavlink/qgroundcontrol.git
+   git clone https://github.com/mavlink/qgroundcontrol.git
    ```
-2. Update submodules (do this each time you pull new source code):
+2. Update submodules (required each time you pull new source code):
    ```
-   git submodule update
+   git submodule update --init --recursive 
    ```
 
 > **Tip** Github source-code zip files cannot be used because these do not contain the appropriate submodule source code. You must use git!
@@ -29,7 +29,7 @@ To get the source files:
 
 - **macOS:** v10.11 or higher
 - **Ubuntu:** 64 bit, gcc compiler
-- **Windows:** Vista or higher, 32 bit, [Visual Studio 2015 compiler](http://www.visualstudio.com/downloads/download-visual-studio-vs#d-express-windows-desktop)
+- **Windows:** Vista or higher, 32 bit, [Visual Studio 2015 compiler](https://visualstudio.microsoft.com/vs/older-downloads/)
 - **iOS:** 10.0 and higher
 - **Android:** Jelly Bean (4.1) and higher. Standard QGC is built against ndk version 19.
 - **Qt version:** {{ book.qt_version }} **(only)**  <!-- NOTE {{ book.qt_version }} is set in the variables section of gitbook file https://github.com/mavlink/qgc-dev-guide/blob/master/book.json -->

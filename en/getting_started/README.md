@@ -25,14 +25,16 @@ To get the source files:
 
 ### Native Builds
 
-*QGroundControl* builds are supported for OSX, Linux, Windows, iOS and Android. *QGroundControl* uses [Qt](http://www.qt.io) as its cross-platform support library and uses [QtCreator](http://doc.qt.io/qtcreator/index.html) as its default build environment.
+*QGroundControl* builds are supported for macOS, Linux, Windows, iOS and Android. *QGroundControl* uses [Qt](http://www.qt.io) as its cross-platform support library and uses [QtCreator](http://doc.qt.io/qtcreator/index.html) as its default build environment.
 
-- **OSX:** OSX 10.7 or higher, 64 bit, clang compiler
+- **macOS:** v10.11 or higher
 - **Ubuntu:** 64 bit, gcc compiler
 - **Windows:** Vista or higher, 32 bit, [Visual Studio 2015 compiler](http://www.visualstudio.com/downloads/download-visual-studio-vs#d-express-windows-desktop)
-- **iOS:** 8.0 and higher
+- **iOS:** 10.0 and higher
 - **Android:** Jelly Bean (4.1) and higher. Standard QGC is built against ndk version 19.
-- **Qt version:** {{ book.qt_version }} **(only)**  <!-- NOTE {{ book.qt_version }} is set in the variabls section of gitbook file https://github.com/mavlink/qgc-dev-guide/blob/master/book.json -->
+- **Qt version:** {{ book.qt_version }} **(only)**  <!-- NOTE {{ book.qt_version }} is set in the variables section of gitbook file https://github.com/mavlink/qgc-dev-guide/blob/master/book.json -->
+
+> **Tip** For more information see: [Qt 5 supported platform list](http://doc.qt.io/qt-5/supported-platforms.html).
 
 #### Install Qt
 
@@ -44,7 +46,14 @@ To install Qt:
      - Set the downloaded file to executable using: `chmod +x`. 
      - Install to default location for use with **./qgroundcontrol-start.sh.** If you install Qt to a non-default location you will need to modify **qgroundcontrol-start.sh** in order to run downloaded builds.
 1. In the installer *Select Components* dialog choose: {{ book.qt_version }}.
-   > **Tip** On Windows make sure to select the component package: *MCVC 2015 32 bit*.
+   
+   You can install all components or a subset of components. 
+   The minimal subset must include: 
+   - *Qt Charts* and *Qt Remote Objects (TP)*
+   - To build android: *Android x86* and *Android ARMv7*
+   - **Windows**: *MCVC 2015 32 bit*
+   - **MacOS**: *macOS*
+   - **Linux**: *Desktop gcc 64-bit*
 1. Install Additional Packages (Platform Specific)
    - **Ubuntu:** `sudo apt-get install speech-dispatcher libudev-dev libsdl2-dev`
    - **Fedora:** `sudo dnf install speech-dispatcher SDL2-devel SDL2 systemd-devel`

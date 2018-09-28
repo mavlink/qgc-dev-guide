@@ -9,13 +9,13 @@ Source code for *QGroundControl* is kept on GitHub here: https://github.com/mavl
 It is [dual-licensed under Apache 2.0 and GPLv3](https://github.com/mavlink/qgroundcontrol/blob/master/COPYING.md).
 
 To get the source files:
-1. Clone the repo (or your fork):
+1. Clone the repo (or your fork) including submodules:
    ```
-   git clone https://github.com/mavlink/qgroundcontrol.git
+   git clone https://github.com/mavlink/qgroundcontrol.git --recursive
    ```
 2. Update submodules (required each time you pull new source code):
    ```
-   git submodule update --init --recursive 
+   git submodule update
    ```
 
 > **Tip** Github source-code zip files cannot be used because these do not contain the appropriate submodule source code. You must use git!
@@ -29,7 +29,7 @@ To get the source files:
 
 - **macOS:** v10.11 or higher
 - **Ubuntu:** 64 bit, gcc compiler
-- **Windows:** Vista or higher, 32 bit, [Visual Studio 2015 compiler](https://visualstudio.microsoft.com/vs/older-downloads/)
+- **Windows:** Vista or higher, [Visual Studio 2015 compiler](https://visualstudio.microsoft.com/vs/older-downloads/) (32 bit)
 - **iOS:** 10.0 and higher
 - **Android:** Jelly Bean (4.1) and higher. Standard QGC is built against ndk version 19.
 - **Qt version:** {{ book.qt_version }} **(only)**  <!-- NOTE {{ book.qt_version }} is set in the variables section of gitbook file https://github.com/mavlink/qgc-dev-guide/blob/master/book.json -->
@@ -49,11 +49,12 @@ To install Qt:
    
    You can install all components or a subset of components. 
    The minimal subset must include: 
-   - *Qt Charts* and *Qt Remote Objects (TP)*
-   - To build android: *Android x86* and *Android ARMv7*
    - **Windows**: *MCVC 2015 32 bit*
    - **MacOS**: *macOS*
    - **Linux**: *Desktop gcc 64-bit*
+   - All:
+     - *Qt Charts* and *Qt Remote Objects (TP)*
+     - *Android ARMv7* (to build Android)
 1. Install Additional Packages (Platform Specific)
    - **Ubuntu:** `sudo apt-get install speech-dispatcher libudev-dev libsdl2-dev`
    - **Fedora:** `sudo dnf install speech-dispatcher SDL2-devel SDL2 systemd-devel`

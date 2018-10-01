@@ -9,4 +9,4 @@ The user interface of QGC is implemented using Qml. Qml provides for hardware ac
 
 The QGC ui targets itself more towards a tablet+touch style of ui than a desktop mouse-based ui. This make a single ui easier to create since tablet style ui also tends to work fine on desktop/laptops.
 
-**Note: The QGroundControl Dev Guide is an active work in progress. The information provided should be correct, but you may find missing information or incomplete pages.**
+**Note: The QGroundControl Dev Guide is an active work in progress. The information provided should be correct, but you may find missing information or incomplete pages.** 

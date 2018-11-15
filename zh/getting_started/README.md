@@ -41,7 +41,7 @@ To install Qt:
 
 2. In the installer *Select Components* dialog choose: {{ book.qt_version }}.
     
-    You can install all components or a subset of components. The minimal subset must include:
+    Then install just the following components:
 
 * **Windows**: *MCVC 2015 32 bit*
 * **MacOS**: *macOS*

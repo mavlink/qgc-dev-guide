@@ -62,8 +62,12 @@ To install Qt:
 2. Select the appropriate kit for your needs: 
     * **OSX:** Desktop Qt {{ book.qt_version }} clang 64 bit > **Note** iOS builds must be built using [XCode](http://doc.qt.io/qt-5/ios-support.html).
     * **Ubuntu:** Desktop Qt {{ book.qt_version }} GCC bit
-    * **Windows:** Desktop Qt {{ book.qt_version }} MSVC2015 32bit
+    * **Windows:** Desktop Qt {{ book.qt_version }} MSVC2015 **32bit**
     * **Android:** Android for armeabi-v7a (GCC 4.9, Qt {{ book.qt_version }})
+
+3. Build using the "hammer" (or "play") icons:
+    
+    ![QtCreator Build Button](../../assets/getting_started/qt_creator_build_qgc.png)
 
 ### Vagrant
 

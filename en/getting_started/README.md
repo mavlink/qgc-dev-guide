@@ -71,6 +71,9 @@ To install Qt:
   - **Ubuntu:** Desktop Qt {{ book.qt_version }} GCC bit
   - **Windows:** Desktop Qt {{ book.qt_version }} MSVC2015 32bit
   - **Android:** Android for armeabi-v7a (GCC 4.9, Qt {{ book.qt_version }})
+1. Build
+
+<img width="337" alt="screen shot 2018-11-15 at 4 35 55 pm" src="https://user-images.githubusercontent.com/317648/48583709-a3999280-e8dc-11e8-92e8-4231f5cb7dc0.png">
 
 
 ### Vagrant

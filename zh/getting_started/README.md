@@ -21,12 +21,18 @@ To get the source files:
 
 * **macOS:** v10.11 or higher
 * **Ubuntu:** 64 bit, gcc compiler
-* **Windows:** Vista or higher, [Visual Studio 2015 compiler](https://visualstudio.microsoft.com/vs/older-downloads/) (32 bit)
+* **Windows:** Vista or higher, [Visual Studio 2015 compiler](#vs2015) (32 bit)
 * **iOS:** 10.0 and higher
 * **Android:** Jelly Bean (4.1) and higher. Standard QGC is built against ndk version 19.
 * **Qt version:** {{ book.qt_version }} **(only)** <!-- NOTE {{ book.qt_version }} is set in the variables section of gitbook file https://github.com/mavlink/qgc-dev-guide/blob/master/book.json -->
 
 > **Tip** For more information see: [Qt 5 supported platform list](http://doc.qt.io/qt-5/supported-platforms.html).
+
+#### Install Visual Studio 2015 (Windows Only) {#vs2015}
+
+The Windows compiler can be found here: [Visual Studio 2015 compiler](https://visualstudio.microsoft.com/vs/older-downloads/) (32 bit)
+
+When installing, you must minimally select all Visual C++ components as shown: ![Visual Studio 2015 - Select all Visual C++ Components](../../assets/getting_started/vs_2015_select_features.png)
 
 #### Install Qt
 

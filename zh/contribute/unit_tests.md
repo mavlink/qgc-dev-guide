@@ -1,12 +1,12 @@
-# Unit Tests
+# 单元测试
 
-*QGroundControl* (QGC) contains a set of unit tests that must pass before before a pull request will be accepted. The addition of new complex subsystems to QGC should include a corresponding new unit test to test it.
+QGroundControl（QGC）包含一组必须在接受拉取请求之前通过的单元测试。 向QGC添加新的复杂子系统应该有相应的新单元测试来测试它。
 
-The full list of unit tests can be found in [UnitTestList.cc](https://github.com/mavlink/qgroundcontrol/blob/master/src/qgcunittest/UnitTestList.cc).
+单元测试的完整列表可以在UnitTestList.cc中找到。
 
-To run unit tests:
+要运行单元测试：
 
-1. Build in `debug` mode with `UNITTEST_BUILD` definition. 
-2. Copy the **deploy/qgroundcontrol-start.sh** script in the **debug** directory
-3. Run *all* unit tests from the command line using the `--unittest` command line option. For Linux this is done as shown: ```qgroundcontrol-start.sh --unittest```
-4. Run *individual* unit tests by specifying the test name as well: `--unittest:RadioConfigTest`. For Linux this is done as shown: ```qgroundcontrol-start.sh --unittest:RadioConfigTest```
+1. 使用UNITTEST_BUILD定义在调试模式下构建。 
+2. 复制debug目录中的deploy / qgroundcontrol-start.sh脚本
+3. 使用--unittest命令行选项从命令行运行所有单元测试。 对于Linux，这是完成如下所示： ```qgroundcontrol-start.sh --unittest```
+4. 通过指定测试名称来运行单个单元测试： - unittest：RadioConfigTest。 对于Linux，这是完成如下所示： ```qgroundcontrol-start.sh --unittest:RadioConfigTest```

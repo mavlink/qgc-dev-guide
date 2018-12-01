@@ -36,13 +36,13 @@ OSG，Linux，Windows，iOS和Android支持QGroundControl构建。 QGroundContro
     
     #### 安装Qt
     
-    You **need to install Qt as described below** instead of using pre-built packages from say, a Linux distribution, because *QGroundControl* needs access to private Qt headers.
+    请** 按照下面的方式安装 QT**, 而不是使用 linux 发行版中的预构建包, 因为 *QGroundControl* 需要访问专用 Qt标头。
     
-    To install Qt:
+    如何安装Qt：
     
-    1. 下载并运行Qt Online Installer 
+    1. 下载并运行[Qt Online Installer](http://www.qt.io/download-open-source) 
         * **Ubuntu:** 
-            * 使用以下命令将下载的文件设置为可执行文件：chmod + x。 
+            * 使用以下命令将下载的文件设置为可执行文件：`chmod + x` 
             * Install to default location for use with **./qgroundcontrol-start.sh.** If you install Qt to a non-default location you will need to modify **qgroundcontrol-start.sh** in order to run downloaded builds.
     
     2. In the installer *Select Components* dialog choose: {{ book.qt_version }}.

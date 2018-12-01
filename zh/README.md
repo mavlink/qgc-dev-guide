@@ -1,54 +1,54 @@
-# QGroundControl Dev Guide
+# QGroundControl开发指南
 
-[![Releases](https://img.shields.io/github/release/mavlink/QGroundControl.svg)](https://github.com/mavlink/QGroundControl/releases) [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/mavlink/qgroundcontrol?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Slack](https://px4-slack.herokuapp.com/badge.svg)](http://slack.px4.io) [![Discuss](https://img.shields.io/badge/discuss-dev-ff69b4.svg)](http://discuss.px4.io/c/qgroundcontrol/qgroundcontrol-developers)
+[![版本发布](https://img.shields.io/github/release/mavlink/QGroundControl.svg)](https://github.com/mavlink/QGroundControl/releases) [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/mavlink/qgroundcontrol?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Slack](https://px4-slack.herokuapp.com/badge.svg)](http://slack.px4.io) [![论坛](https://img.shields.io/badge/discuss-dev-ff69b4.svg)](http://discuss.px4.io/c/qgroundcontrol/qgroundcontrol-developers)
 
-This developer guide is the best source for information if you want to build, modify or extend [QGroundControl](http://qgroundcontrol.com) (QGC). It shows how to obtain and build the source code, explains how QGC works, and provides guidelines for contributing code to the project.
+如果要构建，修改或扩展QGroundControl（QGC），此开发人员指南是获取信息的最佳来源。 它展示了如何获取和构建源代码，解释了QGC的工作原理，并提供了为项目贡献代码的指南。
 
-> **Tip** This guide is for **developers**! To learn how to **use** *QGroundControl*, see the [User Guide](https://docs.qgroundcontrol.com/en/).
+> </strong> 提示</strong> 本指南适用于开发人员</0> ！ 要了解如何使用QGroundControl，请参阅“用户指南”。
 
 <span></span>
 
-> **Note** This guide is an active work in progress - information should be correct, but may not be complete! If you find that it is missing helpful information (or errors) please raise an [issue](https://github.com/mavlink/qgc-dev-guide/issues).
+> 注意: 本指南的编写是一项正在进行的活动 - 信息应该是正确的，但可能不完整！ 如果您发现它缺少有用的信息（或错误），请提出问题。
 
-## Design Philosophy
+## 设计理念
 
-QGC is designed to provide a single codebase that can run across multiple OS platforms as well as multiple device sizes and styles.
+QGC旨在提供可在多个操作系统平台上运行的单个代码库以及多种设备大小和样式。
 
-The QGC user interface is implemented using [Qt QML](http://doc.qt.io/qt-5/qtqml-index.html). QML provides for hardware acceleration which is a key feature on lower powered devices such as tablets or phones. QML also provides features which allows us to more easily create a single user interface which can adapt itself to differing screen sizes and resolution.
+QGC用户界面使用Qt QML实现。 QML提供硬件加速，这是平板电脑或手机等低功率设备的关键功能。 QML提供硬件加速，这是平板电脑或手机等低功率设备的关键功能。 QML还提供了一些功能，使我们能够更轻松地创建单个用户界面，以适应不同的屏幕尺寸和分辨率。
 
-The QGC UI targets itself more towards a tablet+touch style of UI than a desktop mouse-based UI. This make a single UI easier to create since tablet style UI also tends to work fine on desktop/laptops.
+与基于桌面鼠标的UI相比，QGC UI更倾向于平板电脑+触摸式UI。 这使得单个UI更容易创建，因为平板电脑样式UI也可以在台式机/笔记本电脑上正常工作。
 
-## Support {#support}
+## 支持 {#support}
 
-Development questions can be raised in the [QGroundControl Developer](http://discuss.px4.io/c/qgroundcontrol/qgroundcontrol-developers) discuss category or in the *QGroundControl* [Gitter](https://gitter.im/mavlink/qgroundcontrol) channel.
+可以在QGroundControl Developer讨论组或QGroundControl Gitter频道中提出开发问题。
 
-## Contribution
+## 贡献
 
-Information about contributing, including coding styles, testing and licenses can be found in [Code Submissions](contribute/README.md).
+有关贡献的信息，包括编码样式，测试和许可证，可以在代码提交中找到。
 
-> **Tip** We expect all contributors to adhere to the [QGroundControl code of conduct](https://github.com/mavlink/qgroundcontrol/blob/master/CODE_OF_CONDUCT.md). This code aims to foster an open and welcoming environment.
+> 提示我们希望所有贡献者都遵守QGroundControl行为准则。 该守则旨在营造一个开放和热情的环境。
 
-### Translations
+### 翻译
 
-We use [Crowdin](https://crowdin.com) to make it easier to manage translation for both *QGroundControl* and the documentation.
+我们使用Crowdin来更轻松地管理QGroundControl和文档的翻译。
 
-The translation projects (and join links) are listed below:
+翻译项目（和加入链接）如下：
 
-* [QGroundControl](https://crowdin.com/project/qgroundcontrol) ([join](https://crwd.in/qgroundcontrol))
-* [QGroundControl User Guide](https://crowdin.com/project/qgroundcontrol-user-guide) ([join](https://crwd.in/qgroundcontrol-user-guide))
-* *QGroundControl Developer Guide* - Not yet ready for translation
+* [QGroundControl](https://crowdin.com/project/qgroundcontrol)（[加入](https://crwd.in/qgroundcontrol)）
+* [QGroundControl使用指南](https://crowdin.com/project/qgroundcontrol-user-guide)（[加入](https://crwd.in/qgroundcontrol-user-guide)）
+* *QGroundControl开发者指南* - 尚未准备好进行翻译
 
-If you would us to add support for a new language, then ask for it in the [discussion channels](#support).
+如果您希望我们添加对新语言的支持，请在[论坛频道](#support)中提出要求。
 
-## License
+## 许可证
 
-*QGroundControl* source code is [dual-licensed under Apache 2.0 and GPLv3](https://github.com/mavlink/qgroundcontrol/blob/master/COPYING.md). For more information see: [Licenses](contribute/licences.md).
+QGroundControl源代码在Apache 2.0和GPLv3下是双许可的。 有关更多信息，请参阅：许可证。 有关更多信息，请参阅：许可证。
 
-## Governance
+## 管理
 
-The QGroundControl mission planner is hosted under the governance of the [Dronecode Project](https://www.dronecode.org/).
+QGroundControl任务计划程序托管在Dronecode项目的管理下。
 
-<a href="https://www.dronecode.org/" style="padding:20px"><img src="https://mavlink.io/assets/site/logo_dronecode.png" alt="Dronecode Logo" width="110px"/></a>
-<a href="https://www.linuxfoundation.org/projects" style="padding:20px;"><img src="https://mavlink.io/assets/site/logo_linux_foundation.png" alt="Linux Foundation Logo" width="80px" /></a>
+<a href="https://www.dronecode.org/" style="padding:20px"><img src="https://mavlink.io/assets/site/logo_dronecode.png" alt="Dronecode徽标" width="110px"/></a>
+<a href="https://www.linuxfoundation.org/projects" style="padding:20px;"><img src="https://mavlink.io/assets/site/logo_linux_foundation.png" alt="Linux基金会徽标" width="80px" /></a>
 
 <div style="padding:10px">&nbsp</div>

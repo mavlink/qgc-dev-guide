@@ -9,11 +9,11 @@
 
 ## 调试
 
-若要检查数据, 请在以十六进制方式查看日志文件。 You should see after 8 bytes **0x55**. The first 8 bytes should also convert to a valid timestamp, so something either close to zero or around the number **1294571828792000** (which is the current Unix epoch timestamp in microseconds).
+若要检查数据, 请在以十六进制方式查看日志文件。 文件打开后，可在第九个字节的位置，找到**0x55**。 前8个字节应转换为有效的时间戳, 数值接近零或 **1294571828792000 ** (表示当前的 unix 纪元时间戳 (以微秒为单位)。
 
-## C++ Sketch for logging MAVLink
+## 用于记录 mavlink 的 c++ 例程
 
-The code fragment below shows how to implement logging using [C++ streams](http://www.cplusplus.com/reference/iostream/istream/) from the C++ standard library.
+下面的代码段演示，如何使用 c++ 标准库中的 < 0>C++ 流 </0 > 实现日志记录。
 
 ```cpp
 //write into mavlink logfile

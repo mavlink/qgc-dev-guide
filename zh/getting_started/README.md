@@ -52,26 +52,26 @@ OSG，Linux，Windows，iOS和Android支持QGroundControl构建。 QGroundContro
         * **Windows**: *MCVC 2015 32 bit*
         * **MacOS**: *macOS*
         * **Linux**: *Desktop gcc 64-bit*
-        * All: 
+        * 必装组件（所有平台） 
             * *Qt Charts* and *Qt Remote Objects (TP)*
-            * *Android ARMv7* (to build Android) 
+            * *Android ARMv7* (为了构建Android) 
                 1. Install Additional Packages (Platform Specific)
         * **Ubuntu:** `sudo apt-get install speech-dispatcher libudev-dev libsdl2-dev`
         * **Fedora:** `sudo dnf install speech-dispatcher SDL2-devel SDL2 systemd-devel`
-        * **Arch Linux:** `pacman -Sy speech-dispatcher`
-        * **Windows:** [USB Driver](http://www.pixhawk.org/firmware/downloads) to connect to Pixhawk/PX4Flow/3DR Radio
+        * Arch Linux: pacman -Sy speech-dispatcher
+        * Windows: USB Driver to connect to Pixhawk/PX4Flow/3DR Radio
         * **Android:** [Qt Android Setup](http://doc.qt.io/qt-5/androidgs.html)
         
-        #### Building using Qt Creator
+        #### 使用Qt Creator构建
         
-        1. 启动Qt Creator并打开qgroundcontrol.pro项目。
-        2. 2. 根据您的需求选择合适的套件： 
+        1. 启动*Qt Creator*并打开**qgroundcontrol.pro**项目。
+        2. 根据您的需求选择合适的套件： 
             * OSX：桌面Qt {{book.qt_version}} clang 64 bit>注意iOS构建必须使用XCode构建。
             * Ubuntu：桌面Qt {{book.qt_version}} GCC位
-            * **Windows:** Desktop Qt {{ book.qt_version }} MSVC2015 **32bit**
-            * Android：Android：适用于armeabi的Android-v7a（GCC 4.9，Qt {{book.qt_version}}）
+            * **Windows:** 桌面Qt{{ book.qt_version }}MSVC2015**32bit**
+            * **Android：** Android平台需选择armeabi的Android-v7a（GCC 4.9，Qt {{ book.qt_version }}）
         
-        3. Build using the "hammer" (or "play") icons:
+        3. 使用"hammer" (or "play") 图标构建:
             
             ![QtCreator Build Button](../../assets/getting_started/qt_creator_build_qgc.png)
         

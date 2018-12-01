@@ -1,15 +1,15 @@
-# Communication Flow
+# 通信流程
 
-Description of the high level communication flow which takes place during a vehicle auto-connect.
+描述载具在自动连接期间进行的高级通信流程。
 
-* LinkManager always has a UDP link open waiting for a Vehicle heartbeat
-* LinkManager detects a new known device (Pixhawk, SiK Radio, PX4 Flow) connected to computer 
-    * Creates a new SerialLink connected to the device
-* Bytes comes through Link and are sent to MAVLinkProtocol
-* MAVLinkProtocol converts the bytes into a MAVLink message
-* If the message is a `HEARTBEAT` the MultiVehicleManager is notified
-* MultiVehicleManager is notifed of the ```HEARTBEAT``` and creates a new Vehicle object based on the information in the `HEARTBEAT` message
-* The Vehicle instantiates the plugins which match the vehicle type
-* The ParameterLoader associated with the vehicle sends a ```PARAM_REQUEST_LIST``` to the vehicle to load params using the parameter protocol
-* Once parameter load is complete, the MissionManager associated with the Vehicle requests the mission items from the Vehicle using the mission item protocol
-* Once parameter load is complete, the VehicleComponents display their UI in the Setup view
+* LinkManager始终保持UDP链接打开，等待载具的心跳包
+* LinkManager检测连接到计算机的新已知设备（Pixhawk，SiK Radio，PX4 Flow） 
+    * 创建一个新的 SerialLink对象给链接到的设备
+* 字节通过链接发送到 MAVLinkProtocol对象
+* MAVLinkProtocol将字节转换为MAVLink消息
+* 如果消息是HEARTBEAT，则通知MultiVehicleManager(多机管理类)
+* MultiVehicleManager (多机管理类)将会接到心跳包的通知 ```HEARTBEAT``` 并根据HEARTBEAT消息中的信息创建一个新的Vehicle对象
+* 载具实例化与载机类型匹配的插件
+* ParameterLoader对象发送一个与载具相关的PARAM_REQUEST_LIST ```PARAM_REQUEST_LIST``` 使用参数协议向载具加载相对应的参数
+* 当参数加载完成后，与载具相关联的MissionManager将使用任务项协议从载机请求任务项
+* 当参数加载完成后，VehicleComponents对象将在Setup视图中显示其UI

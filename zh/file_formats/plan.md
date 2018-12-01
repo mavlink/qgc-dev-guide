@@ -79,16 +79,16 @@
 
 需要以下值：
 
-| 键                     | 描述                                                                                                                                      |
-| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| `version`             | 任务对象的版本。 目前的版本是2。                                                                                                                       |
-| `firmwareType`        | 为此任务创建的固件类型。 这是MAV_AUTOPILOT枚举值之一。                                                                                                      |
+| 键                     | 描述                                                                        |
+| --------------------- | ------------------------------------------------------------------------- |
+| `version`             | 任务对象的版本。 目前的版本是2。                                                         |
+| `firmwareType`        | 为此任务创建的固件类型。 这是MAV_AUTOPILOT枚举值之一。                                        |
 | `vehicleType
-`        | 为此任务创建的载具类型。 这是MAV_TYPE枚举值之一。                                                                                                           |
-| `cruiseSpeed`         | 固定翼或VTOL载具的默认前进速度（即在航点之间移动时）。                                                                                                           |
-| `hoverSpeed	`         | 多旋翼飞行器的默认前进速度。                                                                                                                          |
-| `items`               | 与任务相关的任务物品对象列表。 该列表可以包含SimpleItem和ComplexItem对象。                                                                                        |
-| `plannedHomePosition` | The planned home position is shown on the map and used for mission planning when no vehicle is connected. 计划中的原始位置显示在地图上，用于未连接车辆时的任务计划。 |
+`        | 为此任务创建的载具类型。 这是MAV_TYPE枚举值之一。                                             |
+| `cruiseSpeed`         | 固定翼或VTOL载具的默认前进速度（即在航点之间移动时）。                                             |
+| `hoverSpeed	`         | 多旋翼飞行器的默认前进速度。                                                            |
+| `items`               | 与任务相关的任务物品对象列表。 该列表可以包含SimpleItem和ComplexItem对象。                          |
+| `plannedHomePosition` | 原始的Home点将显示在地图上，可用于未连接载具时进行任务规划。 Home点显示的数组值 (从上到)为: 纬度、经度和平均海拔（AMSL） 高度。 |
 
 简单和复杂项目的格式如下。
 

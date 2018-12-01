@@ -1,3 +1,3 @@
-# Top Level Views
+# 顶级视图
 
-This section contains topics about the code for the top level views: settings, setup, plan and fly.
+本节包含有关顶级视图代码的主题：设置，设置，计划和飞行。

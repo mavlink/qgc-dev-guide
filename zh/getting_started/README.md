@@ -88,8 +88,8 @@ OSG，Linux，Windows，iOS和Android支持QGroundControl构建。 QGroundContro
         * **Warnings as Errors:** 指定`CONFIG = WarningsAsErrors`会将所有警告转换为错误，从而使得构建程序无法顺利执行。 如果您正在处理拉取请求，您计划提交给github进行考虑，则应始终在启用此设置的情况下运行，因为所有拉取请求都需要此设置。 **注意：**将此行放入顶级目录（与**qgroundcontrol.pro**相同的目录）中名为**user_config.pri**的文件中，将在所有构建上设置此标志，而不会干扰GIT历史记录。
         * **并行构建：** 对于非Windows系统下的构建，您可以使用`-j＃`选项来运行并行构建。
         * **构建文件的位置：** 可以在`build_debug`或`build_release`目录中找到单个构建文件结果。 可以在`debug`或`release`目录中找到构建的可执行文件。
-        * 如果在运行QGroundControl时遇到此错误：/usr/lib/x86_64-linux-gnu/libstdc++.so.6：找不到版本'GLIBCXX_3.4.20'，则需要更新到最新的gcc，或安装最新的 libstdc ++。6使用：sudo apt-get install libstdc ++ 6。
-        * 单元测试：要运行单元测试，使用UNITTEST_BUILD定义构建调试模式，然后在运行测试之前将deploy / qgroundcontrol-start.sh脚本复制到调试目录中。
+        * **如果在运行*QGroundControl*时出现报错：** `/usr/lib/x86_64-linux-gnu/libstdc++.so.6: version 'GLIBCXX_3.4.20' not found.` ，则需要更新到最新的*gcc*，或安装最新的*libstdc++.6* ：`sudo apt-get  install  libstdc ++ 6 ` 。
+        * **单元测试：** 如需运行[unit tests](../contribute/unit_tests.md),请使用`UNITTEST_BUILD`定义 `debug`模式，然后在运行测试之前将`deploy / qgroundcontrol-start.sh`脚本文件复制到 `debug`目录中。
         
         ## 可选/特定于操作系统的功能
         

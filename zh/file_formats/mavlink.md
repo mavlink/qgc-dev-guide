@@ -1,11 +1,11 @@
-# MAVLink Log Format
+# MAVLink 日志格式
 
-*QGroundControl* allows you to generate plain MAVLink packet logs that can be replayed (with QGroundControl) to watch a mission again for analysis.
+* QGroundControl *地面站（简称：QGC） 能生成纯 MAVLink 数据包日志, 并支持日志回放，以便飞行任务结束后查看任务执行状态来进行数据分析。
 
-The format is binary:
+日志采用二进制格式，字节定义如下:
 
-* Byte 1-8: Timestamp in microseconds since Unix epoch as unsigned 64 bit integer
-* Byte 9-271: MAVLink packet (263 bytes maximum packet length, not all bytes have to be actual data, the packet might be shorter. Includes packet start sign)
+* 字节 1-8: 64位无符号整数，表示时间戳，单位为微秒，起始时间为Unix纪元（UTM时间1970年1月1日0时0分0秒）
+* 字节 9-271: MAVLink 数据包 (数据包的最大长度为263字节，包括数据包起始标识。一般来说，数据包中的可用字节不会被实际数据全部填充，因此，数据包的实际长度会小于263字节 。
 
 ## Debugging
 

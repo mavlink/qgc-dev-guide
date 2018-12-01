@@ -1,11 +1,11 @@
-# Firmware Plugins
+# 固件插件
 
-Although the MAVLink spec defines a standard communication protocol to communicate with a vehicle. There are many aspects of that spec that at up for interpretation by the firmware developers. Because of this there are many cases where communication with a vehicle running one firmware must be slightly different to communication with a vehicle running a different firmware in order to accomplish the same task. Also each firmware may implement a subset of the MAVLink command set.
+虽然MAVLink规范定义了与载具通信的标准通信协议。 该规范有许多方面可供固件开发人员解释。 因此，存在许多情况，其中与运行一个固件的载具的通信必须与运行不同固件的载具的通信略微不同，以便完成相同的任务。 此外，每个固件可以实现MAVLink命令集的子集。
 
-Another major issue is that the MAVLink spec does not cover vehicle configuration or a common parameter set. Due to this all code which relates to vehicle config ends up being firmware specific. Also any code which must refer to a specific parameter is also firmware specific.
+另一个主要问题是MAVLink规范不包括载具配置或通用参数集。 因此，与载具配置相关的所有代码最终都是固件特定的。 此外，任何必须引用特定参数的代码也是特定于固件的。
 
-Given all of these differences between firmware implementations it can be quite tricky to create a single ground station application that can support each without having the codebase degrade into a massive pile of if/then/else statements peppered everywhere based on the firmware the vehicle is using.
+鉴于固件实现之间的所有这些差异，创建单个地面站应用程序可能非常棘手，可以支持每个应用程序而不会使代码库降级为基于车辆使用的固件在任何地方遍布的大量if / then / else语句。
 
-QGC uses a plugin architecture to isolate the firmware specific code from the code which is generic to all firmwares.
+QGC使用插件架构将固件特定代码与所有固件通用的代码隔离开来。
 
-## FirmwarePluginManager, FirmwarePlugin
+## FirmwarePluginManager, FirmwarePlugin（固件插件管理器，固件插件）

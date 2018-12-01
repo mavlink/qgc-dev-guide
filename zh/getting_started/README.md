@@ -32,7 +32,7 @@ OSG，Linux，Windows，iOS和Android支持QGroundControl构建。 QGroundContro
     
     windows 编译器可以在这里找到: Visual studio 2015 编译器 </0 > (32位)</p> 
     
-    安装时, 必须选择的 visual c++ 组件, 如下所示: ![Visual Studio 2015 - Select all Visual C++ Components](../../assets/getting_started/vs_2015_select_features.png)
+    安装时, 必须选择的 visual c++ 组件, 如下所示: ![Visual Studio 2015 - 请选择所有的 Visual C++组件](../../assets/getting_started/vs_2015_select_features.png)
     
     #### 安装Qt
     
@@ -55,7 +55,7 @@ OSG，Linux，Windows，iOS和Android支持QGroundControl构建。 QGroundContro
         * 必装组件（所有平台） 
             * *Qt Charts* and *Qt Remote Objects (TP)*
             * *Android ARMv7* (为了构建Android) 
-                1. Install Additional Packages (Platform Specific)
+                1. 安装附加软件包（特定于平台）
         * **Ubuntu:** `sudo apt-get install speech-dispatcher libudev-dev libsdl2-dev`
         * **Fedora:** `sudo dnf install speech-dispatcher SDL2-devel SDL2 systemd-devel`
         * Arch Linux: pacman -Sy speech-dispatcher
@@ -73,7 +73,7 @@ OSG，Linux，Windows，iOS和Android支持QGroundControl构建。 QGroundContro
         
         3. 使用"hammer" (or "play") 图标构建:
             
-            ![QtCreator Build Button](../../assets/getting_started/qt_creator_build_qgc.png)
+            ![QtCreator构建按键](../../assets/getting_started/qt_creator_build_qgc.png)
         
         ### Vagrant
         
@@ -85,9 +85,9 @@ OSG，Linux，Windows，iOS和Android支持QGroundControl构建。 QGroundContro
         
         ### 所有支持操作系统的附加构建说明
         
-        * 警告为错误：指定CONFIG = WarningsAsErrors会将所有警告转换为错误，从而破坏构建。 如果您正在处理拉取请求，您计划提交给github进行考虑，则应始终在启用此设置的情况下运行，因为所有拉取请求都需要此设置。 >注意将此行放入顶级目录（与qgroundcontrol.pro相同的目录）中名为user_config.pri的文件中，将在所有构建上设置此标志，而不会干扰GIT历史记录。
-        * 并行构建：对于非Windows构建，您可以使用-j＃选项来运行并行构建。
-        * 构建文件的位置：可以在build_debug或build_release目录中找到单个构建文件结果。 可以在debug或release目录中找到构建的可执行文件。
+        * **Warnings as Errors:** 指定`CONFIG = WarningsAsErrors`会将所有警告转换为错误，从而使得构建程序无法顺利执行。 如果您正在处理拉取请求，您计划提交给github进行考虑，则应始终在启用此设置的情况下运行，因为所有拉取请求都需要此设置。 **注意：**将此行放入顶级目录（与**qgroundcontrol.pro**相同的目录）中名为**user_config.pri**的文件中，将在所有构建上设置此标志，而不会干扰GIT历史记录。
+        * **并行构建：** 对于非Windows系统下的构建，您可以使用`-j＃`选项来运行并行构建。
+        * **构建文件的位置：** 可以在`build_debug`或`build_release`目录中找到单个构建文件结果。 可以在`debug`或`release`目录中找到构建的可执行文件。
         * 如果在运行QGroundControl时遇到此错误：/usr/lib/x86_64-linux-gnu/libstdc++.so.6：找不到版本'GLIBCXX_3.4.20'，则需要更新到最新的gcc，或安装最新的 libstdc ++。6使用：sudo apt-get install libstdc ++ 6。
         * 单元测试：要运行单元测试，使用UNITTEST_BUILD定义构建调试模式，然后在运行测试之前将deploy / qgroundcontrol-start.sh脚本复制到调试目录中。
         
@@ -103,15 +103,15 @@ OSG，Linux，Windows，iOS和Android支持QGroundControl构建。 QGroundContro
         
         *QGroundControl*可以直接在Windows和Linux平台上通过其专属协议与XBee无线设备通信 如果您不使用XBee设备或未使用其专有协议，则无需此支持。 在Windows上，必需的依赖项包含在此存储库中，无需其他步骤。 对于Linux，进入`libs / thirdParty / libxbee`目录下，并运行`make; sudo make install`安装libxbee（如需卸载，请运行`sudo make uninstall`）。 *qmake* 将在 linux 上自动检测库文件, 因此无需用户进行其他操作。
         
-        To disable XBee support you may add `DEFINES+=DISABLE_XBEE` to *qmake*.
+        如需禁用 XBee , 您可以向 *qmake* 中添加 `DEFINES+=DISABLE_XBEE`。
         
         ### 视频流 
         
-        Check the [Video Streaming](https://github.com/mavlink/qgroundcontrol/tree/master/src/VideoStreaming) directory for further instructions.
+        请查看 [Video Streaming](https://github.com/mavlink/qgroundcontrol/tree/master/src/VideoStreaming)目录以获取更多说明。
         
         ## 下载最新的开发版本
         
-        QGroundControl mantains this download links to allow test and usage of the last updates in main code.
+        QGroundControl保留此下载链接，以允许测试和使用主代码中的最后更新。
         
         * [Windows (QGroundControl-installer.exe)](https://s3-us-west-2.amazonaws.com/qgroundcontrol/builds/master/QGroundControl-installer.exe)
         * [MAC OS (QGroundControl.dmg)](https://s3-us-west-2.amazonaws.com/qgroundcontrol/builds/master/QGroundControl.dmg)

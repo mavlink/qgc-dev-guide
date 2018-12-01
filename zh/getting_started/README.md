@@ -1,6 +1,6 @@
 # 初始步骤
 
-本主题说明如何获取QGroundControl源代码并在本机或在Vagrant(虚拟机)环境中构建它。 它还提供有关可选或OS特定功能的信息。
+本主题说明如何获取QGroundControl源代码并在本机或在Vagrant(虚拟机)环境中构建它。 本主题还提供其他可选功能信息及特定于操作系统的功能信息。
 
 ## 源代码 
 
@@ -77,7 +77,7 @@ OSG，Linux，Windows，iOS和Android支持QGroundControl构建。 QGroundContro
         
         ### Vagrant
         
-        [Vagrant](https://www.vagrantup.com/) can be used to build and run *QGroundControl* within a Linux virtual machine (the build can also be run on the host machine if it is compatible).
+        [Vagrant](https://www.vagrantup.com/)可用于在Linux虚拟机中构建和运行QGroundControl（如果兼容，则构建也可以在主机上运行）
         
         1. 1. 下载并安装Vagrant
         2. 2. 从QGroundControl存储库的根目录运行vagrant up

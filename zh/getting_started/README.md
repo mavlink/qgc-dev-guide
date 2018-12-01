@@ -8,10 +8,10 @@ QGroundControl的源代码保存在GitHub上：https：//github.com/mavlink/qgro
 
 如何获取源文件：
 
-1. Clone the repo (or your fork) including submodules: ```git clone https://github.com/mavlink/qgroundcontrol.git --recursive```
-2. Update submodules (required each time you pull new source code): ```git submodule update```
+1. 克隆存储库 (或您的分叉), 包括子模块: ```git clone https://github.com/mavlink/qgroundcontrol.git --recursive```
+2. 2.更新子模块（每次拉新源代码时都这样做）： ```git submodule update```
 
-> 提示不能使用Github源代码zip文件，因为这些文件不包含相应的子模块源代码。 你必须使用git！
+> 提示：不能使用Github以zip形式下载源文件，因为zip压缩包中不包含相应的子模块源代码。 你必须使用git工具！
 
 ## 构建QGroundControl开发环境
 

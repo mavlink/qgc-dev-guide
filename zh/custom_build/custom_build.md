@@ -1,3 +1,3 @@
-# Custom Builds
+# 自定义构建
 
-A custom build allows third parties to create their own version of QGC in a way that allows them to easily keep up to date with changes which are being made in regular QGC. QGC has an archiecture built into it which allows customs builds to modofy and add to thje feature set of regular QGC.
+自定义构建允许第三方创建自己的QGC版本，使其能够轻松跟上常规QGC中所做的更改。 QGC内置了一个架构，允许用户构建修改和添新QGC的功能。

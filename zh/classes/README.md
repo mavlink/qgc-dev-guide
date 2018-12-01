@@ -1,29 +1,29 @@
-# Class Hierarchy (high level)
+# 类层次结构（高级）
 
-## LinkManager, LinkInterface
+## (LinkManager)链接管理器类，(LinkInterface)链接接口类
 
-A "Link" in QGC is a specific type of communication pipe with the vehicle such as a serial port or UDP over WiFi. The base class for all links is LinkInterface. Each link runs on it's own thread and sends bytes to MAVLinkProtocol.
+QGC中的“链接”是与载具的特定类型的通信管道，例如串行端口或基于WiFi的UDP。 所有链接的基类都是LinkInterface这个类。 每个链接都在它自己的线程上运行，并将字节发送到MAVLinkProtocol。
 
-The `LinkManager` object keeps track of all open links in the system. `LinkManager` also manages automatic connections through serial and UDP links.
+LinkManager类所生成对象管理系统中的所有打开链接。 `LinkManager`还通过串行和UDP链接管理自动连接
 
-## MAVLinkProtocol
+## MAVLink协议类
 
-There is a single `MAVLinkProtocol` object in the system. It's job is to take incoming bytes from a link and translate them into MAVLink messages. MAVLink HEARTBEAT messages are routed to `MultiVehicleManager`. All MAVLink messages are routed to Vehicle's which are associated with the link.
+系统中有一个MAVLink协议对象。 它的功能是从链接获取传入的字节并将它们转换为MAVLink消息。 MAVLink HEARTBEAT消息是被分发到Multi Vehicle Manager(多机管理类)。 所有MAVLink消息都将关联到与链接相对应的载具。
 
-## MultiVehicleManager
+## (MultiVehicleManager)多机管理类
 
-There is a single `MultiVehicleManager` object within the system. When it receives a HEARTBEAT on a link which has not been previously seen it creates a Vehicle object. ``MultiVehicleManager` also keeps tracks of all Vehicles in the system and handles switching from one active vehicle to another and correctly handling a vehicle being removed.
+系统中有一个MultiVehicleManager多机管理类生成的对象, 当它接收到一个新的心跳包(通过心跳包里面的系统ID识别)，它会自动生成一个载具对象，来表示一个新的载具加入到系统。 `MultiVehicleManager`还可以管理系统中所有载具的信息，并处理从一辆主动车辆到另一辆车辆的数据显示与控制切换。
 
-## Vehicle
+## (Vehicle)载具类
 
-The Vehicle object is the main interface through which the QGC code communicates with the physical vehicle.
+Vehicle类所生成的对象是QGC代码与物理载具通信的主要接口。
 
-Note: There is also a UAS object associated with each Vehicle which is a deprecated class and is slowly being phased out with all functionality moving to the Vehicle class. No new code should be added here.
+注意：还有一个与每个Vehicle相关联的UAS对象，这是一个已弃用的类，并且正逐渐被逐步淘汰，所有功能都转移到Vehicle类。 这里不应该添加新代码。
 
-## FirmwarePlugin, FirmwarePluginManager
+## (FirmwarePlugin)固件插件类，( FirmwarePluginManager)固件插件管理器类
 
-The FirmwarePlugin class is used an the base class for firmware plugins. A firmware plugin contains the firmware specific code, such that the Vehicle object is clean with respect to it supporting a single standard interface to the UI.
+FirmwarePlugin类用作固件插件的基类。 固件插件包含固件特定代码，因此Vehicle对象相对于它是识别的，支持UI的单个标准接口。
 
-FirmwarePluginManager is a factory class which creates a FirmwarePlugin instance based on the MAV_AUTOPILOT/MAV_TYPE combination for the Vehicle.
+FirmwarePluginManager是一个工厂类，它根据Vehicle类的成员MAV_AUTOPILOT / MAV_TYPE组合创建FirmwarePlugin类的实例。
 
-> **Note** AutoPilotPlugin and AutoPilotPluginManager are deprecated class which also contains firmware specific code. All functionality in these are being moved to the newer FirmwarePlugin and FirmwarePluginManager implementations. No new code should be added here.
+> **Note**AutoPilotPlugin和AutoPilotPluginManager是不推荐使用的类，它还包含特定于固件的代码。 其中的所有功能都将移至较新的FirmwarePlugin和FirmwarePluginManager实现。 这里不应该添加新代码。

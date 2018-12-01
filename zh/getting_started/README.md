@@ -93,15 +93,15 @@ OSG，Linux，Windows，iOS和Android支持QGroundControl构建。 QGroundContro
         
         ## 可选/特定于操作系统的功能
         
-        *QGroundControl* has functionality that is dependent on the operating system and libraries installed by the user. The following sections describe these features, their dependencies, and how to disable/alter them during the build process. These features can be forcibly enabled/disabled by specifying additional values to qmake.
+        *QGroundControl*的功能依赖于用户安装的操作系统和库。 以下部分描述了这些功能，它们的依赖关系，以及如何在构建过程中禁用/更改它们。 通过为qmake指定其他值，可以强制启用/禁用这些功能。
         
         ### Opal-RT的RT-LAB模拟器
         
-        Integration with Opal-RT's RT-LAB simulator can be enabled on Windows by installing RT-LAB 7.2.4. This allows vehicles to be simulated in RT-LAB and communicate directly with QGC on the same computer as if the UAS was actually deployed. This support is enabled by default once the requisite RT-LAB software is installed. Disabling this can be done by adding `DEFINES+=DISABLE_RTLAB` to qmake.
+        通过安装RT-LAB 7.2.4，可以在Windows上启用与Opal-RT的RT-LAB模拟器的集成。 这允许在RT-LAB中模拟车辆并在同一计算机上直接与QGC通信，就像实际部署UAS一样。 一旦安装了必需的RT-LAB软件，默认情况下将启用此支持。 可以通过向qmake添加`DEFINES + = DISABLE_RTLAB`来禁用此功能。
         
         ### XBee支持
         
-        *QGroundControl* can talk to XBee wireless devices using their proprietary protocol directly on Windows and Linux platforms. This support is not necessary if you're not using XBee devices or aren't using their proprietary protocol. On Windows, the necessary dependencies are included in this repository and no additional steps are required. For Linux, change to the `libs/thirdParty/libxbee` folder and run `make;sudo make install` to install libxbee on your system (uninstalling can be done with a `sudo make uninstall`). *qmake* will automatically detect the library on Linux, so no other work is necessary.
+        *QGroundControl*可以直接在Windows和Linux平台上通过其专属协议与XBee无线设备通信 如果您不使用XBee设备或未使用其专有协议，则无需此支持。 在Windows上，必需的依赖项包含在此存储库中，无需其他步骤。 对于Linux，进入`libs / thirdParty / libxbee`目录下，并运行`make; sudo make install`安装libxbee（如需卸载，请运行`sudo make uninstall`）。 *qmake* 将在 linux 上自动检测库文件, 因此无需用户进行其他操作。
         
         To disable XBee support you may add `DEFINES+=DISABLE_XBEE` to *qmake*.
         

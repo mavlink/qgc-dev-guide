@@ -2,22 +2,26 @@
 
 本主题说明如何获取QGroundControl源代码并在本机或在Vagrant(虚拟机)环境中构建它。 本主题还提供其他可选功能信息及特定于操作系统的功能信息。
 
-## 源代码 
+## Daily Builds
 
-QGroundControl的源代码保存在GitHub上：https：//github.com/mavlink/qgroundcontrol。 它在Apache 2.0和GPLv3下是双重许可的。
+If you just want to test (and not debug) a recent build of *QGroundControl* you can use the [Daily Build](https://docs.qgroundcontrol.com/en/releases/daily_builds.html). Versions are provided for all platforms.
 
-如何获取源文件：
+## Source Code
+
+Source code for *QGroundControl* is kept on GitHub here: https://github.com/mavlink/qgroundcontrol. It is [dual-licensed under Apache 2.0 and GPLv3](https://github.com/mavlink/qgroundcontrol/blob/master/COPYING.md).
+
+To get the source files:
 
 1. 克隆存储库 (或您的分叉), 包括子模块: ```git clone https://github.com/mavlink/qgroundcontrol.git --recursive```
 2. 2.更新子模块（每次拉新源代码时都这样做）： ```git submodule update```
 
 > 提示：不能使用Github以zip形式下载源文件，因为zip压缩包中不包含相应的子模块源代码。 你必须使用git工具！
 
-## 构建QGroundControl开发环境
+## Build QGroundControl
 
 ### 原生构建
 
-OSG，Linux，Windows，iOS和Android支持QGroundControl构建。 QGroundControl使用Qt作为其跨平台支持库，并使用QtCreator作为其默认构建环境。
+*QGroundControl* builds are supported for macOS, Linux, Windows, iOS and Android. *QGroundControl* uses [Qt](http://www.qt.io) as its cross-platform support library and uses [QtCreator](http://doc.qt.io/qtcreator/index.html) as its default build environment.
 
 * macOS：v10.11或更高版本
 * Ubuntu：64位，gcc编译器
@@ -30,15 +34,15 @@ OSG，Linux，Windows，iOS和Android支持QGroundControl构建。 QGroundContro
     
     #### 安装 visual studio 2015 (仅限 windows) {#vs2015}
     
-    windows 编译器可以在这里找到: Visual studio 2015 编译器 </0 > (32位)</p> 
+    The Windows compiler can be found here: [Visual Studio 2015 compiler](https://visualstudio.microsoft.com/vs/older-downloads/) (32 bit)
     
-    安装时, 必须选择的 visual c++ 组件, 如下所示: ![Visual Studio 2015 - 请选择所有的 Visual C++组件](../../assets/getting_started/vs_2015_select_features.png)
+    When installing, you must minimally select all Visual C++ components as shown: ![Visual Studio 2015 - Select all Visual C++ Components](../../assets/getting_started/vs_2015_select_features.png)
     
     #### 安装Qt
     
-    请** 按照下面的方式安装 QT**, 而不是使用 linux 发行版中的预构建包, 因为 *QGroundControl* 需要访问专用 Qt标头。
+    You **need to install Qt as described below** instead of using pre-built packages from say, a Linux distribution, because *QGroundControl* needs access to private Qt headers.
     
-    如何安装Qt：
+    To install Qt:
     
     1. 下载并运行[Qt Online Installer](http://www.qt.io/download-open-source) 
         * **Ubuntu:** 
@@ -77,7 +81,7 @@ OSG，Linux，Windows，iOS和Android支持QGroundControl构建。 QGroundContro
         
         ### Vagrant
         
-        [Vagrant](https://www.vagrantup.com/)可用于在Linux虚拟机中构建和运行QGroundControl（如果兼容，则构建也可以在主机上运行）
+        [Vagrant](https://www.vagrantup.com/) can be used to build and run *QGroundControl* within a Linux virtual machine (the build can also be run on the host machine if it is compatible).
         
         1. 1. 下载并安装Vagrant
         2. 2. 从QGroundControl存储库的根目录运行vagrant up
@@ -91,29 +95,20 @@ OSG，Linux，Windows，iOS和Android支持QGroundControl构建。 QGroundContro
         * **如果在运行*QGroundControl*时出现报错：** `/usr/lib/x86_64-linux-gnu/libstdc++.so.6: version 'GLIBCXX_3.4.20' not found.` ，则需要更新到最新的*gcc*，或安装最新的*libstdc++.6* ：`sudo apt-get  install  libstdc ++ 6 ` 。
         * **单元测试：** 如需运行[unit tests](../contribute/unit_tests.md),请使用`UNITTEST_BUILD`定义 `debug`模式，然后在运行测试之前将`deploy / qgroundcontrol-start.sh`脚本文件复制到 `debug`目录中。
         
-        ## 可选/特定于操作系统的功能
+        ## Optional/OS-Specific Functionality
         
-        *QGroundControl*的功能依赖于用户安装的操作系统和库。 以下部分描述了这些功能，它们的依赖关系，以及如何在构建过程中禁用/更改它们。 通过为qmake指定其他值，可以强制启用/禁用这些功能。
+        *QGroundControl* has functionality that is dependent on the operating system and libraries installed by the user. The following sections describe these features, their dependencies, and how to disable/alter them during the build process. These features can be forcibly enabled/disabled by specifying additional values to qmake.
         
         ### Opal-RT的RT-LAB模拟器
         
-        通过安装RT-LAB 7.2.4，可以在Windows上启用与Opal-RT的RT-LAB模拟器的集成。 这允许在RT-LAB中模拟车辆并在同一计算机上直接与QGC通信，就像实际部署UAS一样。 一旦安装了必需的RT-LAB软件，默认情况下将启用此支持。 可以通过向qmake添加`DEFINES + = DISABLE_RTLAB`来禁用此功能。
+        Integration with Opal-RT's RT-LAB simulator can be enabled on Windows by installing RT-LAB 7.2.4. This allows vehicles to be simulated in RT-LAB and communicate directly with QGC on the same computer as if the UAS was actually deployed. This support is enabled by default once the requisite RT-LAB software is installed. Disabling this can be done by adding `DEFINES+=DISABLE_RTLAB` to qmake.
         
         ### XBee支持
         
-        *QGroundControl*可以直接在Windows和Linux平台上通过其专属协议与XBee无线设备通信 如果您不使用XBee设备或未使用其专有协议，则无需此支持。 在Windows上，必需的依赖项包含在此存储库中，无需其他步骤。 对于Linux，进入`libs / thirdParty / libxbee`目录下，并运行`make; sudo make install`安装libxbee（如需卸载，请运行`sudo make uninstall`）。 *qmake* 将在 linux 上自动检测库文件, 因此无需用户进行其他操作。
+        *QGroundControl* can talk to XBee wireless devices using their proprietary protocol directly on Windows and Linux platforms. This support is not necessary if you're not using XBee devices or aren't using their proprietary protocol. On Windows, the necessary dependencies are included in this repository and no additional steps are required. For Linux, change to the `libs/thirdParty/libxbee` folder and run `make;sudo make install` to install libxbee on your system (uninstalling can be done with a `sudo make uninstall`). *qmake* will automatically detect the library on Linux, so no other work is necessary.
         
-        如需禁用 XBee , 您可以向 *qmake* 中添加 `DEFINES+=DISABLE_XBEE`。
+        To disable XBee support you may add `DEFINES+=DISABLE_XBEE` to *qmake*.
         
         ### 视频流 
         
-        请查看 [Video Streaming](https://github.com/mavlink/qgroundcontrol/tree/master/src/VideoStreaming)目录以获取更多说明。
-        
-        ## 下载最新的开发版本
-        
-        QGroundControl保留此下载链接，以允许测试和使用主代码中的最后更新。
-        
-        * [Windows (QGroundControl-installer.exe)](https://s3-us-west-2.amazonaws.com/qgroundcontrol/builds/master/QGroundControl-installer.exe)
-        * [MAC OS (QGroundControl.dmg)](https://s3-us-west-2.amazonaws.com/qgroundcontrol/builds/master/QGroundControl.dmg)
-        * [Linux（QGroundControl.AppImage）](https://s3-us-west-2.amazonaws.com/qgroundcontrol/builds/master/QGroundControl.AppImage)
-        * [Android (QGroundControl.apk)](https://s3-us-west-2.amazonaws.com/qgroundcontrol/builds/master/QGroundControl.apk)
+        Check the [Video Streaming](https://github.com/mavlink/qgroundcontrol/tree/master/src/VideoStreaming) directory for further instructions.

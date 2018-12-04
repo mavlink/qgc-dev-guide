@@ -34,15 +34,15 @@ macos、linux、windows、ios 和 android 平台均可支持 *QGroundControl* �
     
     #### 安装 visual studio 2015 (仅限 windows) {#vs2015}
     
-    The Windows compiler can be found here: [Visual Studio 2015 compiler](https://visualstudio.microsoft.com/vs/older-downloads/) (32 bit)
+    Windows环境下的编译器下载链接：[Visual Studio 2015 compiler](https://visualstudio.microsoft.com/vs/older-downloads/) (32 bit)。
     
-    When installing, you must minimally select all Visual C++ components as shown: ![Visual Studio 2015 - Select all Visual C++ Components](../../assets/getting_started/vs_2015_select_features.png)
+    安装时, 必须选择的 visual c++ 组件, 如下所示： ![Visual Studio 2015 - Select all Visual C++ Components](../../assets/getting_started/vs_2015_select_features.png)
     
     #### 安装Qt
     
-    You **need to install Qt as described below** instead of using pre-built packages from say, a Linux distribution, because *QGroundControl* needs access to private Qt headers.
+    因为 *QGroundControl* 需要访问专用 Qt标头，所以请** 按照下面的方式安装 QT**（而不是使用 linux 发行版中的预构建包）。
     
-    To install Qt:
+    安装Qt:
     
     1. 下载并运行[Qt Online Installer](http://www.qt.io/download-open-source) 
         * **Ubuntu:** 
@@ -81,7 +81,7 @@ macos、linux、windows、ios 和 android 平台均可支持 *QGroundControl* �
         
         ### Vagrant
         
-        [Vagrant](https://www.vagrantup.com/) can be used to build and run *QGroundControl* within a Linux virtual machine (the build can also be run on the host machine if it is compatible).
+        Vagrant可用于在Linux虚拟机中构建和运行QGroundControl（如果兼容，则构建也可以在主机上运行）
         
         1. 1. 下载并安装Vagrant
         2. 2. 从QGroundControl存储库的根目录运行vagrant up
@@ -95,9 +95,9 @@ macos、linux、windows、ios 和 android 平台均可支持 *QGroundControl* �
         * **如果在运行*QGroundControl*时出现报错：** `/usr/lib/x86_64-linux-gnu/libstdc++.so.6: version 'GLIBCXX_3.4.20' not found.` ，则需要更新到最新的*gcc*，或安装最新的*libstdc++.6* ：`sudo apt-get  install  libstdc ++ 6 ` 。
         * **单元测试：** 如需运行[unit tests](../contribute/unit_tests.md),请使用`UNITTEST_BUILD`定义 `debug`模式，然后在运行测试之前将`deploy / qgroundcontrol-start.sh`脚本文件复制到 `debug`目录中。
         
-        ## Optional/OS-Specific Functionality
+        ## 选项/特定功能
         
-        *QGroundControl* has functionality that is dependent on the operating system and libraries installed by the user. The following sections describe these features, their dependencies, and how to disable/alter them during the build process. These features can be forcibly enabled/disabled by specifying additional values to qmake.
+        *QGroundControl*的功能依赖于用户安装的操作系统和库。 以下章节描述了这些功能，它们的依赖关系，以及如何在构建过程中禁用/更改它们。 通过为qmake指定其他值，可以强制启用/禁用这些功能。
         
         ### Opal-RT的RT-LAB模拟器
         

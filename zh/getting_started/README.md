@@ -36,7 +36,7 @@ macos、linux、windows、ios 和 android 平台均可支持 *QGroundControl* �
     
     Windows环境下的编译器下载链接：[Visual Studio 2015 compiler](https://visualstudio.microsoft.com/vs/older-downloads/) (32 bit)。
     
-    安装时, 必须选择的 visual c++ 组件, 如下所示： ![Visual Studio 2015 - Select all Visual C++ Components](../../assets/getting_started/vs_2015_select_features.png)
+    安装时, 必须选择的 visual c++ 组件, 如下所示： ![Visual Studio 2015 - 请选择所有的 Visual C++组件](../../assets/getting_started/vs_2015_select_features.png)
     
     #### 安装Qt
     
@@ -101,14 +101,14 @@ macos、linux、windows、ios 和 android 平台均可支持 *QGroundControl* �
         
         ### Opal-RT的RT-LAB模拟器
         
-        Integration with Opal-RT's RT-LAB simulator can be enabled on Windows by installing RT-LAB 7.2.4. This allows vehicles to be simulated in RT-LAB and communicate directly with QGC on the same computer as if the UAS was actually deployed. This support is enabled by default once the requisite RT-LAB software is installed. Disabling this can be done by adding `DEFINES+=DISABLE_RTLAB` to qmake.
+        通过安装RT-LAB 7.2.4，可以使QGC在Windows集成Opal-RT的RT-LAB模拟器。 这允许载具在RT-LAB中模拟并在同一计算机上直接与QGC通信，就像实际操控UAS一样。 一旦安装了匹配的RT-LAB软件，默认情况下将启用此支持。 可以通过向qmake添加`DEFINES + = DISABLE_RTLAB`来禁用此功能。
         
         ### XBee支持
         
-        *QGroundControl* can talk to XBee wireless devices using their proprietary protocol directly on Windows and Linux platforms. This support is not necessary if you're not using XBee devices or aren't using their proprietary protocol. On Windows, the necessary dependencies are included in this repository and no additional steps are required. For Linux, change to the `libs/thirdParty/libxbee` folder and run `make;sudo make install` to install libxbee on your system (uninstalling can be done with a `sudo make uninstall`). *qmake* will automatically detect the library on Linux, so no other work is necessary.
+        *QGroundControl*可以直接在Windows和Linux平台上通过其专属协议与XBee无线设备通信 如果您不使用XBee设备或未使用其专有协议，则无需此支持。 在Windows上，必需的依赖项包含在此存储库中，无需其他步骤。 对于Linux，进入`libs / thirdParty / libxbee`目录下，并运行`make; sudo make install`安装libxbee（如需卸载，请运行`sudo make uninstall`）。 *qmake* 将在 linux 上自动检测库文件, 因此无需用户进行其他操作。
         
-        To disable XBee support you may add `DEFINES+=DISABLE_XBEE` to *qmake*.
+        如需禁用XBee支持，您可以将DEFINES + = DISABLE_XBEE添加到qmake。
         
         ### 视频流 
         
-        Check the [Video Streaming](https://github.com/mavlink/qgroundcontrol/tree/master/src/VideoStreaming) directory for further instructions.
+        请查看 [Video Streaming](https://github.com/mavlink/qgroundcontrol/tree/master/src/VideoStreaming)目录以获取进一步说明。

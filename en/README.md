@@ -29,7 +29,7 @@ Information about contributing, including coding styles, testing and licenses ca
 
 > **Tip** We expect all contributors to adhere to the [QGroundControl code of conduct](https://github.com/mavlink/qgroundcontrol/blob/master/CODE_OF_CONDUCT.md). 
   This code aims to foster an open and welcoming environment.
-  
+
 ### Translations
 
 We use [Crowdin](https://crowdin.com) to make it easier to manage translation for both *QGroundControl* and the documentation.
@@ -37,9 +37,11 @@ We use [Crowdin](https://crowdin.com) to make it easier to manage translation fo
 The translation projects (and join links) are listed below:
 * [QGroundControl](https://crowdin.com/project/qgroundcontrol) ([join](https://crwd.in/qgroundcontrol))
 * [QGroundControl User Guide](https://crowdin.com/project/qgroundcontrol-user-guide) ([join](https://crwd.in/qgroundcontrol-user-guide))
-* *QGroundControl Developer Guide* - Not yet ready for translation
+* [QGroundControl Developer Guide](https://crowdin.com/project/qgroundcontrol-developer-guide) ([join](https://crwd.in/qgroundcontrol-developer-guide))
 
-If you would us to add support for a new language, then ask for it in the [discussion channels](#support).
+The PX4 Developer Guide contains additional information about the (common) docs/translation toolchain:
+- [Documentation](https://dev.px4.io/en/contribute/docs.html)
+- [Translation](https://dev.px4.io/en/contribute/docs.html)
 
 
 ## License

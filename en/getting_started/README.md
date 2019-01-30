@@ -36,7 +36,7 @@ To get the source files:
 - **Windows:** Vista or higher, [Visual Studio 2015 compiler](#vs2015) (32 bit)
 - **iOS:** 10.0 and higher
 - **Android:** Jelly Bean (4.1) and higher. Standard QGC is built against ndk version 19.
-- **Qt version:** {{ book.qt_version }} **(only)**  <!-- NOTE {{ book.qt_version }} is set in the variables section of gitbook file https://github.com/mavlink/qgc-dev-guide/blob/master/book.json -->
+- **Qt version:** {{ book.qt_version }} **(only)** (except for Ubuntu, which uses Qt 5.11.3) <!-- NOTE {{ book.qt_version }} is set in the variables section of gitbook file https://github.com/mavlink/qgc-dev-guide/blob/master/book.json -->
 
 > **Tip** For more information see: [Qt 5 supported platform list](http://doc.qt.io/qt-5/supported-platforms.html).
 
@@ -58,7 +58,7 @@ To install Qt:
    - **Ubuntu:** 
      - Set the downloaded file to executable using: `chmod +x`. 
      - Install to default location for use with **./qgroundcontrol-start.sh.** If you install Qt to a non-default location you will need to modify **qgroundcontrol-start.sh** in order to run downloaded builds.
-1. In the installer *Select Components* dialog choose: {{ book.qt_version }}.
+1. In the installer *Select Components* dialog choose: {{ book.qt_version }} (on *Ubuntu* choose Qt 5.11.3).
    
    Then install just the following components: 
    - **Windows**: *MCVC 2015 32 bit*
@@ -80,7 +80,7 @@ To install Qt:
 1. Select the appropriate kit for your needs:
   - **OSX:** Desktop Qt {{ book.qt_version }} clang 64 bit
     > **Note** iOS builds must be built using [XCode](http://doc.qt.io/qt-5/ios-support.html).
-  - **Ubuntu:** Desktop Qt {{ book.qt_version }} GCC bit
+  - **Ubuntu:** Desktop Qt 5.11.3 <!-- {{ book.qt_version }} --> GCC bit
   - **Windows:** Desktop Qt {{ book.qt_version }} MSVC2015 **32bit**
   - **Android:** Android for armeabi-v7a (GCC 4.9, Qt {{ book.qt_version }})
 1. Build using the "hammer" (or "play") icons:

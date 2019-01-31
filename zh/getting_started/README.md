@@ -71,7 +71,7 @@ Windows环境下的编译器下载链接：[Visual Studio 2015 compiler](https:/
 1. 启动*Qt Creator*并打开**qgroundcontrol.pro**项目。
 2. 根据您的需求选择合适的套件： 
     * OSX：桌面Qt {{book.qt_version}} clang 64 bit>注意iOS构建必须使用XCode构建。
-    * **Ubuntu:** Desktop Qt 5.11.3 <!-- {{ book.qt_version }} --> GCC bit
+    * **Ubuntu:** Desktop Qt 5.11.3 <!-- {{ book.qt_version }} --> GCC 64bit
     
     * **Windows:** 桌面Qt{{ book.qt_version }}MSVC2015**32bit**
     * **Android：** Android平台需选择armeabi的Android-v7a（GCC 4.9，Qt {{ book.qt_version }}）

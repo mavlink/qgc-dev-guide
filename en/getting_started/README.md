@@ -130,16 +130,10 @@ You can additionally create installation file(s) for *QGroundControl* as part of
 
 > **Note** On Windows you will need to first install [NSIS](https://sourceforge.net/projects/nsis/).
 
-To add support for installation file creation, put the text `CONFIG+=installer` in the [qgroundcontrol.pro](https://github.com/mavlink/qgroundcontrol/blob/master/qgroundcontrol.pro) project file near the end (as shown below):
+To add support for installation file creation you need to add `CONFIG+=installer` to your project file, or when you call *qmake*.
 
-```
-...
-# Installer targets
-#
+To do this in *Qt Creator*:
+- Open **Projects > Build > Build Steps > qmake > Additional arguments**.
+- Enter `CONFIG+=installer` as shown:
+  ![Installer](../../assets/getting_started/qt_project_installer.png)
 
-CONFIG+=installer
-
-include(QGCInstaller.pri)
-```
-
-<!-- Installation files will then be created in ... -->

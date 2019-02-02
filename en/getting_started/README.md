@@ -105,6 +105,7 @@ To install Qt:
 * **If you get this error when running _QGroundControl_**: `/usr/lib/x86_64-linux-gnu/libstdc++.so.6: version 'GLIBCXX_3.4.20' not found.`, you need to either update to the latest *gcc*, or install the latest *libstdc++.6* using: `sudo apt-get install libstdc++6`.
 * **Unit tests:** To run the [unit tests](../contribute/unit_tests.md), build in `debug` mode with `UNITTEST_BUILD` definition, and then copy `deploy/qgroundcontrol-start.sh` script into the `debug` directory before running the tests.
 
+
 ## Optional/OS-Specific Functionality
 
 *QGroundControl* has functionality that is dependent on the operating system and libraries installed by the user. The following sections describe these features, their dependencies, and how to disable/alter them during the build process. These features can be forcibly enabled/disabled by specifying additional values to qmake. 
@@ -122,4 +123,17 @@ To disable XBee support you may add `DEFINES+=DISABLE_XBEE` to *qmake*.
 ### Video Streaming
 
 Check the [Video Streaming](https://github.com/mavlink/qgroundcontrol/tree/master/src/VideoStreaming) directory for further instructions.
+
+## Building QGC Installation Files
+
+You can additionally create installation file(s) for *QGroundControl* as part of the normal build process.
+
+> **Note** On Windows you will need to first install [NSIS](https://sourceforge.net/projects/nsis/).
+
+To add support for installation file creation you need to add `CONFIG+=installer` to your project file, or when you call *qmake*.
+
+To do this in *Qt Creator*:
+- Open **Projects > Build > Build Steps > qmake > Additional arguments**.
+- Enter `CONFIG+=installer` as shown:
+  ![Installer](../../assets/getting_started/qt_project_installer.png)
 

@@ -23,12 +23,12 @@
 
 macos、linux、windows、ios 和 android 平台均可支持 *QGroundControl* 的构建。 *QGroundControl* 使用 [Qt](http://www.qt.io) 作为其跨平台支持库, 并将 [QtCreator](http://doc.qt.io/qtcreator/index.html) 用作其默认构建环境。
 
-* macOS：v10.11或更高版本
-* Ubuntu：64位，gcc编译器
-* **Windows:**vista 或更高版本, < 1>Visual studio 2015 编译器 </1 > (32位)
-* iOS：10.0及更高版本
-* Android：Jelly Bean（4.1）及更高版本。 标准QGC是针对ndk版本19构建的。 标准QGC是针对ndk版本19构建的。
-* **Qt version:** {{ book.qt_version }} **(only)** (except for Ubuntu, which uses Qt 5.11.3) <!-- NOTE {{ book.qt_version }} is set in the variables section of gitbook file https://github.com/mavlink/qgc-dev-guide/blob/master/book.json -->
+- macOS：v10.11或更高版本
+- Ubuntu：64位，gcc编译器
+- **Windows:**vista 或更高版本, < 1>Visual studio 2015 编译器 </1 > (32位)
+- iOS：10.0及更高版本
+- Android：Jelly Bean（4.1）及更高版本。 标准QGC是针对ndk版本19构建的。 标准QGC是针对ndk版本19构建的。
+- **Qt version:** {{ book.qt_version }} **(only)** (except for Ubuntu, which uses Qt 5.11.3) <!-- NOTE {{ book.qt_version }} is set in the variables section of gitbook file https://github.com/mavlink/qgc-dev-guide/blob/master/book.json -->
 
 > 提示: 有关更多信息，请参阅：Qt 5支持的平台列表。
 
@@ -45,36 +45,36 @@ Windows环境下的编译器下载链接：[Visual Studio 2015 compiler](https:/
 安装Qt:
 
 1. 下载并运行[Qt Online Installer](http://www.qt.io/download-open-source) 
-    * **Ubuntu:** 
-        * 使用以下命令将下载的文件设置为可执行文件：`chmod + x` 
-        * 请安装到默认位置, 以便与 **./qgroundcontrol-start.sh** 一起使用。如果将 Qt 安装到非默认位置, 则需要修改 **qgroundcontrol-start.sh** ，才能运行下载的组件。
+    - **Ubuntu:** 
+        - 使用以下命令将下载的文件设置为可执行文件：`chmod + x` 
+        - 请安装到默认位置, 以便与 **./qgroundcontrol-start.sh** 一起使用。如果将 Qt 安装到非默认位置, 则需要修改 **qgroundcontrol-start.sh** ，才能运行下载的组件。
 
 2. In the installer *Select Components* dialog choose: {{ book.qt_version }} (on *Ubuntu* choose Qt 5.11.3).
     
     然后，按如下向导，安装组件:
 
-* **Windows**: *MCVC 2015 32 bit*
-* **MacOS**: *macOS*
-* **Linux**: *Desktop gcc 64-bit*
-* 必装组件（所有平台） 
-    * *Qt Charts* and *Qt Remote Objects (TP)*
-    * *Android ARMv7* (为了构建Android) 
+- **Windows**: *MCVC 2015 32 bit*
+- **MacOS**: *macOS*
+- **Linux**: *Desktop gcc 64-bit*
+- 必装组件（所有平台） 
+    - *Qt Charts* and *Qt Remote Objects (TP)*
+    - *Android ARMv7* (为了构建Android) 
         1. 安装附加软件包（特定于平台）
-* **Ubuntu:** `sudo apt-get install speech-dispatcher libudev-dev libsdl2-dev`
-* **Fedora:** `sudo dnf install speech-dispatcher SDL2-devel SDL2 systemd-devel`
-* Arch Linux: pacman -Sy speech-dispatcher
-* Windows: USB Driver to connect to Pixhawk/PX4Flow/3DR Radio
-* **Android:** [Qt Android Setup](http://doc.qt.io/qt-5/androidgs.html)
+- **Ubuntu:** `sudo apt-get install speech-dispatcher libudev-dev libsdl2-dev`
+- **Fedora:** `sudo dnf install speech-dispatcher SDL2-devel SDL2 systemd-devel`
+- Arch Linux: pacman -Sy speech-dispatcher
+- Windows: USB Driver to connect to Pixhawk/PX4Flow/3DR Radio
+- **Android:** [Qt Android Setup](http://doc.qt.io/qt-5/androidgs.html)
 
 #### 使用Qt Creator构建
 
 1. 启动*Qt Creator*并打开**qgroundcontrol.pro**项目。
 2. 根据您的需求选择合适的套件： 
-    * OSX：桌面Qt {{book.qt_version}} clang 64 bit>注意iOS构建必须使用XCode构建。
-    * **Ubuntu:** Desktop Qt 5.11.3 <!-- {{ book.qt_version }} --> GCC 64bit
+    - OSX：桌面Qt {{book.qt_version}} clang 64 bit>注意iOS构建必须使用XCode构建。
+    - **Ubuntu:** Desktop Qt 5.11.3 <!-- {{ book.qt_version }} --> GCC 64bit
     
-    * **Windows:** 桌面Qt{{ book.qt_version }}MSVC2015**32bit**
-    * **Android：** Android平台需选择armeabi的Android-v7a（GCC 4.9，Qt {{ book.qt_version }}）
+    - **Windows:** 桌面Qt{{ book.qt_version }}MSVC2015**32bit**
+    - **Android：** Android平台需选择armeabi的Android-v7a（GCC 4.9，Qt {{ book.qt_version }}）
 
 3. 使用"hammer" (or "play") 图标构建:
     
@@ -90,11 +90,11 @@ Vagrant可用于在Linux虚拟机中构建和运行QGroundControl（如果兼容
 
 ### 所有支持操作系统的附加构建说明
 
-* **Warnings as Errors:** 指定`CONFIG = WarningsAsErrors`会将所有警告转换为错误，从而使得构建程序无法顺利执行。 如果您正在处理拉取请求，您计划提交给github进行考虑，则应始终在启用此设置的情况下运行，因为所有拉取请求都需要此设置。 **注意：**将此行放入顶级目录（与**qgroundcontrol.pro**相同的目录）中名为**user_config.pri**的文件中，将在所有构建上设置此标志，而不会干扰GIT历史记录。
-* **并行构建：** 对于非Windows系统下的构建，您可以使用`-j＃`选项来运行并行构建。
-* **构建文件的位置：** 可以在`build_debug`或`build_release`目录中找到单个构建文件结果。 可以在`debug`或`release`目录中找到构建的可执行文件。
-* **如果在运行*QGroundControl*时出现报错：** `/usr/lib/x86_64-linux-gnu/libstdc++.so.6: version 'GLIBCXX_3.4.20' not found.` ，则需要更新到最新的*gcc*，或安装最新的*libstdc++.6* ：`sudo apt-get  install  libstdc ++ 6 ` 。
-* **单元测试：** 如需运行[unit tests](../contribute/unit_tests.md),请使用`UNITTEST_BUILD`定义 `debug`模式，然后在运行测试之前将`deploy / qgroundcontrol-start.sh`脚本文件复制到 `debug`目录中。
+- **Warnings as Errors:** 指定`CONFIG = WarningsAsErrors`会将所有警告转换为错误，从而使得构建程序无法顺利执行。 如果您正在处理拉取请求，您计划提交给github进行考虑，则应始终在启用此设置的情况下运行，因为所有拉取请求都需要此设置。 **注意：**将此行放入顶级目录（与**qgroundcontrol.pro**相同的目录）中名为**user_config.pri**的文件中，将在所有构建上设置此标志，而不会干扰GIT历史记录。
+- **并行构建：** 对于非Windows系统下的构建，您可以使用`-j＃`选项来运行并行构建。
+- **构建文件的位置：** 可以在`build_debug`或`build_release`目录中找到单个构建文件结果。 可以在`debug`或`release`目录中找到构建的可执行文件。
+- **如果在运行*QGroundControl*时出现报错：** `/usr/lib/x86_64-linux-gnu/libstdc++.so.6: version 'GLIBCXX_3.4.20' not found.` ，则需要更新到最新的*gcc*，或安装最新的*libstdc++.6* ：`sudo apt-get  install  libstdc ++ 6 ` 。
+- **单元测试：** 如需运行[unit tests](../contribute/unit_tests.md),请使用`UNITTEST_BUILD`定义 `debug`模式，然后在运行测试之前将`deploy / qgroundcontrol-start.sh`脚本文件复制到 `debug`目录中。
 
 ## 选项/特定功能
 
@@ -113,3 +113,16 @@ Vagrant可用于在Linux虚拟机中构建和运行QGroundControl（如果兼容
 ### 视频流 
 
 请查看 [Video Streaming](https://github.com/mavlink/qgroundcontrol/tree/master/src/VideoStreaming)目录以获取进一步说明。
+
+## Building QGC Installation Files
+
+You can additionally create installation file(s) for *QGroundControl* as part of the normal build process.
+
+> **Note** On Windows you will need to first install [NSIS](https://sourceforge.net/projects/nsis/).
+
+To add support for installation file creation you need to add `CONFIG+=installer` to your project file, or when you call *qmake*.
+
+To do this in *Qt Creator*:
+
+- Open **Projects > Build > Build Steps > qmake > Additional arguments**.
+- Enter `CONFIG+=installer` as shown: ![Installer](../../assets/getting_started/qt_project_installer.png)

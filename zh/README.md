@@ -34,11 +34,14 @@ QGC用户界面使用Qt QML实现。 QML提供硬件加速，这是平板电脑�
 
 翻译项目（和加入链接）如下：
 
-* [QGroundControl](https://crowdin.com/project/qgroundcontrol)（[加入](https://crwd.in/qgroundcontrol)）
-* [QGroundControl使用指南](https://crowdin.com/project/qgroundcontrol-user-guide)（[加入](https://crwd.in/qgroundcontrol-user-guide)）
-* *QGroundControl开发者指南* - 尚未准备好进行翻译
+- [QGroundControl](https://crowdin.com/project/qgroundcontrol)（[加入](https://crwd.in/qgroundcontrol)）
+- [QGroundControl使用指南](https://crowdin.com/project/qgroundcontrol-user-guide)（[加入](https://crwd.in/qgroundcontrol-user-guide)）
+- [QGroundControl Developer Guide](https://crowdin.com/project/qgroundcontrol-developer-guide) ([join](https://crwd.in/qgroundcontrol-developer-guide))
 
-如果您希望我们添加对新语言的支持，请在[论坛频道](#support)中提出要求。
+The PX4 Developer Guide contains additional information about the (common) docs/translation toolchain:
+
+- [Documentation](https://dev.px4.io/en/contribute/docs.html)
+- [Translation](https://dev.px4.io/en/contribute/docs.html)
 
 ## 许可证
 

@@ -114,15 +114,15 @@ Vagrant可用于在Linux虚拟机中构建和运行QGroundControl（如果兼容
 
 请查看 [Video Streaming](https://github.com/mavlink/qgroundcontrol/tree/master/src/VideoStreaming)目录以获取进一步说明。
 
-## Building QGC Installation Files
+## 构建 QGC 安装文件
 
-You can additionally create installation file(s) for *QGroundControl* as part of the normal build process.
+作为正常生成过程的一部分, 您还可以为 *QGroundControl* 创建安装文件。
 
-> **Note** On Windows you will need to first install [NSIS](https://sourceforge.net/projects/nsis/).
+> **注意** 在Windows上，您需要先安装 [NSIS](https://sourceforge.net/projects/nsis/)。
 
-To add support for installation file creation you need to add `CONFIG+=installer` to your project file, or when you call *qmake*.
+若要添加对安装文件创建的支持, 您需要将 `CONFIG+=installer` 添加到项目文件中, 或者在调用 *qmake* 时添加。
 
-To do this in *Qt Creator*:
+要在 < 0>Qt 创建者 </0 > 中执行此操作:
 
-- Open **Projects > Build > Build Steps > qmake > Additional arguments**.
+- 打开 **项目 > 构建 > 构建步骤 > qmake > 额外参数**。
 - Enter `CONFIG+=installer` as shown: ![Installer](../../assets/getting_started/qt_project_installer.png)

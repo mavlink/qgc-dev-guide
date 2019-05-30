@@ -53,7 +53,7 @@ Windows环境下的编译器下载链接：[Visual Studio 2015 compiler](https:/
     
     然后，按如下向导，安装组件:
 
-- **Windows**: *MCVC 2015 32 bit*
+- **Windows**: *MSVC 2015 32 bit*
 - **MacOS**: *macOS*
 - **Linux**: *Desktop gcc 64-bit*
 - 必装组件（所有平台） 

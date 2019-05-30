@@ -61,7 +61,7 @@ To install Qt:
 1. In the installer *Select Components* dialog choose: {{ book.qt_version }} (on *Ubuntu* choose Qt 5.11.3).
    
    Then install just the following components: 
-   - **Windows**: *MCVC 2015 32 bit*
+   - **Windows**: *MSVC 2015 32 bit*
    - **MacOS**: *macOS*
    - **Linux**: *Desktop gcc 64-bit*
    - All:

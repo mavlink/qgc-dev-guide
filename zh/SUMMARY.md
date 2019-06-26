@@ -33,5 +33,5 @@
 * [PX4用户指南](https://docs.px4.io/en/)
 * [PX4开发人员指南](https://dev.px4.io/en/)
 * [MAVLink指南](https://mavlink.io/en/)
-* [Dronecode SDK(无人机代码SDK)](https://sdk.dronecode.org/en/)
+* [MAVSDK](https://mavsdk.mavlink.io/)
 * [Dronecode相机管理器](https://camera-manager.dronecode.org/en/)

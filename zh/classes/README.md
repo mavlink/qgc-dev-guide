@@ -12,7 +12,7 @@ LinkManager类所生成对象管理系统中的所有打开链接。 `LinkManage
 
 ## (MultiVehicleManager)多机管理类
 
-系统中有一个MultiVehicleManager多机管理类生成的对象, 当它接收到一个新的心跳包(通过心跳包里面的系统ID识别)，它会自动生成一个载具对象，来表示一个新的载具加入到系统。 `MultiVehicleManager`还可以管理系统中所有载具的信息，并处理从一辆主动车辆到另一辆车辆的数据显示与控制切换。
+系统中有一个MultiVehicleManager多机管理类生成的对象, 当它接收到一个新的心跳包(通过心跳包里面的系统ID识别)，它会自动生成一个载具对象，来表示一个新的载具加入到系统。 `MultiVehicleManager` also keeps tracks of all Vehicles in the system and handles switching from one active vehicle to another and correctly handling a vehicle being removed.
 
 ## (Vehicle)载具类
 

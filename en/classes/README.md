@@ -12,7 +12,7 @@ There is a single `MAVLinkProtocol` object in the system. It's job is to take in
 
 ## MultiVehicleManager
 
-There is a single `MultiVehicleManager` object within the system. When it receives a HEARTBEAT on a link which has not been previously seen it creates a Vehicle object. ``MultiVehicleManager` also keeps tracks of all Vehicles in the system and handles switching from one active vehicle to another and correctly handling a vehicle being removed.
+There is a single `MultiVehicleManager` object within the system. When it receives a HEARTBEAT on a link which has not been previously seen it creates a Vehicle object. `MultiVehicleManager` also keeps tracks of all Vehicles in the system and handles switching from one active vehicle to another and correctly handling a vehicle being removed.
 
 ## Vehicle
 

@@ -33,6 +33,7 @@ To get the source files:
 
 - **macOS:** v10.11 or higher
 - **Ubuntu:** 64 bit, gcc compiler
+- **CentOS:** Build instructions can be found on Github here: [CentOS](https://github.com/mavlink/qgroundcontrol/blob/master/CentOS.md)
 - **Windows:** Vista or higher, [Visual Studio 2015 compiler](#vs2015) (32 bit)
 - **iOS:** 10.0 and higher
 - **Android:** Jelly Bean (4.1) and higher. Standard QGC is built against ndk version 19.

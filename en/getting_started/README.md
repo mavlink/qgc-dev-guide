@@ -67,8 +67,8 @@ To install Qt:
    - **MacOS**: *macOS*
    - **Linux**: *Desktop gcc 64-bit*
    - All:
-   - *Qt Charts* and *Qt Remote Objects (TP)*
-   - *Android ARMv7* (to build Android)
+     - *Qt Charts* and *Qt Remote Objects (TP)*
+     - *Android ARMv7* (to build Android)
 1. Install Additional Packages (Platform Specific)
    - **Ubuntu:** `sudo apt-get install speech-dispatcher libudev-dev libsdl2-dev`
    - **Fedora:** `sudo dnf install speech-dispatcher SDL2-devel SDL2 systemd-devel`

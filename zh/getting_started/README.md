@@ -29,7 +29,7 @@ macos、linux、windows、ios 和 android 平台均可支持 *QGroundControl* �
 - **Windows:** Vista or higher, [Visual Studio 2015 compiler](#vs2015) (32 bit)
 - **iOS:** 10.0 and higher
 - **Android:** Jelly Bean (4.1) and higher. Standard QGC is built against ndk version 19.
-- **Qt version:** {{ book.qt_version }} **(only)** (except for Ubuntu, which uses Qt 5.11.3) <!-- NOTE {{ book.qt_version }} is set in the variables section of gitbook file https://github.com/mavlink/qgc-dev-guide/blob/master/book.json -->
+- **Qt version:** {{ book.qt_version }} **(only)** <!-- NOTE {{ book.qt_version }} is set in the variables section of gitbook file https://github.com/mavlink/qgc-dev-guide/blob/master/book.json -->
 
 > 提示: 有关更多信息，请参阅：Qt 5支持的平台列表。
 
@@ -50,7 +50,7 @@ Windows环境下的编译器下载链接：[Visual Studio 2015 compiler](https:/
         - 使用以下命令将下载的文件设置为可执行文件：`chmod + x` 
         - 请安装到默认位置, 以便与 **./qgroundcontrol-start.sh** 一起使用。如果将 Qt 安装到非默认位置, 则需要修改 **qgroundcontrol-start.sh** ，才能运行下载的组件。
 
-2. In the installer *Select Components* dialog choose: {{ book.qt_version }} (on *Ubuntu* choose Qt 5.11.3).
+2. In the installer *Select Components* dialog choose: {{ book.qt_version }}.
     
     然后，按如下向导，安装组件:
 
@@ -72,8 +72,7 @@ Windows环境下的编译器下载链接：[Visual Studio 2015 compiler](https:/
 1. 启动*Qt Creator*并打开**qgroundcontrol.pro**项目。
 2. 根据您的需求选择合适的套件： 
     - OSX：桌面Qt {{book.qt_version}} clang 64 bit>注意iOS构建必须使用XCode构建。
-    - **Ubuntu:** Desktop Qt 5.11.3 <!-- {{ book.qt_version }} --> GCC 64bit
-    
+    - **Ubuntu:** Desktop Qt {{ book.qt_version }} GCC 64bit
     - **Windows:** 桌面Qt{{ book.qt_version }}MSVC2015**32bit**
     - **Android：** Android平台需选择armeabi的Android-v7a（GCC 4.9，Qt {{ book.qt_version }}）
 
@@ -91,39 +90,28 @@ Vagrant可用于在Linux虚拟机中构建和运行QGroundControl（如果兼容
 
 ### 所有支持操作系统的附加构建说明
 
-- **Warnings as Errors:** 指定`CONFIG = WarningsAsErrors`会将所有警告转换为错误，从而使得构建程序无法顺利执行。 如果您正在处理拉取请求，您计划提交给github进行考虑，则应始终在启用此设置的情况下运行，因为所有拉取请求都需要此设置。 **注意：**将此行放入顶级目录（与**qgroundcontrol.pro**相同的目录）中名为**user_config.pri**的文件中，将在所有构建上设置此标志，而不会干扰GIT历史记录。
-- **并行构建：** 对于非Windows系统下的构建，您可以使用`-j＃`选项来运行并行构建。
-- **构建文件的位置：** 可以在`build_debug`或`build_release`目录中找到单个构建文件结果。 可以在`debug`或`release`目录中找到构建的可执行文件。
-- **如果在运行*QGroundControl*时出现报错：** `/usr/lib/x86_64-linux-gnu/libstdc++.so.6: version 'GLIBCXX_3.4.20' not found.` ，则需要更新到最新的*gcc*，或安装最新的*libstdc++.6* ：`sudo apt-get  install  libstdc ++ 6 ` 。
-- **单元测试：** 如需运行[unit tests](../contribute/unit_tests.md),请使用`UNITTEST_BUILD`定义 `debug`模式，然后在运行测试之前将`deploy / qgroundcontrol-start.sh`脚本文件复制到 `debug`目录中。
+- **Parallel builds:** For non Windows builds, you can use the `-j#` option to run parellel builds.
+- **Location of built files:** Individual build file results can be found in the `build_debug` or `build_release` directories. The built executable can be found in the `debug` or `release` directory.
+- **If you get this error when running *QGroundControl***: `/usr/lib/x86_64-linux-gnu/libstdc++.so.6: version 'GLIBCXX_3.4.20' not found.`, you need to either update to the latest *gcc*, or install the latest *libstdc++.6* using: `sudo apt-get install libstdc++6`.
+- **Unit tests:** To run the [unit tests](../contribute/unit_tests.md), build in `debug` mode with `UNITTEST_BUILD` definition, and then copy `deploy/qgroundcontrol-start.sh` script into the `debug` directory before running the tests.
 
 ## 选项/特定功能
 
 *QGroundControl*的功能依赖于用户安装的操作系统和库。 以下章节描述了这些功能，它们的依赖关系，以及如何在构建过程中禁用/更改它们。 通过为qmake指定其他值，可以强制启用/禁用这些功能。
 
-### Opal-RT的RT-LAB模拟器
+### Video Streaming
 
-通过安装RT-LAB 7.2.4，可以使QGC在Windows集成Opal-RT的RT-LAB模拟器。 这允许载具在RT-LAB中模拟并在同一计算机上直接与QGC通信，就像实际操控UAS一样。 一旦安装了匹配的RT-LAB软件，默认情况下将启用此支持。 可以通过向qmake添加`DEFINES + = DISABLE_RTLAB`来禁用此功能。
-
-### XBee支持
-
-*QGroundControl*可以直接在Windows和Linux平台上通过其专属协议与XBee无线设备通信 如果您不使用XBee设备或未使用其专有协议，则无需此支持。 在Windows上，必需的依赖项包含在此存储库中，无需其他步骤。 对于Linux，进入`libs / thirdParty / libxbee`目录下，并运行`make; sudo make install`安装libxbee（如需卸载，请运行`sudo make uninstall`）。 *qmake* 将在 linux 上自动检测库文件, 因此无需用户进行其他操作。
-
-如需禁用XBee支持，您可以将DEFINES + = DISABLE_XBEE添加到qmake。
-
-### 视频流 
-
-请查看 [Video Streaming](https://github.com/mavlink/qgroundcontrol/tree/master/src/VideoStreaming)目录以获取进一步说明。
+Check the [Video Streaming](https://github.com/mavlink/qgroundcontrol/tree/master/src/VideoStreaming) directory for further instructions.
 
 ## 构建 QGC 安装文件
 
-作为正常生成过程的一部分, 您还可以为 *QGroundControl* 创建安装文件。
+You can additionally create installation file(s) for *QGroundControl* as part of the normal build process.
 
 > **注意** 在Windows上，您需要先安装 [NSIS](https://sourceforge.net/projects/nsis/)。
 
-若要添加对安装文件创建的支持, 您需要将 `CONFIG+=installer` 添加到项目文件中, 或者在调用 *qmake* 时添加。
+To add support for installation file creation you need to add `CONFIG+=installer` to your project file, or when you call *qmake*.
 
-要在 < 0>Qt 创建者 </0 > 中执行此操作:
+To do this in *Qt Creator*:
 
 - 打开 **项目 > 构建 > 构建步骤 > qmake > 额外参数**。
 - Enter `CONFIG+=installer` as shown: ![Installer](../../assets/getting_started/qt_project_installer.png)

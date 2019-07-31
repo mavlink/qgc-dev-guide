@@ -1,7 +1,8 @@
 # 概要 
 
 * [摘要](README.md)
-* [入门 ](getting_started/README.md)
+* [入门 ](getting_started/README.md) 
+  * [Using QGC on CentOS](getting_started/CentOS.md)
 * [通信流程](communication_flow.md)
 * [固件插件](firmware_plugin.md)
 * [类层次结构](classes/README.md)

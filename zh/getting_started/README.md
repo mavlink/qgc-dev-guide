@@ -25,7 +25,6 @@ macos、linux、windows、ios 和 android 平台均可支持 *QGroundControl* �
 
 - macOS：v10.11或更高版本
 - Ubuntu：64位，gcc编译器
-- **CentOS:** Build instructions can be found on Github here: [CentOS](https://github.com/mavlink/qgroundcontrol/blob/master/CentOS.md)
 - **Windows:** Vista or higher, [Visual Studio 2015 compiler](#vs2015) (32 bit)
 - **iOS:** 10.0 and higher
 - **Android:** Jelly Bean (4.1) and higher. Standard QGC is built against ndk version 19.
@@ -33,17 +32,21 @@ macos、linux、windows、ios 和 android 平台均可支持 *QGroundControl* �
 
 > 提示: 有关更多信息，请参阅：Qt 5支持的平台列表。
 
+<span></span>
+
+> **Note** Native [CentOS Builds](../getting_started/CentOS.md) are also supported, but are documented separately (as the tested environment is different).
+
 #### 安装 visual studio 2015 (仅限 windows) {#vs2015}
 
-Windows环境下的编译器下载链接：[Visual Studio 2015 compiler](https://visualstudio.microsoft.com/vs/older-downloads/) (32 bit)。
+The Windows compiler can be found here: [Visual Studio 2015 compiler](https://visualstudio.microsoft.com/vs/older-downloads/) (32 bit)
 
-安装时, 必须选择的 visual c++ 组件, 如下所示： ![Visual Studio 2015 - 请选择所有的 Visual C++组件](../../assets/getting_started/vs_2015_select_features.png)
+When installing, you must minimally select all Visual C++ components as shown: ![Visual Studio 2015 - Select all Visual C++ Components](../../assets/getting_started/vs_2015_select_features.png)
 
 #### 安装Qt
 
-因为 *QGroundControl* 需要访问专用 Qt标头，所以请** 按照下面的方式安装 QT**（而不是使用 linux 发行版中的预构建包）。
+You **need to install Qt as described below** instead of using pre-built packages from say, a Linux distribution, because *QGroundControl* needs access to private Qt headers.
 
-安装Qt:
+To install Qt:
 
 1. 下载并运行[Qt Online Installer](http://www.qt.io/download-open-source) 
     - **Ubuntu:** 
@@ -82,7 +85,7 @@ Windows环境下的编译器下载链接：[Visual Studio 2015 compiler](https:/
 
 ### Vagrant
 
-Vagrant可用于在Linux虚拟机中构建和运行QGroundControl（如果兼容，则构建也可以在主机上运行）
+[Vagrant](https://www.vagrantup.com/) can be used to build and run *QGroundControl* within a Linux virtual machine (the build can also be run on the host machine if it is compatible).
 
 1. 1. 下载并安装Vagrant
 2. 2. 从QGroundControl存储库的根目录运行vagrant up
@@ -97,7 +100,7 @@ Vagrant可用于在Linux虚拟机中构建和运行QGroundControl（如果兼容
 
 ## 选项/特定功能
 
-*QGroundControl*的功能依赖于用户安装的操作系统和库。 以下章节描述了这些功能，它们的依赖关系，以及如何在构建过程中禁用/更改它们。 通过为qmake指定其他值，可以强制启用/禁用这些功能。
+*QGroundControl* has functionality that is dependent on the operating system and libraries installed by the user. The following sections describe these features, their dependencies, and how to disable/alter them during the build process. These features can be forcibly enabled/disabled by specifying additional values to qmake.
 
 ### Video Streaming
 
@@ -107,7 +110,7 @@ Check the [Video Streaming](https://github.com/mavlink/qgroundcontrol/tree/maste
 
 You can additionally create installation file(s) for *QGroundControl* as part of the normal build process.
 
-> **注意** 在Windows上，您需要先安装 [NSIS](https://sourceforge.net/projects/nsis/)。
+> **Note** On Windows you will need to first install [NSIS](https://sourceforge.net/projects/nsis/).
 
 To add support for installation file creation you need to add `CONFIG+=installer` to your project file, or when you call *qmake*.
 

@@ -2,6 +2,7 @@
 
 * [Overview](README.md)
 * [Getting Started](getting_started/README.md)
+  * [CentOS Builds](getting_started/CentOS.md)
 * [Communication Flow](communication_flow.md)
 * [Firmware Plugins](firmware_plugin.md)
 * [Class Hierarchy](classes/README.md)

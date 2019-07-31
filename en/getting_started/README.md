@@ -33,7 +33,6 @@ To get the source files:
 
 - **macOS:** v10.11 or higher
 - **Ubuntu:** 64 bit, gcc compiler
-- **CentOS:** Build instructions can be found on Github here: [CentOS](https://github.com/mavlink/qgroundcontrol/blob/master/CentOS.md)
 - **Windows:** Vista or higher, [Visual Studio 2015 compiler](#vs2015) (32 bit)
 - **iOS:** 10.0 and higher
 - **Android:** Jelly Bean (4.1) and higher. Standard QGC is built against ndk version 19.
@@ -41,6 +40,8 @@ To get the source files:
 
 > **Tip** For more information see: [Qt 5 supported platform list](http://doc.qt.io/qt-5/supported-platforms.html).
 
+<span></span>
+> **Note** Native [CentOS Builds](../getting_started/CentOS.md) are also supported, but are documented separately (as the tested environment is different).
 
 #### Install Visual Studio 2015 (Windows Only) {#vs2015}
 

@@ -1,4 +1,4 @@
-# Running QGC on CentOS 7
+# Using QGC on CentOS 7
 
 # OS Installation
 - Fetch the latest CentOS 7 iso from here: http://isoredirect.centos.org/centos/7/isos/x86_64/CentOS-7-x86_64-DVD-1810.iso
@@ -13,9 +13,9 @@
 ## CentOS Software Selection Installation Options
 These were the options used to setup a CentOS development system. Use it as a guideline.
 
-![CentOS Installation](https://github.com/mavlink/qgroundcontrol/blob/master/resources/CentOS/CentOS-installation.png)
+![CentOS Installation](../../assets/getting_started/centos/centos_installation.png)
 
-![CentOS Software Selection](https://github.com/mavlink/qgroundcontrol/blob/master/resources/CentOS/CentOS-sw-selection.png)
+![CentOS Software Selection](../../assets/getting_started/centos/centos_sw_selection.png)
 
 ## Update GStreamer
 Once CentOS is installed and booted we need to set up the environment for QGC. First, we need to update GStreamer to a more recent version. This guide follows Alice Wonder's tips found here: https://media.librelamp.com
@@ -111,7 +111,7 @@ chmod +x qt-unified-linux-x64-3.1.1-online.run
 ```
 
 Select the following options and install it under ~/devel/Qt
-![Qt Software Selection](https://github.com/mavlink/qgroundcontrol/blob/master/resources/CentOS/Qt-Setup.png)
+![Qt Software Selection](../../assets/getting_started/centos/qt_setup.png)
 
 ## Clone and Build QGC
 ```

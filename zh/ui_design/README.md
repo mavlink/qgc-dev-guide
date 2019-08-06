@@ -1,6 +1,6 @@
 # 用户界面设计
 
-QGC中UI设计的主要模式是用QML编写的UI页面，多次与用C ++编写的自定义“Controller”进行通信。 这是一个有点被黑客攻击的MVC设计模式。
+The main pattern for UI design in QGC is a UI page written in QML, many times communicating with a custom "Controller" written in C++. 这是一个有点被黑客攻击的MVC设计模式。
 
 QML代码通过以下机制绑定到与系统关联的信息：
 

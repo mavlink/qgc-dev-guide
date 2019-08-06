@@ -26,7 +26,7 @@ QGC没有针对不同屏幕尺寸和/或形状因子的不同编码的UI。 通�
 
 ### FactSystem（事实系统）
 
-QGC内部是一个系统，用于管理系统中的所有单个数据。 这个数据模型是连接到控件。
+QGC内部是一个系统，用于管理系统中的所有单个数据。 This data model is then connected to controls.
 
 ### 严重依赖可重用控件
 
@@ -42,10 +42,10 @@ QGC UI是从一组可重用的控件和UI元素开发而来的。 这样，现�
 ## 这种设计模式的优点
 
 * 由于使用此混合模型和控制集进行一次UI编码，因此设计新功能所需的时间更短。 布局重排在Qt QML中非常强大，一旦你习惯它就成为第二天性。
-* 一个UI可以在仅平台上进行功能测试，因为功能代码在所有形状因子中是相同的。 只有布局流必须在多个设备上进行可视化检查, 但这很容易使用移动模拟器完成。 在大多数情况下，这是需要的： 
-    * 使用桌面构建，调整窗口大小以测试重排。 一般只会覆盖一个平板大小的屏幕..
+* A piece of UI can be functionally tested on one platform since the functional code is the same across all form factors. 只有布局流必须在多个设备上进行可视化检查, 但这很容易使用移动模拟器完成。 在大多数情况下，这是需要的： 
+    * 使用桌面构建，调整窗口大小以测试重排。 This will generally cover a tablet sized screen as well.
     * 使用移动模拟器直观地验证手机大小的屏幕。 在OSX XCode iPhone模拟器上工作得非常好。
-* 以上所有内容对于让我们假设的1人开发团队保持高效和高质量至关重要。
+* All of the above are critical to keeping our hypothetical 1 person dev team efficient and to keep quality high.
 
 ## 未来发展方向 
 

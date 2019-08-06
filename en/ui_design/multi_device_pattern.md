@@ -22,7 +22,7 @@ At specified above, at this point smaller phone sized screens are the lowest lev
 QGC does not have differently coded UIs which are targeted to different screen sizes and/or form factors. In general it uses QML Layout capabilities to reflow a single set of QML UI code to fit different form factors. In some cases it provides less detail on small screen sizes to make things fit. But that is a simple visibility pattern.
 
 ### FactSystem
-Internal to QGC is a system which is used to manage all of the individual pieces of data within the system. This data model is them connected to controls.
+Internal to QGC is a system which is used to manage all of the individual pieces of data within the system. This data model is then connected to controls.
 
 ### Heavy reliance on reusable controls
 QGC UI is developed from a base set of reusable controls and UI elements. This way any new feature added to a reusable control is now available throughout the UI. These reusable controls also connect to FactSystem Facts which then automatically provides appropriate UI.
@@ -37,10 +37,10 @@ QGC UI is developed from a base set of reusable controls and UI elements. This w
 ## Pros for this design pattern
 
 * It takes less time to design a new feature since the UI coding is done once using this hybrid model and control set. Layout reflow is quite capable in Qt QML and becomes second nature once you get used to it.
-* A piece of UI can be functionally tested on only platform since the functional code is the same across all form factors. Only layout flow must be visually checked on multiple devices but this is fairly easily done using the mobile simulators. In most cases this is what is needed:
-    * Use desktop build, resizing windows to test reflow. Just will generally cover a tablet sized screen as well.
+* A piece of UI can be functionally tested on one platform since the functional code is the same across all form factors. Only layout flow must be visually checked on multiple devices but this is fairly easily done using the mobile simulators. In most cases this is what is needed:
+    * Use desktop build, resizing windows to test reflow. This will generally cover a tablet sized screen as well.
     * Use a mobile simulator to visually verify a phone sized screen. On OSX XCode iPhone simulator works really well.
-* All of the above are critical to keep our hypothetical 1 person dev team efficient and quality high.
+* All of the above are critical to keeping our hypothetical 1 person dev team efficient and to keep quality high.
 
 ## Future directions
 

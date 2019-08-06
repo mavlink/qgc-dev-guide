@@ -26,7 +26,7 @@ The following controls are QGC variants of standard Qt QML Controls. They provid
 These custom controls are exclusive to QGC and are used to create standard UI elements.
 
 * DropButton - RoundButton which drops out a panel of options when clicked. Example is Sync button in Plan view.
-* ExclusiveGroupItem - Used a a base Item for custom controls which supports the QML ExclusiveGroup concept.
+* ExclusiveGroupItem - Used as a base Item for custom controls which supports the QML ExclusiveGroup concept.
 * QGCView - Base control for all top level views in the system. Provides support for FactPanels and displaying QGCViewDialogs and QGCViewMessages.
 * QGCViewDialog - Dialog which pops out from the right side of a QGCView. You can specific the accept/reject buttons for the dialog as well as the dialog contents. Example usage is when you click on a parameter and it brings up the value editor dialog.
 * QGCViewMessage - A simplified version of QGCViewDialog which allows you to specify buttons and a simple text message.

@@ -67,14 +67,16 @@ sudo yum install SDL2 SDL2-devel -y
 
 ### Update Kernel (optional)
 
-The two resons why we update the kernel are:
-- Better touch screen responsiveness
-- Correct recognition of some USB devices especially joysticks
+> **Tip** If your Joystick gets recognized and shows up as `/dev/input/js0` when you run the command `/dev/input/*` you can skip this step.
 
-In our tests the following joysticks did not work out of the box with the default CentOS 7 kernel (3.10.0):
+We recommend updating the kernel for:
+- Better touch screen responsiveness.
+- Correct recognition of some USB devices - in particular joysticks.
+
+The following joysticks are known not do work out of the box with the default CentOS 7 kernel (3.10.0):
 - Logitech F310
 - Microsoft Xbox 360 controller (USB)
-If your Joystick gets recognized fine and shows up as `/dev/input/js0` when you run the command `/dev/input/*` you can skip this step.
+
 
 To fix the joystick not being recognized (even if the same unit is working under Windows or Ubuntu) please [follow this guide to update the kernel](https://www.howtoforge.com/tutorial/how-to-upgrade-kernel-in-centos-7-server/).
 
@@ -87,7 +89,7 @@ sudo yum --enablerepo=elrepo-kernel install kernel-ml -y
 
 Reboot your device afterwards and make sure the new kernel version shows up as the default start option in the GRUB menu on boot.
 
-**Note:** You might need to disable secure boot in the BIOS to allow the new kernel to be booted.
+> **Note** You might need to disable secure boot in the BIOS to allow the new kernel to be booted.
 
 ## Running QGC on CentOS
 
@@ -102,17 +104,17 @@ The default firewall security level of Red Hat distributions like CentOS block M
 So you need to create rules to open the incoming ports for MAVLink and camera stream.
 For non-production local environment testing purposes ONLY you can temporarily disable the firewall using the following commands ([from here](https://www.liquidweb.com/kb/how-to-stop-and-disable-firewalld-on-centos-7/)):
 
-Temporary
+Temporary:
 ```
 systemctl stop firewalld
 ```
 
-Permanent (at your own risk)
+Permanent (at your own risk):
 ```
 systemctl disable firewalld
 ```
 
-Undo permanent change
+Undo permanent change:
 ```
 systemctl enable firewalld
 ```
@@ -153,7 +155,8 @@ chmod +x qt-unified-linux-x64-3.1.1-online.run
 ./qt-unified-linux-x64-3.1.1-online.run
 ```
 
-Select the following options and install it under ~/devel/Qt
+Select the following options and install it under `~/devel/Qt`:
+
 ![Qt Software Selection](../../assets/getting_started/centos/qt_setup.png)
 
 ### Clone and Build QGC

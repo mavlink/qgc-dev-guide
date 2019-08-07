@@ -58,12 +58,19 @@ SDL2 is used for joystick support.
     sudo yum install SDL2 SDL2-devel -y
     
 
-### Update Kernel to support all USB Joysticks
+### Update Kernel (optional)
 
-Chances are that your USB Joystick does not get recognized under CentOS. In our tests the following joysticks did not work out of the box:
+> **Tip** If your Joystick gets recognized and shows up as `/dev/input/js0` when you run the command `/dev/input/*` you can skip this step.
+
+We recommend updating the kernel for:
+
+- Better touch screen responsiveness.
+- Correct recognition of some USB devices - in particular joysticks.
+
+The following joysticks are known not do work out of the box with the default CentOS 7 kernel (3.10.0):
 
 - Logitech F310
-- Microsoft Xbox controller (USB) If your Joystick gets recognized fine and shows up as `/dev/input/js0` when you run the command `/dev/input/*` you can skip this step.
+- Microsoft Xbox 360 controller (USB)
 
 To fix the joystick not being recognized (even if the same unit is working under Windows or Ubuntu) please [follow this guide to update the kernel](https://www.howtoforge.com/tutorial/how-to-upgrade-kernel-in-centos-7-server/).
 
@@ -71,10 +78,12 @@ Here's a short summary of the commands that you need to execute to update the ke
 
     sudo rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
     sudo rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm
-    sudo yum --enablerepo=elrepo-kernel install kernel-ml
+    sudo yum --enablerepo=elrepo-kernel install kernel-ml -y
     
 
 Reboot your device afterwards and make sure the new kernel version shows up as the default start option in the GRUB menu on boot.
+
+> **Note** You might need to disable secure boot in the BIOS to allow the new kernel to be booted.
 
 ## Running QGC on CentOS
 
@@ -87,17 +96,17 @@ Before launching QGC, you need to make sure the current user has access to the d
 
 The default firewall security level of Red Hat distributions like CentOS block MAVLink communication and also the camera video stream. So you need to create rules to open the incoming ports for MAVLink and camera stream. For non-production local environment testing purposes ONLY you can temporarily disable the firewall using the following commands ([from here](https://www.liquidweb.com/kb/how-to-stop-and-disable-firewalld-on-centos-7/)):
 
-Temporary
+Temporary:
 
     systemctl stop firewalld
     
 
-Permanent (at your own risk)
+Permanent (at your own risk):
 
     systemctl disable firewalld
     
 
-Undo permanent change
+Undo permanent change:
 
     systemctl enable firewalld
     
@@ -136,7 +145,8 @@ mkdir ~/devel cd ~/devel
 
 chmod +x qt-unified-linux-x64-3.1.1-online.run ./qt-unified-linux-x64-3.1.1-online.run
 
-    <br />Select the following options and install it under ~/devel/Qt
+    <br />Select the following options and install it under `~/devel/Qt`:
+    
     ![Qt Software Selection](../../assets/getting_started/centos/qt_setup.png)
     
     ### Clone and Build QGC

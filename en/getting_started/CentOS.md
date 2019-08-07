@@ -65,12 +65,15 @@ SDL2 is used for joystick support.
 sudo yum install SDL2 SDL2-devel -y
 ```
 
-### Update Kernel to support all USB Joysticks
+### Update Kernel (optional)
 
-Chances are that your USB Joystick does not get recognized under CentOS.
-In our tests the following joysticks did not work out of the box:
+The two resons why we update the kernel are:
+- Better touch screen responsiveness
+- Correct recognition of some USB devices especially joysticks
+
+In our tests the following joysticks did not work out of the box with the default CentOS 7 kernel (3.10.0):
 - Logitech F310
-- Microsoft Xbox controller (USB)
+- Microsoft Xbox 360 controller (USB)
 If your Joystick gets recognized fine and shows up as `/dev/input/js0` when you run the command `/dev/input/*` you can skip this step.
 
 To fix the joystick not being recognized (even if the same unit is working under Windows or Ubuntu) please [follow this guide to update the kernel](https://www.howtoforge.com/tutorial/how-to-upgrade-kernel-in-centos-7-server/).
@@ -79,10 +82,12 @@ Here's a short summary of the commands that you need to execute to update the ke
 ```
 sudo rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
 sudo rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm
-sudo yum --enablerepo=elrepo-kernel install kernel-ml
+sudo yum --enablerepo=elrepo-kernel install kernel-ml -y
 ```
 
 Reboot your device afterwards and make sure the new kernel version shows up as the default start option in the GRUB menu on boot.
+
+**Note:** You might need to disable secure boot in the BIOS to allow the new kernel to be booted.
 
 ## Running QGC on CentOS
 

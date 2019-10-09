@@ -62,6 +62,11 @@ sudo yum install libva
 sudo yum install libva-utils
 sudo yum install libva-intel-driver
 ```
+If libva-intel-driver is not found you can download it and install it manually
+```
+wget http://download1.rpmfusion.org/free/el/updates/7/x86_64/l/libva-intel-driver-1.8.3-4.el7.x86_64.rpm
+sudo yum localinstall libva-intel-driver-1.8.3-4.el7.x86_64.rpm -y
+```
 
 ### Installing SDL2
 

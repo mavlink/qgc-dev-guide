@@ -56,6 +56,12 @@ sudo yum install gstreamer1* --skip-broken -y
 sudo yum install gstreamer1-vaapi
 sudo yum install gstreamer1-libav
 ```
+**Note:** Install these to enable hardware accelerated video decoding
+```
+sudo yum install libva
+sudo yum install libva-utils
+sudo yum install libva-intel-driver
+```
 
 ### Installing SDL2
 

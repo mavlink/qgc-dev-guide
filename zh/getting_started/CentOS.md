@@ -18,9 +18,9 @@
 
 **Example** [UAV 组件微导航](https://www.uavcomp.com/command-control/micronav/) 设备：
 
-1. The setup of CentOS will not start with the default configuration. To solve this 
-    1. Go to the BIOS menu as explained in the example above.
-    2. Disable the "Extension Port" device under the "Advanced" tab.
+1. CentOS 不会以默认配置安装。 为解决这个问题，可进行如下操作： 
+    1. 如上述的示例中所述，转到BIOS菜单。
+    2. 在“Advanced”选项卡下禁用“Extension Port”设备。
     3. "Exit and save" the BIOS menu on the Exit page of the BIOS and try again.
     4. After CentOS is installed, you revert the changes again so that the Microhard network works.
 2. Make sure to never do a warm reboot but always first shut down the device if you want to reboot into Linux. Otherwise the Microhard network adapter will not work properly and slows down the whole system.

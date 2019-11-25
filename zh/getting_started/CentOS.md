@@ -74,51 +74,51 @@ SDL2 用于游戏杆支持。
 
 要修复无法识别的游戏杆(即使在Windows或Ubuntu可正常工作)，请[遵循本指南更新内核](https://www.howtoforge.com/tutorial/how-to-upgrade-kernel-in-centos-7-server/)。
 
-Here's a short summary of the commands that you need to execute to update the kernel:
+更新内核需要执行的命令简短摘要如下：
 
-    sudo rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
+    sudo rpm --importer https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
     sudo rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm
     sudo yum --enablerepo=elrepo-kernel install kernel-ml -y
     
 
-Reboot your device afterwards and make sure the new kernel version shows up as the default start option in the GRUB menu on boot.
+成功执行上述命令后，重启设备，并确保新的内核版本与启动时GRUB菜单中的默认起始选项一致。
 
-> **Note** You might need to disable secure boot in the BIOS to allow the new kernel to be booted.
+> **Note** 您可能需要在 BIOS 中禁用安全启动才能启动新内核。
 
-## Running QGC on CentOS
+## 在 CentOS 上运行 QGC
 
-Before launching QGC, you need to make sure the current user has access to the dialout group (serial port access permission):
+在启动 QGC 之前，您需要确保当前用户可以访问拨号组 (串行端口访问权限)：
 
-    sudo usermod -a -G dialout $USER
+    shsudo usermod -a -G dialout $USER
     
 
-### Firewall
+### 防火墙
 
-The default firewall security level of Red Hat distributions like CentOS block MAVLink communication and also the camera video stream. So you need to create rules to open the incoming ports for MAVLink and camera stream. For non-production local environment testing purposes ONLY you can temporarily disable the firewall using the following commands ([from here](https://www.liquidweb.com/kb/how-to-stop-and-disable-firewalld-on-centos-7/)):
+CentOS作为 Red Hat的分发版本，其默认防火墙安全级别会 阻止MAVLink通讯和摄像头视频流。 因此，需要创建规则来打开传入端口的 MAVLink 和相机流。 仅为非生产性的本地环境测试目的，您可以使用以下命令暂时禁用防火墙 ([从这里](https://www.liquidweb.com/kb/how-to-stop-and-disable-firewalld-on-centos-7/))：
 
-Temporary:
+临时
 
     systemctl stop firewalld
     
 
-Permanent (at your own risk):
+永久性(风险自负)：
 
     systemctl disable firewalld
     
 
-Undo permanent change:
+撤销永久更改：
 
-    systemctl enable firewalld
+    systemctl stop firewalld
     
 
-### Connection problems with multiple networks
+### 与多网络的连接问题
 
-In our test with CentOS we had problems when connecting to multiple networks through multiple network devices even with appropriate IP address and subnet assignment.
+在 CentOS 测试中，在通过多个网络设备连接到多个网络时遇到了一些问题，即使有适当的IP地址和子网分配。
 
-Issues consisted of:
+问题包括：
 
-- Losing Internet access when connecting to a second network
-- Having flaky connection to the vehicle with a lot of hiccups and packet losses (e.g. 30 seconds perfect connection 4 seconds of packet loss in a regular pattern)
+- 连接到第二个网络时失去互联网连接
+- 与载具的脆弱连接中，存在有大量不确定非再现问题和包丢失（例如，在常规模式中， 30秒完美连接4秒丢失数据包)
 
 If you face any of these problems avoid them by only connecting one network at a time e.g. switching between WiFi and Microhard.
 

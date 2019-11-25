@@ -21,21 +21,21 @@
 1. CentOS 不会以默认配置安装。 为解决这个问题，可进行如下操作： 
     1. 如上述的示例中所述，转到BIOS菜单。
     2. 在“Advanced”选项卡下禁用“Extension Port”设备。
-    3. "Exit and save" the BIOS menu on the Exit page of the BIOS and try again.
-    4. After CentOS is installed, you revert the changes again so that the Microhard network works.
-2. Make sure to never do a warm reboot but always first shut down the device if you want to reboot into Linux. Otherwise the Microhard network adapter will not work properly and slows down the whole system.
+    3. 在BIOS菜单的退出页面上选择“Exit and save”，然后从USB启动盘启动目标设备。
+    4. 在 CentOS 安装成功后，可再次恢复更改，以便微硬网络正常工作。
+2. 如果想要重新进入Linux操作系统，请先关闭设备，而不是热重启。 否则微硬网络适配器将无法正常工作并怠速整个系统。
 
-### CentOS Software Selection Installation Options
+### CentOS 软件选择安装选项
 
-These were the options used to setup a CentOS development system. Use it as a guideline.
+这些都是用于安装CentOS开发系统的选项。 使用它作为指南。
 
 ![CentOS Installation](../../assets/getting_started/centos/centos_installation.png)
 
 ![CentOS Software Selection](../../assets/getting_started/centos/centos_sw_selection.png)
 
-### Update GStreamer
+### 更新 GStreamer
 
-Once CentOS is installed and booted we need to set up the environment for QGC. First, we need to update GStreamer to a more recent version. This guide follows Alice Wonder's tips found here: https://media.librelamp.com
+CentOS 安装并启动后，我们需要为QGC 搭建环境。 首先，我们需要将GStreamer更新为最新版本。 本指南遵循Alice Wonder的提示：https://media.librelamp.com。
 
     sudo yum install epel-release -y
     wget http://awel.domblogger.net/7/media/x86_64/awel-media-release-7-6.noarch.rpm

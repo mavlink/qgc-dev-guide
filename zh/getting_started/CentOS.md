@@ -4,7 +4,7 @@
 
 安装CentOS 7
 
-1. Fetch the latest [CentOS 7 ISO from here](http://isoredirect.centos.org/centos/7/isos/x86_64/CentOS-7-x86_64-DVD-1810.iso)
+1. 从这里获取最新[CentOS 7 ISO ](http://isoredirect.centos.org/centos/7/isos/x86_64/CentOS-7-x86_64-DVD-1810.iso)
 2. 通过[following this guide](https://linuxize.com/post/how-to-create-a-bootable-centos-7-usb-stick/)制作一个 USB 启动盘。
 3. 从USB启动盘中启动目标设备。
 
@@ -39,40 +39,40 @@ CentOS 安装并启动后，我们需要为QGC 搭建环境。 首先，我们�
 
     sudo yum install epel-release -y
     wget http://awel.domblogger.net/7/media/x86_64/awel-media-release-7-6.noarch.rpm
-    sudo yum localinstall awel-media-release-7-6.noarch.rpm -y
-    sudo yum clean all
+    sudo yum localinstall awel-media-release-7-6. orarch.rpm -y
+    sudo yum clearing all
     sudo yum update
-    sudo yum install gstreamer1* --skip-broken -y
+    sudo yum install gstreamer1* --skip-break-y
     
 
-**Note:** Make sure these are installed (vaapi for Intel GPUs)
+**Note:**确保如下组件已安装 (Intel GPUs的 vaapi)
 
     sudo yum install gstreamer1-vaapi
     sudo yum install gstreamer1-libav
     
 
-### Installing SDL2
+### 安装SDL2
 
-SDL2 is used for joystick support.
+SDL2 用于游戏杆支持。
 
     sudo yum install SDL2 SDL2-devel -y
     
 
-### Update Kernel (optional)
+### 更新内核(可选)
 
-> **Tip** If your Joystick gets recognized and shows up as `/dev/input/js0` when you run the command `/dev/input/*` you can skip this step.
+> **Tip**当运行命令`/dev/input/*` 时， 如果游戏杆被成功识别并显示为`/dev/input/js0` ，则可以跳过这一步。
 
-We recommend updating the kernel for:
+我们建议更新内核的原因为：
 
-- Better touch screen responsiveness.
-- Correct recognition of some USB devices - in particular joysticks.
+- 更好地触摸屏幕响应性能。
+- 正确识别某些USB设备 - 特别是游戏杆。
 
-The following joysticks are known not do work out of the box with the default CentOS 7 kernel (3.10.0):
+下面的游戏杆已确信无法用默认的 CentOS 7 内核(3.10.0):
 
 - Logitech F310
 - Microsoft Xbox 360 controller (USB)
 
-To fix the joystick not being recognized (even if the same unit is working under Windows or Ubuntu) please [follow this guide to update the kernel](https://www.howtoforge.com/tutorial/how-to-upgrade-kernel-in-centos-7-server/).
+要修复无法识别的游戏杆(即使在Windows或Ubuntu可正常工作)，请[遵循本指南更新内核](https://www.howtoforge.com/tutorial/how-to-upgrade-kernel-in-centos-7-server/)。
 
 Here's a short summary of the commands that you need to execute to update the kernel:
 

@@ -1,8 +1,8 @@
-# Using QGC on CentOS 7
+# 在 CentOS 7 上使用 QGC
 
-## OS Installation
+## 安装操作系统
 
-To install CentOS 7:
+安装CentOS 7
 
 1. Fetch the latest [CentOS 7 ISO from here](http://isoredirect.centos.org/centos/7/isos/x86_64/CentOS-7-x86_64-DVD-1810.iso)
 2. Make a bootable USB stick out of the ISO e.g. by [following this guide](https://linuxize.com/post/how-to-create-a-bootable-centos-7-usb-stick/).

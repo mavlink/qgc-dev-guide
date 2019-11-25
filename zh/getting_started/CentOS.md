@@ -5,7 +5,7 @@
 安装CentOS 7
 
 1. Fetch the latest [CentOS 7 ISO from here](http://isoredirect.centos.org/centos/7/isos/x86_64/CentOS-7-x86_64-DVD-1810.iso)
-2. Make a bootable USB stick out of the ISO e.g. by [following this guide](https://linuxize.com/post/how-to-create-a-bootable-centos-7-usb-stick/).
+2. 通过[following this guide](https://linuxize.com/post/how-to-create-a-bootable-centos-7-usb-stick/)制作一个 USB 启动盘。
 3. Boot the target device from the stick.
 
 The following examples show how to boot the target device from the stick.

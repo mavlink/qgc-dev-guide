@@ -6,17 +6,17 @@
 
 1. Fetch the latest [CentOS 7 ISO from here](http://isoredirect.centos.org/centos/7/isos/x86_64/CentOS-7-x86_64-DVD-1810.iso)
 2. 通过[following this guide](https://linuxize.com/post/how-to-create-a-bootable-centos-7-usb-stick/)制作一个 USB 启动盘。
-3. Boot the target device from the stick.
+3. 从USB启动盘中启动目标设备。
 
-The following examples show how to boot the target device from the stick.
+下面的示例将说明如何从USB启动盘启动目标设备。
 
-**Example:** *Panasonic Toughpad FZ-M1* (attaching a keyboard and mouse to the device to follow this guide is recommended).
+**Example：** *Panasonic Toughpad FZ-M1* （为方便遵循本指南操作，建议在设备上附上一个键盘和鼠标）。
 
-1. Enter the BIOS menu by holding **Delete** on an attached USB keyboard or pressing all hardware buttons around the power button during boot.
-2. Once inside the BIOS switch to the *Exit* tab using the arrow keys or the touchscreen.
-3. Select your previously created and plugged in USB stick under Boot device override.
+1. 在附加的 USB 键盘上按住 **Delete** 键，或者在启动时按下电源按钮周围的所有按钮，便可进入BIOS 菜单。
+2. 在 BIOS 菜单界面使用箭头键或触摸屏切换到 *Exit* 选项卡。
+3. 从启动设备列表中，选择已插入的USB启动盘。
 
-**Example** [UAV Components Micronav](https://www.uavcomp.com/command-control/micronav/) device:
+**Example** [UAV 组件微导航](https://www.uavcomp.com/command-control/micronav/) 设备：
 
 1. The setup of CentOS will not start with the default configuration. To solve this 
     1. Go to the BIOS menu as explained in the example above.

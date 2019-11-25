@@ -2,7 +2,7 @@
 
 ## (LinkManager)链接管理器类，(LinkInterface)链接接口类
 
-QGC中的“链接”是与载具的特定类型的通信管道，例如串行端口或基于WiFi的UDP。 所有链接的基类都是LinkInterface这个类。 每个链接都在它自己的线程上运行，并将字节发送到MAVLinkProtocol。
+QGC中的“链接”是QGC与载具间的一种特定类型的通信管道，例如串行端口或基于WiFi的UDP端口。 LinkInterface为所有链接的基类。 每个链接都在它自己的线程上运行，并将字节发送到MAVLinkProtocol。
 
 LinkManager类所生成对象管理系统中的所有打开链接。 `LinkManager`还通过串行和UDP链接管理自动连接
 
@@ -22,7 +22,7 @@ Vehicle类所生成的对象是QGC代码与物理载具通信的主要接口。
 
 ## (FirmwarePlugin)固件插件类，( FirmwarePluginManager)固件插件管理器类
 
-The FirmwarePlugin class is the base class for firmware plugins. 固件插件包含固件特定代码，因此Vehicle对象相对于它是识别的，支持UI的单个标准接口。
+FirmwarePlugin类为固件插件的基类。 固件插件包含固件特定代码，因此Vehicle对象相对于它是识别的，支持UI的单个标准接口。
 
 FirmwarePluginManager是一个工厂类，它根据Vehicle类的成员MAV_AUTOPILOT / MAV_TYPE组合创建FirmwarePlugin类的实例。
 

@@ -122,10 +122,10 @@ CentOS作为 Red Hat的分发版本，其默认防火墙安全级别会 阻止MA
 
 如果遇到以上任一问题，一次只连接一个网络，即可规避问题（例如，在WiFi和Microhard之间切换）。
 
-### 执行预设的 QGC 二进制文件
+### 执行预构建的 QGC 二进制文件
 
-- Get hold of an archive containing a prebuilt binary of QGC for CentOS. At the moment there is no automatic deployment for this build if you urgently need one get in touch with the developers.
-- [Unpack the archive](https://www.hostdime.com/kb/hd/command-line/how-to-tar-untar-and-zip-files).
+- 为CentOS保留包含预构建的QGC二进制文件的归档。 目前，这个构建没有自动部署，如果您迫切需要，请与开发者取得联系，。
+- [解压归档](https://www.hostdime.com/kb/hd/command-line/how-to-tar-untar-and-zip-files)
 - Go inside the unpacked files and locate the script named `qgroundcontrol-run.sh`
 - Run it by executing the command
 

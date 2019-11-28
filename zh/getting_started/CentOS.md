@@ -113,14 +113,14 @@ CentOS作为 Red Hat的分发版本，其默认防火墙安全级别会 阻止MA
 
 ### 与多网络的连接问题
 
-在 CentOS 测试中，在通过多个网络设备连接到多个网络时遇到了一些问题，即使有适当的IP地址和子网分配。
+在 CentOS 测试中，即使有适当的IP地址和子网分配，在通过多个网络设备连接到多个网络时依然遇到了一些问题，。
 
 问题包括：
 
 - 连接到第二个网络时失去互联网连接
-- 与载具的脆弱连接中，存在有大量不确定非再现问题和包丢失（例如，在常规模式中， 30秒完美连接4秒丢失数据包)
+- 与载具的连接质量不佳，存在有大量不确定非再现问题和包丢失（例如，在常规模式中， 30秒完美连接，4秒丢失数据包)
 
-If you face any of these problems avoid them by only connecting one network at a time e.g. switching between WiFi and Microhard.
+如果遇到以上任一问题，一次只连接一个网络，即可规避问题（例如，在WiFi和Microhard之间切换）。
 
 ### Executing a Prebuilt QGC Binary
 

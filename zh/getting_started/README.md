@@ -25,9 +25,9 @@ macos、linux、windows、ios 和 android 平台均可支持 *QGroundControl* �
 
 - macOS：v10.11或更高版本
 - Ubuntu：64位，gcc编译器
-- **Windows:** Vista or higher, [Visual Studio 2015 compiler](#vs2015) (32 bit)
-- **iOS:** 10.0 and higher
-- **Android:** Jelly Bean (4.1) and higher. Standard QGC is built against ndk version 19.
+- **Windows:**vista 或更高版本, [Visual studio 2015 ](#vs2015)编译器 (32位)
+- iOS：10.0及更高版本
+- Android：Jelly Bean（4.1）及更高版本。 标准QGC是针对ndk 19版本构建的。
 - **Qt version:** {{ book.qt_version }} **(only)** <!-- NOTE {{ book.qt_version }} is set in the variables section of gitbook file https://github.com/mavlink/qgc-dev-guide/blob/master/book.json -->
 
 > 提示: 有关更多信息，请参阅：Qt 5支持的平台列表。

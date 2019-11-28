@@ -31,7 +31,7 @@
 
 ![安装操作系统../Qt/5.12.4](../../assets/getting_started/centos/centos_installation.png)
 
-![CentOS Software Selection](../../assets/getting_started/centos/centos_sw_selection.png)
+![CentOS 软件选项](../../assets/getting_started/centos/centos_sw_selection.png)
 
 ### 更新 GStreamer
 

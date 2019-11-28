@@ -126,36 +126,36 @@ CentOS作为 Red Hat的分发版本，其默认防火墙安全级别会 阻止MA
 
 - 为CentOS保留包含预构建的QGC二进制文件的归档。 目前，这个构建没有自动部署，如果您迫切需要，请与开发者取得联系，。
 - [解压归档](https://www.hostdime.com/kb/hd/command-line/how-to-tar-untar-and-zip-files)
-- Go inside the unpacked files and locate the script named `qgroundcontrol-run.sh`
-- Run it by executing the command
+- 从解压文件里找到脚本文件`qgroundcontrol-run.sh`
+- 输入如下命令，运行该脚本
 
-      ./qgroundcontrol-run.sh
+      ./qgroundcontroll-run.sh
       ```
     
     ## Building QGC on CentOS
     
-    ### Installing Qt
+    ### 安装 Qt
     
 
 mkdir ~/devel cd ~/devel
 
-    <br />Install Qt 5.12.4 from the Qt installation script that can be downloaded [here](https://www.qt.io/download-thank-you?os=linux&hsLang=en).
-    Once downloaded, make it executable and run it:
+    <br />从 Qt 安装脚本安装 Qt 5.12.4 ，可以从此链接下载所需文件 [here](https://www.qt.io/download-thank-you?os=linux&hsLang=en)。
+    下载完毕后，输入如下指令，即可执行安装文件，并运行Qt：
     
 
-chmod +x qt-unified-linux-x64-3.1.1-online.run ./qt-unified-linux-x64-3.1.1-online.run
+chmod +x qt-unified-linux-x64-3.1-online.run ./qt-unified-linux-x64-3.1-online.run
 
-    <br />Select the following options and install it under `~/devel/Qt`:
+    <br />选择以下选项并在“~/devel/Qt`下安装它：
     
     ![Qt Software Selection](../../assets/getting_started/centos/qt_setup.png)
     
-    ### Clone and Build QGC
+    ### 克隆并构建 QGC
     
     
 
-git clone --recursive https://github.com/mavlink/qgroundcontrol.git mkdir build cd build
+git clone --recursive https://github.com/mavlink/qgroundcontrol.git mkdir build cd building
 
-    For a debug/test build:
+    调试/测试版本构建：
     
 
 ../Qt/5.12.4/gcc_64/bin/qmake ../qgroundcontrol/qgroundcontrol.pro -spec linux-g++ CONFIG+=debug

@@ -29,7 +29,7 @@
 
 这些都是用于安装CentOS开发系统的选项。 使用它作为指南。
 
-![CentOS Installation](../../assets/getting_started/centos/centos_installation.png)
+![安装操作系统../Qt/5.12.4](../../assets/getting_started/centos/centos_installation.png)
 
 ![CentOS Software Selection](../../assets/getting_started/centos/centos_sw_selection.png)
 
@@ -160,16 +160,16 @@ git clone --recursive https://github.com/mavlink/qgroundcontrol.git mkdir build 
 
 ../Qt/5.12.4/gcc_64/bin/qmake ../qgroundcontrol/qgroundcontrol.pro -spec linux-g++ CONFIG+=debug
 
-    For a release build:
+    发行版本构建：
     
 
-../Qt/5.12.4/gcc_64/bin/qmake ../qgroundcontrol/qgroundcontrol.pro -spec linux-g++ CONFIG+=qtquickcompiler
+../Qt/5.12.4/gcc_64/bin/qmake ../qgroundcontrol/qgroundcontrol.pr-spec linux-g++ CONFIG+=qtquickcompiler
 
-    Build it:
+    构建
     
 
 make -j4 ```
 
-You can alternatively launch *QtCreator* (found under `~/devel/Qt/Tools/QtCreator/bin/qtcreator`), load the `qgroundcontro.pro` project and build/debug from within its IDE.
+您也可以先启动*QtCreator* (在 `~/devel/Qt/Tools/QtCreator/bin/qtcreator`目录下)，然后从IDE之中打开`qgroundContro.pro` 项目，构建build版和debug版 。
 
-By default, this will build the regular QGC. To build the sample, customized UI version, follow [these instructions](https://github.com/mavlink/qgroundcontrol/blob/master/custom-example/README.md).
+默认情况下，这将构建常规的 QGC。 请参阅[这些说明](https://github.com/mavlink/qgroundcontrol/blob/master/custom-example/README.md)，构建样本，并自定义UI版本

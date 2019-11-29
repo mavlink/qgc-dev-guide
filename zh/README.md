@@ -40,8 +40,8 @@ QGC 用户界面使用[Qt QML](http://doc.qt.io/qt-5/qtqml-index.html)实现。 
 
 PX4 开发者指南包含更多关于(通用) 文件/翻译工具链的信息：
 
-- [Documentation](https://dev.px4.io/en/contribute/docs.html)
-- [Translation](https://dev.px4.io/en/contribute/docs.html)
+- [文档](https://dev.px4.io/en/contribute/docs.html)
+- [翻译](https://dev.px4.io/en/contribute/docs.html)
 
 ## 许可证
 

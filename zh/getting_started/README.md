@@ -41,9 +41,9 @@ macos、linux、windows、ios 和 android 平台均可支持 *QGroundControl* �
     
     #### 安装 visual studio 2015 (仅限 windows) {#vs2015}
     
-    The Windows compiler can be found here: [Visual Studio 2015 compiler](https://visualstudio.microsoft.com/vs/older-downloads/) (32 bit)
+    Windows环境下的编译器下载链接：[Visual Studio 2015 compiler](https://visualstudio.microsoft.com/vs/older-downloads/) (32 bit)。
     
-    When installing, you must minimally select all Visual C++ components as shown: ![Visual Studio 2015 - Select all Visual C++ Components](../../assets/getting_started/vs_2015_select_features.png)
+    安装时, 必须选择的 visual c++ 组件, 如下所示: ![Visual Studio 2015 - Select all Visual C++ Components](../../assets/getting_started/vs_2015_select_features.png)
     
     #### 安装Qt
     

@@ -103,7 +103,7 @@ CentOS作为 Red Hat的分发版本，其默认防火墙安全级别会 阻止MA
 
 永久性(风险自负)：
 
-    systemctl disable firewalld
+    systemctl stop firewalld
     
 
 撤销永久更改：

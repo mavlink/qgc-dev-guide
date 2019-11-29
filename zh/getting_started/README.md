@@ -43,7 +43,7 @@ macos、linux、windows、ios 和 android 平台均可支持 *QGroundControl* �
     
     Windows环境下的编译器下载链接：[Visual Studio 2015 compiler](https://visualstudio.microsoft.com/vs/older-downloads/) (32 bit)。
     
-    安装时, 必须选择的 visual c++ 组件, 如下所示: ![Visual Studio 2015 - Select all Visual C++ Components](../../assets/getting_started/vs_2015_select_features.png)
+    安装时, 必须选择的 visual c++ 组件, 如下所示: ![Visual Studio 2015 - 请选择所有的 Visual C++组件](../../assets/getting_started/vs_2015_select_features.png)
     
     #### 安装Qt
     
@@ -117,7 +117,7 @@ macos、linux、windows、ios 和 android 平台均可支持 *QGroundControl* �
         
         若要添加对安装文件创建的支持, 您需要将 `CONFIG+=installer` 添加到项目文件中, 或者在调用 *qmake* 时添加。
         
-        To do this in *Qt Creator*:
+        若要在*Qt Creator*中添加对安装文件创建的支持，请按如下步骤操作：
         
         - 打开 **项目 > 构建 > 构建步骤 > qmake > 额外参数**。
-        - Enter `CONFIG+=installer` as shown: ![Installer](../../assets/getting_started/qt_project_installer.png)
+        - 输入`CONFIG+=installer`： ![安装器](../../assets/getting_started/qt_project_installer.png)

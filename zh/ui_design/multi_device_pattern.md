@@ -26,7 +26,7 @@ QGC没有针对不同屏幕尺寸和/或形状因子的不同编码的UI。 通�
 
 ### FactSystem（事实系统）
 
-QGC内部是一个系统，用于管理系统中的所有单个数据。 This data model is then connected to controls.
+QGC内部是一个系统，用于管理系统中的所有单个数据。 这个数据模型是连接到控件的。
 
 ### 严重依赖可重用控件
 

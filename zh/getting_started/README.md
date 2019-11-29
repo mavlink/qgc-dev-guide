@@ -88,7 +88,7 @@ macos、linux、windows、ios 和 android 平台均可支持 *QGroundControl* �
         
         ### Vagrant
         
-        [Vagrant](https://www.vagrantup.com/) can be used to build and run *QGroundControl* within a Linux virtual machine (the build can also be run on the host machine if it is compatible).
+        [Vagrant](https://www.vagrantup.com/)可用于在Linux虚拟机中构建和运行*QGroundControl*（如果兼容，则构建也可以在主机上运行）。
         
         1. 1. 下载并安装Vagrant
         2. 2. 从QGroundControl存储库的根目录运行vagrant up
@@ -96,8 +96,8 @@ macos、linux、windows、ios 和 android 平台均可支持 *QGroundControl* �
         
         ### 所有支持操作系统的附加构建说明
         
-        - **Parallel builds:** For non Windows builds, you can use the `-j#` option to run parellel builds.
-        - **Location of built files:** Individual build file results can be found in the `build_debug` or `build_release` directories. The built executable can be found in the `debug` or `release` directory.
+        - **并行构建：** 对于非Windows系统下的构建，您可以使用`-j＃`选项来运行并行构建。
+        - **构建文件的位置：** 可以在`build_debug`或`build_release`目录中找到单个构建文件结果。 The built executable can be found in the `debug` or `release` directory.
         - **If you get this error when running *QGroundControl***: `/usr/lib/x86_64-linux-gnu/libstdc++.so.6: version 'GLIBCXX_3.4.20' not found.`, you need to either update to the latest *gcc*, or install the latest *libstdc++.6* using: `sudo apt-get install libstdc++6`.
         - **Unit tests:** To run the [unit tests](../contribute/unit_tests.md), build in `debug` mode with `UNITTEST_BUILD` definition, and then copy `deploy/qgroundcontrol-start.sh` script into the `debug` directory before running the tests.
         

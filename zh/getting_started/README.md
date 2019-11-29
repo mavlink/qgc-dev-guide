@@ -115,7 +115,7 @@ macos、linux、windows、ios 和 android 平台均可支持 *QGroundControl* �
         
         > **Note** 在Windows上，您需要先安装 [NSIS](https://sourceforge.net/projects/nsis/)。
         
-        To add support for installation file creation you need to add `CONFIG+=installer` to your project file, or when you call *qmake*.
+        若要添加对安装文件创建的支持, 您需要将 `CONFIG+=installer` 添加到项目文件中, 或者在调用 *qmake* 时添加。
         
         To do this in *Qt Creator*:
         

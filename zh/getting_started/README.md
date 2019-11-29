@@ -97,23 +97,23 @@ macos、linux、windows、ios 和 android 平台均可支持 *QGroundControl* �
         ### 所有支持操作系统的附加构建说明
         
         - **并行构建：** 对于非Windows系统下的构建，您可以使用`-j＃`选项来运行并行构建。
-        - **构建文件的位置：** 可以在`build_debug`或`build_release`目录中找到单个构建文件结果。 The built executable can be found in the `debug` or `release` directory.
-        - **If you get this error when running *QGroundControl***: `/usr/lib/x86_64-linux-gnu/libstdc++.so.6: version 'GLIBCXX_3.4.20' not found.`, you need to either update to the latest *gcc*, or install the latest *libstdc++.6* using: `sudo apt-get install libstdc++6`.
-        - **Unit tests:** To run the [unit tests](../contribute/unit_tests.md), build in `debug` mode with `UNITTEST_BUILD` definition, and then copy `deploy/qgroundcontrol-start.sh` script into the `debug` directory before running the tests.
+        - **构建文件的位置：** 可以在`build_debug`或`build_release`目录中找到单个构建文件结果。 可以在`debug`或`release`目录中找到构建的可执行文件。
+        - **如果在运行*QGroundControl*时出现报错：** `/usr/lib/x86_64-linux-gnu/libstdc++.so.6: version 'GLIBCXX_3.4.20' not found.` ，则需将*gcc*更新到最新版本，或安装最新版本的*libstdc++.6* ：`sudo apt-get install libstdc ++ 6 ` 。
+        - **单元测试：** 如需运行[unit tests](../contribute/unit_tests.md),请使用`UNITTEST_BUILD`定义 `debug`模式，然后在运行测试之前将`deploy / qgroundcontrol-start.sh`脚本文件复制到 `debug`目录中。
         
-        ## 选项/特定功能
+        ## 选项/与OS相关的特定功能
         
-        *QGroundControl* has functionality that is dependent on the operating system and libraries installed by the user. The following sections describe these features, their dependencies, and how to disable/alter them during the build process. These features can be forcibly enabled/disabled by specifying additional values to qmake.
+        *QGroundControl*的功能依赖于用户安装的操作系统和库。 以下章节描述了这些功能，功能间的依赖关系，以及如何在构建过程中禁用/更改它们。 通过为qmake指定其他值，可以强制启用/禁用这些功能。
         
-        ### Video Streaming
+        ### 视频流
         
-        Check the [Video Streaming](https://github.com/mavlink/qgroundcontrol/tree/master/src/VideoStreaming) directory for further instructions.
+        请查看 [Video Streaming](https://github.com/mavlink/qgroundcontrol/tree/master/src/VideoStreaming)目录以获取更多说明。
         
         ## 构建 QGC 安装文件
         
-        You can additionally create installation file(s) for *QGroundControl* as part of the normal build process.
+        作为正常构建过程的一部分, 您还可以为 *QGroundControl* 创建安装文件。
         
-        > **Note** On Windows you will need to first install [NSIS](https://sourceforge.net/projects/nsis/).
+        > **Note** 在Windows上，您需要先安装 [NSIS](https://sourceforge.net/projects/nsis/)。
         
         To add support for installation file creation you need to add `CONFIG+=installer` to your project file, or when you call *qmake*.
         

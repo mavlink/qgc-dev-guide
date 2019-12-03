@@ -58,6 +58,8 @@ macos、linux、windows、ios 和 android 平台均可支持 *QGroundControl* �
     
     2. 在安装程序 的*Select 组件 </0 > 对话框中, 选择 {{ book.qt_version }}。</p> 
         
+        > **Note** If the version needed is not displayed, check the archive (show archive and refresh).
+        
         然后，按如下向导，安装组件:</li> </ol> 
         
         - **Windows**: *MCVC 2015 32 bit*

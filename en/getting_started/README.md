@@ -63,6 +63,8 @@ To install Qt:
      - Install to default location for use with **./qgroundcontrol-start.sh.** If you install Qt to a non-default location you will need to modify **qgroundcontrol-start.sh** in order to run downloaded builds.
 1. In the installer *Select Components* dialog choose: {{ book.qt_version }}.
    
+   > **Note** If the version needed is not displayed, check the archive (show archive and refresh).
+   
    Then install just the following components: 
    - **Windows**: *MSVC 2015 32 bit*
    - **MacOS**: *macOS*

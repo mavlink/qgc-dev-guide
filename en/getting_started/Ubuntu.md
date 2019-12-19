@@ -114,7 +114,7 @@ For a debug/test build:
 ```
 For a release build:
 ```
-../Qt/5.12.4/gcc_64/bin/qmake ../qgroundcontrol/qgroundcontrol.pro -spec linux-g++ CONFIG+=qtquickcompiler
+../Qt/5.11.3/gcc_64/bin/qmake ../qgroundcontrol/qgroundcontrol.pro -spec linux-g++ CONFIG+=qtquickcompiler
 ```
 Build it:
 ```

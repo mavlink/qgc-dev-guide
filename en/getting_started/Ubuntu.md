@@ -25,7 +25,8 @@ sudo apt-get install $list
 sudo apt-get install libgstreamer-plugins-base1.0-dev
 ```
 **Note:** Make sure Gstreamer 1.0 is running (On the receiving end, if you want to test it from the command line, you can use something like:)
-```gst-launch-1.0 udpsrc port=5600 caps='application/x-rtp, media=(string)video, clock-rate=(int)90000, encoding-name=(string)H264' ! rtph264depay ! h264parse ! avdec_h264 ! autovideosink fps-update-interval=1000 sync=false
+```
+gst-launch-1.0 udpsrc port=5600 caps='application/x-rtp, media=(string)video, clock-rate=(int)90000, encoding-name=(string)H264' ! rtph264depay ! h264parse ! avdec_h264 ! autovideosink fps-update-interval=1000 sync=false
 ```
 
 ### Installing SDL2

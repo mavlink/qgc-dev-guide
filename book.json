@@ -3,7 +3,7 @@
     "title": "QGroundControl Developer Guide",
     "variables": {
         "logo": "./assets/site/logo_qgc_rgb_horizontal.png",
-        "qt_version": "5.11.3"
+        "qt_version": "5.12.5"
     },
     "plugins": [
         "youtube",

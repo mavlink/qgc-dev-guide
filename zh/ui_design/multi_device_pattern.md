@@ -45,7 +45,7 @@ QGC UI是从一组可重用的控件和UI元素开发而来的。 这样，现�
 * UI可以仅在一个平台上进行功能测试，因为代码是平台无关的。 只有布局流必须在多个设备上进行可视化检查, 但这很容易使用移动模拟器完成。 在大多数情况下，这是需要的： 
     * 使用桌面构建，调整窗口大小以测试重排。 通常也会覆盖平板电脑大小的屏幕。
     * 使用移动模拟器直观地验证手机大小的屏幕。 在OSX XCode iPhone模拟器上工作得非常好。
-* All of the above are critical to keeping our hypothetical 1 person dev team efficient and to keep quality high.
+* 上述机制对于确保单人团队的效率和高质量是至关重要。
 
 ## 未来发展方向 
 

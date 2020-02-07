@@ -33,7 +33,7 @@ To get the source files:
 
 - **macOS:** v10.11 or higher
 - **Ubuntu:** 64 bit, gcc compiler
-- **Windows:** Vista or higher, [Visual Studio 2015 compiler](#vs2015) (32 bit)
+- **Windows:** Vista or higher, [Visual Studio 2017 compiler](#vs) (64 bit)
 - **iOS:** 10.0 and higher
 - **Android:** Jelly Bean (4.1) and higher. Standard QGC is built against ndk version 19.
 - **Qt version:** {{ book.qt_version }} **(only)** <!-- NOTE {{ book.qt_version }} is set in the variables section of gitbook file https://github.com/mavlink/qgc-dev-guide/blob/master/book.json -->
@@ -43,12 +43,13 @@ To get the source files:
 <span></span>
 > **Note** Native [CentOS Builds](../getting_started/CentOS.md) are also supported, but are documented separately (as the tested environment is different).
 
-#### Install Visual Studio 2015 (Windows Only) {#vs2015}
+#### Install Visual Studio 2017 (Windows Only) {#vs}
 
-The Windows compiler can be found here: [Visual Studio 2015 compiler](https://visualstudio.microsoft.com/vs/older-downloads/) (32 bit)
+The Windows compiler can be found here: [Visual Studio 2017 compiler](https://visualstudio.microsoft.com/vs/older-downloads/) (64 bit)
 
-When installing, you must minimally select all Visual C++ components as shown:
-![Visual Studio 2015 - Select all Visual C++ Components](../../assets/getting_started/vs_2015_select_features.png)
+When installing, select *Desktop development with C++* as shown:
+
+![Visual Studio 2017 - Select Desktop Environment with C++](../../assets/getting_started/visual_studio_select_features.png)
 
 
 #### Install Qt
@@ -66,11 +67,11 @@ To install Qt:
    > **Note** If the version needed is not displayed, check the archive (show archive and refresh).
    
    Then install just the following components: 
-   - **Windows**: *MSVC 2015 32 bit*
+   - **Windows**: *MSVC 2017 64 bit*
    - **MacOS**: *macOS*
    - **Linux**: *Desktop gcc 64-bit*
    - All:
-     - *Qt Charts* and *Qt Remote Objects (TP)*
+     - *Qt Charts* <!-- and *Qt Remote Objects (TP)* -->
      - *Android ARMv7* (to build Android)
 1. Install Additional Packages (Platform Specific)
    - **Ubuntu:** `sudo apt-get install speech-dispatcher libudev-dev libsdl2-dev`
@@ -86,7 +87,7 @@ To install Qt:
   - **OSX:** Desktop Qt {{ book.qt_version }} clang 64 bit
     > **Note** iOS builds must be built using [XCode](http://doc.qt.io/qt-5/ios-support.html).
   - **Ubuntu:** Desktop Qt {{ book.qt_version }} GCC 64bit
-  - **Windows:** Desktop Qt {{ book.qt_version }} MSVC2015 **32bit**
+  - **Windows:** Desktop Qt {{ book.qt_version }} MSVC2017 **64bit**
   - **Android:** Android for armeabi-v7a (GCC 4.9, Qt {{ book.qt_version }})
 1. Build using the "hammer" (or "play") icons:
    

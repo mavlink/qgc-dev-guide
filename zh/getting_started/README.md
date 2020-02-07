@@ -25,7 +25,7 @@ macos、linux、windows、ios 和 android 平台均可支持 *QGroundControl* �
 
 - macOS：v10.11或更高版本
 - Ubuntu：64位，gcc编译器
-- **Windows:**vista 或更高版本, [Visual studio 2015 ](#vs2015)编译器 (32位)
+- **Windows:** Vista or higher, [Visual Studio 2017 compiler](#vs) (64 bit)
 - iOS：10.0及更高版本
 - Android：Jelly Bean（4.1）及更高版本。 标准QGC是针对ndk 19版本构建的。
 - ** Qt版本：</ 0> {{book.qt_version}} **（仅限）</ 0> <!-- NOTE {{ book.qt_version }} is set in the variables section of gitbook file https://github.com/mavlink/qgc-dev-guide/blob/master/book.json --></li> </ul> 
@@ -39,17 +39,19 @@ macos、linux、windows、ios 和 android 平台均可支持 *QGroundControl* �
     
     > **Note** 本地[CentOS Builds](../getting_started/CentOS.md)也得到支持，但需单独记录(因为测试环境不同)。
     
-    #### 安装 visual studio 2015 (仅限 windows) {#vs2015}
+    #### Install Visual Studio 2017 (Windows Only) {#vs}
     
-    Windows环境下的编译器下载链接：[Visual Studio 2015 compiler](https://visualstudio.microsoft.com/vs/older-downloads/) (32 bit)。
+    The Windows compiler can be found here: [Visual Studio 2017 compiler](https://visualstudio.microsoft.com/vs/older-downloads/) (64 bit)
     
-    安装时, 必须选择的 visual c++ 组件, 如下所示: ![Visual Studio 2015 - 请选择所有的 Visual C++组件](../../assets/getting_started/vs_2015_select_features.png)
+    When installing, select *Desktop development with C++* as shown:
+    
+    ![Visual Studio 2017 - Select Desktop Environment with C++](../../assets/getting_started/visual_studio_select_features.png)
     
     #### 安装Qt
     
-    请** 按照下述方式安装 QT**, 而不是使用 linux 发行版中的预构建包, 因为 *QGroundControl* 需要访问专用 Qt标头。
+    You **need to install Qt as described below** instead of using pre-built packages from say, a Linux distribution, because *QGroundControl* needs access to private Qt headers.
     
-    安装Qt:
+    To install Qt:
     
     1. 下载并运行[Qt Online Installer](http://www.qt.io/download-open-source) 
         - **Ubuntu:** 
@@ -62,12 +64,15 @@ macos、linux、windows、ios 和 android 平台均可支持 *QGroundControl* �
         
         然后，按如下向导，安装组件:</li> </ol> 
         
-        - **Windows**: *MCVC 2015 32 bit*
+        - **Windows**: *MSVC 2017 64 bit*
         - **MacOS**: *macOS*
         - **Linux**: *Desktop gcc 64-bit*
-        - 必装组件（所有平台） 
-            - *Qt Charts* and *Qt Remote Objects (TP)*
-            - *Android ARMv7* (为了构建Android) 
+        - All:
+            
+            - *Qt Charts* <!-- and *Qt Remote Objects (TP)* -->
+            
+            - *Android ARMv7* (to build Android)
+                
                 1. 安装附加软件包（特定于平台）
         - **Ubuntu:** `sudo apt-get install speech-dispatcher libudev-dev libsdl2-dev`
         - **Fedora:** `sudo dnf install speech-dispatcher SDL2-devel SDL2 systemd-devel`
@@ -81,7 +86,7 @@ macos、linux、windows、ios 和 android 平台均可支持 *QGroundControl* �
         2. 根据您的需求选择合适的套件： 
             - OSX：桌面Qt {{book.qt_version}} clang 64 bit>注意iOS构建必须使用XCode构建。
             - **Ubuntu:** Desktop Qt {{ book.qt_version }} GCC 64bit
-            - **Windows:** 桌面Qt{{ book.qt_version }}MSVC2015**32bit**
+            - **Windows:** Desktop Qt {{ book.qt_version }} MSVC2017 **64bit**
             - **Android：** Android平台需选择armeabi的Android-v7a（GCC 4.9，Qt {{ book.qt_version }}）
         
         3. 使用"hammer" (or "play") 图标构建:
@@ -90,7 +95,7 @@ macos、linux、windows、ios 和 android 平台均可支持 *QGroundControl* �
         
         ### Vagrant
         
-        [Vagrant](https://www.vagrantup.com/)可用于在Linux虚拟机中构建和运行*QGroundControl*（如果兼容，则构建也可以在主机上运行）。
+        [Vagrant](https://www.vagrantup.com/) can be used to build and run *QGroundControl* within a Linux virtual machine (the build can also be run on the host machine if it is compatible).
         
         1. 1. 下载并安装Vagrant
         2. 2. 从QGroundControl存储库的根目录运行vagrant up
@@ -105,21 +110,21 @@ macos、linux、windows、ios 和 android 平台均可支持 *QGroundControl* �
         
         ## 选项/与OS相关的特定功能
         
-        *QGroundControl*的功能依赖于用户安装的操作系统和库。 以下章节描述了这些功能，功能间的依赖关系，以及如何在构建过程中禁用/更改它们。 通过为qmake指定其他值，可以强制启用/禁用这些功能。
+        *QGroundControl* has functionality that is dependent on the operating system and libraries installed by the user. The following sections describe these features, their dependencies, and how to disable/alter them during the build process. These features can be forcibly enabled/disabled by specifying additional values to qmake.
         
         ### 视频流
         
-        请查看 [Video Streaming](https://github.com/mavlink/qgroundcontrol/tree/master/src/VideoStreaming)目录以获取更多说明。
+        Check the [Video Streaming](https://github.com/mavlink/qgroundcontrol/tree/master/src/VideoStreaming) directory for further instructions.
         
         ## 构建 QGC 安装文件
         
-        作为正常构建过程的一部分, 您还可以为 *QGroundControl* 创建安装文件。
+        You can additionally create installation file(s) for *QGroundControl* as part of the normal build process.
         
         > **Note** 在Windows上，您需要先安装 [NSIS](https://sourceforge.net/projects/nsis/)。
         
-        若要添加对安装文件创建的支持, 您需要将 `CONFIG+=installer` 添加到项目文件中, 或者在调用 *qmake* 时添加。
+        To add support for installation file creation you need to add `CONFIG+=installer` to your project file, or when you call *qmake*.
         
-        若要在*Qt Creator*中添加对安装文件创建的支持，请按如下步骤操作：
+        To do this in *Qt Creator*:
         
         - 打开 **项目 > 构建 > 构建步骤 > qmake > 额外参数**。
         - 输入`CONFIG+=installer`： ![安装器](../../assets/getting_started/qt_project_installer.png)

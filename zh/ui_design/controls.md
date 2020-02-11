@@ -25,7 +25,7 @@ QGC提供了一组用于构建用户界面的基本控件。 一般来说，它�
 这些自定义控件是QGC独有的，用于创建标准UI元素。
 
 * DropButton - RoundButton，单击时会删除一组选项。 示例是平面视图中的同步按钮。
-* ExclusiveGroupItem - 用于支持QML ExclusiveGroup概念的自定义控件的基础项。
+* ExclusiveGroupItem - 用于支持QML ExclusiveGroup 概念的自定义控制的基础项目。
 * QGCView - 系统中所有顶级视图的基本控件。 提供对FactPanels的支持并显示QGCViewDialogs和QGCViewMessages。
 * QGC View对话框 - 从QGC视图右侧弹出的对话框。 您可以指定对话框的接受/拒绝按钮以及对话框内容。 使用示例是当您单击某个参数并显示值编辑器对话框时。
 * QGCViewMessage - QGCViewDialog的简化版本，允许您指定按钮和简单的文本消息。

@@ -1,7 +1,8 @@
 # 概要 
 
 * [摘要](README.md)
-* [入门 ](getting_started/README.md)
+* [入门 ](getting_started/README.md) 
+  * [在 CentOS 上运行 QGC](getting_started/CentOS.md)
 * [通信流程](communication_flow.md)
 * [固件插件](firmware_plugin.md)
 * [类层次结构](classes/README.md)
@@ -33,5 +34,5 @@
 * [PX4用户指南](https://docs.px4.io/en/)
 * [PX4开发人员指南](https://dev.px4.io/en/)
 * [MAVLink指南](https://mavlink.io/en/)
-* [Dronecode SDK(无人机代码SDK)](https://sdk.dronecode.org/en/)
+* [MAVSDK](https://mavsdk.mavlink.io/)
 * [Dronecode相机管理器](https://camera-manager.dronecode.org/en/)

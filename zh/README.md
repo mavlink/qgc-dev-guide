@@ -12,9 +12,9 @@
 
 ## 设计理念
 
-QGC旨在提供可在多个操作系统平台上运行的单个代码库以及多种设备大小和样式。
+QGC 的设计是为了提供一个能够跨越多个操作系统平台以及多种设备的单个代码库。
 
-QGC用户界面使用Qt QML实现。 QML提供硬件加速，这是平板电脑或手机等低功率设备的关键功能。 QML提供硬件加速，这是平板电脑或手机等低功率设备的关键功能。 QML还提供了一些功能，使我们能够更轻松地创建单个用户界面，以适应不同的屏幕尺寸和分辨率。
+QGC 用户界面使用[Qt QML](http://doc.qt.io/qt-5/qtqml-index.html)实现。 QML提供硬件加速，这是平板电脑或手机等低功率设备的关键功能。 QML还提供了一些功能，使我们能够更轻松地创建单个用户界面，以适应不同的屏幕尺寸和分辨率。
 
 与基于桌面鼠标的UI相比，QGC UI更倾向于平板电脑+触摸式UI。 这使得单个UI更容易创建，因为平板电脑样式UI也可以在台式机/笔记本电脑上正常工作。
 
@@ -36,12 +36,12 @@ QGC用户界面使用Qt QML实现。 QML提供硬件加速，这是平板电脑�
 
 - [QGroundControl](https://crowdin.com/project/qgroundcontrol)（[加入](https://crwd.in/qgroundcontrol)）
 - [QGroundControl使用指南](https://crowdin.com/project/qgroundcontrol-user-guide)（[加入](https://crwd.in/qgroundcontrol-user-guide)）
-- [QGroundControl Developer Guide](https://crowdin.com/project/qgroundcontrol-developer-guide) ([join](https://crwd.in/qgroundcontrol-developer-guide))
+- [QGroundControl开发者指南](https://crowdin.com/project/qgroundcontrol-developer-guide)（[加入](https://crwd.in/qgroundcontrol-developer-guide)）
 
-The PX4 Developer Guide contains additional information about the (common) docs/translation toolchain:
+PX4 开发者指南包含更多关于(通用) 文件/翻译工具链的信息：
 
-- [Documentation](https://dev.px4.io/en/contribute/docs.html)
-- [Translation](https://dev.px4.io/en/contribute/docs.html)
+- [文档](https://dev.px4.io/en/contribute/docs.html)
+- [翻译](https://dev.px4.io/en/contribute/docs.html)
 
 ## 许可证
 

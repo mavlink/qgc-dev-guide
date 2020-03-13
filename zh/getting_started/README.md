@@ -39,11 +39,11 @@ macos、linux、windows、ios 和 android 平台均可支持 *QGroundControl* �
     
     > **Note** 本地[CentOS Builds](../getting_started/CentOS.md)也得到支持，但需单独记录(因为测试环境不同)。
     
-    #### Install Visual Studio 2017 (Windows Only) {#vs}
+    #### 安装 Visual Studio 2017(仅限Windows操作系统) {#vs}
     
-    The Windows compiler can be found here: [Visual Studio 2017 compiler](https://visualstudio.microsoft.com/vs/older-downloads/) (64 bit)
+    这个Windows编译器可以从这 [Visual Studio 2017 compiler](https://visualstudio.microsoft.com/vs/older-downloads/) (64 bit)找到。
     
-    When installing, select *Desktop development with C++* as shown:
+    安装过程中，请选择 *Desktop development with C++* ，如下所示：
     
     ![Visual Studio 2017 - Select Desktop Environment with C++](../../assets/getting_started/visual_studio_select_features.png)
     
@@ -51,7 +51,7 @@ macos、linux、windows、ios 和 android 平台均可支持 *QGroundControl* �
     
     You **need to install Qt as described below** instead of using pre-built packages from say, a Linux distribution, because *QGroundControl* needs access to private Qt headers.
     
-    To install Qt:
+    如何安装Qt：
     
     1. 下载并运行[Qt Online Installer](http://www.qt.io/download-open-source) 
         - **Ubuntu:** 

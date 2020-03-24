@@ -21,7 +21,9 @@ The QGC UI targets itself more towards a tablet+touch style of UI than a desktop
 
 ## Support {#support}
 
-Development questions can be raised in the [QGroundControl Developer](http://discuss.px4.io/c/qgroundcontrol/qgroundcontrol-developers) discuss category or in the *QGroundControl* [Gitter](https://gitter.im/mavlink/qgroundcontrol) channel.
+Development questions can be raised in the [QGroundControl Developer](http://discuss.px4.io/c/qgroundcontrol/qgroundcontrol-developers) discuss category or the [#QGroundControl Slack channel](https://px4.slack.com/).
+
+> **Note** The [Gitter](https://gitter.im/mavlink/qgroundcontrol) channel will be closed in early March 2020.
 
 ## Contribution
 

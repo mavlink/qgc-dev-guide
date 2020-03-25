@@ -4,7 +4,7 @@
 
 * 从主QGC仓库创建一个新的存储库。 不要克隆，创建新的仓库，从主QGC仓库初始化它。
 * 您现在可以克隆上面的仓库来完成您的工作并从中创建pull请求。
-* 在你的克隆中创建一个名为'mavlink'的遥控器，它指向主要的QGC仓库。 
+* 在你的克隆中创建一个叫做“mavlink”的远程，指向主QGC 仓库. 
   *     git remote add mavlink https://github.com/mavlink/qgroundcontrol.git
 
 ## 上游合并

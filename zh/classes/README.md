@@ -1,4 +1,4 @@
-# 类层次结构（高级）
+# QGC中的“链接”是一种特定类型的通信管道，它使用串行端口或基于WiFI的UDP作为其载体。所有链接的基类都是LinkInterface。每个链接都在它自己的线程上运行，并将字节发送到MAVLinkProtocol。
 
 ## (LinkManager)链接管理器类，(LinkInterface)链接接口类
 

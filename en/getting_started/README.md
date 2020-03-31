@@ -116,7 +116,7 @@ To install Qt:
 
 ### Video Streaming
 
-Check the [Video Streaming](https://github.com/mavlink/qgroundcontrol/tree/master/src/VideoStreaming) directory for further instructions.
+Check the [Video Streaming](https://github.com/mavlink/qgroundcontrol/blob/master/src/VideoReceiver/README.md) directory for further instructions.
 
 ## Building QGC Installation Files
 

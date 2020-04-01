@@ -8,7 +8,7 @@ LinkManager类所生成对象管理系统中的所有打开链接。 `LinkManage
 
 ## MAVLink协议类
 
-系统中有一个MAVLink协议对象。 它的功能是从链接获取传入的字节并将它们转换为MAVLink消息。 MAVLink HEARTBEAT消息被分发到Multi Vehicle Manager(多机管理类)。 所有MAVLink消息都将关联到与链接相对应的载具。
+系统中有一个MAVLink协议对象。 它的功能是从链接获取传入的字节并将它们转换为MAVLink消息。 MAVLink HEARTBEAT消息被分发到Multi Vehicle Manager(多机管理类)。 所有MAVLink消息都将分发到与链接相对应的载具。
 
 ## (MultiVehicleManager)多机管理类
 

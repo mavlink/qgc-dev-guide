@@ -114,7 +114,7 @@ macos、linux、windows、ios 和 android 平台均可支持 *QGroundControl* �
         
         ### 视频流
         
-        Check the [Video Streaming](https://github.com/mavlink/qgroundcontrol/tree/master/src/VideoStreaming) directory for further instructions.
+        Check the [Video Streaming](https://github.com/mavlink/qgroundcontrol/blob/master/src/VideoReceiver/README.md) directory for further instructions.
         
         ## 构建 QGC 安装文件
         

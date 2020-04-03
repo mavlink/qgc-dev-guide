@@ -15,6 +15,7 @@
   * [Settings View](views/settings.md)
   * [Setup View](views/setup.md)
   * [Plan View](views/plan.md)
+    * [Dynamic UI for mission item editing](plan/MissionCommandTree.md)
   * [Fly View](views/fly.md)
 * [File Formats](file_formats/README.md)
     * [Parameters](file_formats/parameters.md)

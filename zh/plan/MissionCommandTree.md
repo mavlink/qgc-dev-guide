@@ -1,8 +1,8 @@
 # 任务指令树
 
-QGC creates the user interface for editing a specific mission item command dynamically from a hierarchy of json metadata. This hierarchy is called the Mission Command Tree. This way only json metadata must be created when new commands are added.
+QGC 创建用户界面，用于从 json 元数据的层次结构中动态编辑特定任务项命令。 此层次结构称为任务命令树。 这样，在添加新命令时，只能创建 json 元数据。
 
-## Why a tree?
+## 为什么是一颗树？
 
 The tree is needed to deal with the idosyncracies of differening firmware supporting commands differently and/or different vehicle types supporting the commands in different ways. The simplest example of that is mavlink spec may include command parameters which are not supported by all firmwares. Or command parameters which are only valid for certain vehicle types. Also in some cases a GCS may decide to hide some of the command parameters from view to end users since they are too complex or cause usability problems.
 

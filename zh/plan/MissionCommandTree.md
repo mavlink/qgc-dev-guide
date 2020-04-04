@@ -152,38 +152,39 @@ QGC 创建用户界面，用于从 json 元数据的层次结构中动态编辑�
 /// 令的部分信息的概念。 这用于创建基本命令信息的替代。 对于覆盖，只需从基本命
 /// 令 ui 信息中指定要修改的键即可。 若要重写 ui 参数信息，必须指定整个MissionParamInfo对象。
 ///
-/// The json format for a MissionCommandUIInfo object is:
+/// MissionCommandUIInfo对象的json格式为：
 ///
-/// Key                     Type    Default     Description
+/// 键值                   　类型    默认值     描述
 /// id                      int     reauired    MAV_CMD id
-/// comment                 string              Used to add a comment
-/// rawName                 string  required    MAV_CMD enum name, should only be set of base tree information
-/// friendlyName            string  rawName     Short description of command
-/// description             string              Long description of command
-/// specifiesCoordinate     bool    false       true: Command specifies a lat/lon/alt coordinate
-/// specifiesAltitudeOnly   bool    false       true: Command specifies an altitude only (no coordinate)
-/// standaloneCoordinate    bool    false       true: Vehicle does not fly through coordinate associated with command (exampl: ROI)
-/// isLandCommand           bool    false       true: Command specifies a land command (LAND, VTOL_LAND, ...)
-/// friendlyEdit            bool    false       true: Command supports friendly editing dialog, false: Command supports 'Show all values" style editing only
-/// category                string  Advanced    Category which this command belongs to
-/// paramRemove             string              Used by an override to remove params, example: "1,3" will remove params 1 and 3 on the override
-/// param[1-7]              object              MissionCommandParamInfo object
+/// comment                 string              用于添加评论
+/// rawName                 string  required    MAV_CMD 枚举名称，仅应设置基础树信息
+/// friendlyName            string  rawName     命令的简单描述
+/// description             string              命令的详细描述
+/// specifiesCoordinate     bool    false       true: 命令指定一个纬／经／高坐标
+/// specifiesAltitudeOnly   bool    false       true: 命令仅指定高度（非坐标）
+/// standaloneCoordinate    bool    false       true: 车辆无法通过与命令关联的坐标（例如：ROI）
+/// isLandCommand           bool    false       true: 命令指定着陆指令 (LAND, VTOL_LAND, ...)
+/// friendlyEdit            bool    false       true: 命令支持友好的编辑对话框，false：Command仅支持“显示所有值”样式的编辑
+/// category                string  Advanced    该命令所属的类别
+/// paramRemove             string              由替代使用以删除参数，例如：“ 1,3”将删除替代上的参数1和3
+/// param[1-7]              object              MissionCommandParamInfo 对象
 ///
+
 ```
 
 [MissionCmdParamInfo](https://github.com/mavlink/qgroundcontrol/blob/master/src/MissionManager/MissionCommandUIInfo.h#L25):
 
 ```
-/// UI Information associated with a mission command (MAV_CMD) parameter
+/// 与任务命令 （MAV_CMD） 参数关联的 UI 信息
 ///
-/// MissionCommandParamInfo is used to automatically generate editing ui for a parameter associated with a MAV_CMD.
+/// MissionCommandParamInfo 用于自动为与 MAV_CMD 关联的参数生成编辑ui。
 ///
-/// The json format for a MissionCmdParamInfo object is:
-///
-/// Key             Type    Default     Description
-/// label           string  required    Label for text field
-/// units           string              Units for value, should use FactMetaData units strings in order to get automatic translation
-/// default         double  0.0/NaN     Default value for param. If no default value specified and nanUnchanged == true, then defaultValue is NaN.
+/// MissionCmdParamInfo 对象的 Json 文件格式为：
+///　
+/// 键值             类型    默认值     描述
+/// label           string  required    文本字段标签
+/// units           string              值的单位，应使用 FactMetaData Units 字符串以获得自动转换
+/// default         double  0.0/NaN     默认参数值。 如果未指定默认值且 nanunchange==true，默认值为NaN。
 /// decimalPlaces   int     7           Number of decimal places to show for value
 /// enumStrings     string              Strings to show in combo box for selection
 /// enumValues      string              Values associated with each enum string

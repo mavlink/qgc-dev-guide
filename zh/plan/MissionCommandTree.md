@@ -148,9 +148,9 @@ QGC 创建用户界面，用于从 json 元数据的层次结构中动态编辑�
 ```
 /// 与任务命令关联的 UI 信息 （MAV_CMD）
 ///
-///MissionCommandUIInfo用于自动为MAV_CMD生成编辑ui。 This object also supports the concept of only having a set of partial
-/// information for the command. This is used to create overrides of the base command information. For on override just specify the keys you want to modify
-/// from the base command ui info. To override param ui info you must specify the entire MissionParamInfo object.
+///MissionCommandUIInfo用于自动为MAV_CMD生成编辑ui。 此对象还支持仅具有一组命
+/// 令的部分信息的概念。 这用于创建基本命令信息的替代。 对于覆盖，只需从基本命
+/// 令 ui 信息中指定要修改的键即可。 若要重写 ui 参数信息，必须指定整个MissionParamInfo对象。
 ///
 /// The json format for a MissionCommandUIInfo object is:
 ///

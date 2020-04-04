@@ -51,9 +51,9 @@ QGC 创建用户界面，用于从 json 元数据的层次结构中动态编辑�
         },
 ```
 
-Note: In reality this based information should be provided by mavlink itself and not needed to be part of a GCS.
+注意：在现实中，基于此的信息应由 mavlink 本身提供，而不需要成为 GCS 的一部分。
 
-### Leaf Nodes
+### 叶节点
 
 The leaf nodes then provides metadata which can override values for the command and/or remove parameters from display to the user. The full tree hierarchy is this:
 

@@ -94,9 +94,9 @@ QGC 创建用户界面，用于从 json 元数据的层次结构中动态编辑�
 这样做是删除参数4的编辑 UI，固定翼没有使用航向（Yaw）参数。 由于这是根的叶节点，因此无论固件类型如何，这都适用于所有固定翼车辆。
 
 ### 根－硬件类型的特定叶节点
-The next level of the hiearchy are overrides which are specific to a firmware type but apply to all vehicle types.  Once again lets loook at the waypoint overrides:
+层次结构的下一层级是特定于固件类型但适用于所有车辆类型的替代。  再次让我们看看航点（Waypoint）覆盖：
 
-[ArduPilot](https://github.com/mavlink/qgroundcontrol/blob/master/src/FirmwarePlugin/APM/MavCmdInfoCommon.json#L6):
+[ArduPilot](https://github.com/mavlink/qgroundcontrol/blob/master/src/FirmwarePlugin/APM/MavCmdInfoCommon.json#L6)：
 
 ```
         {
@@ -106,7 +106,7 @@ The next level of the hiearchy are overrides which are specific to a firmware ty
         },
 ```
 
-[PX4](https://github.com/mavlink/qgroundcontrol/blob/master/src/FirmwarePlugin/PX4/MavCmdInfoCommon.json#L7):
+[PX4](https://github.com/mavlink/qgroundcontrol/blob/master/src/FirmwarePlugin/PX4/MavCmdInfoCommon.json#L7)：
 
 ```
         {
@@ -116,12 +116,12 @@ The next level of the hiearchy are overrides which are specific to a firmware ty
         },
 ```
 
-You can see that for both firmwares param2 which is acceptance radius is removed from the editing ui. This is a QGC specific decision. It is generally safer and easier to use the firmwares generic acceptance radius handling than the specify a value. So we've decided to hide it from users.
+您可以看到，对于两个固件参数参数2，即接受半径，从编辑 ui 中删除。 这是QGC的特性决定。 与指定值相比，使用固件通用接受半径会更加安全和容易。 因此，我们决定对用户隐藏它。
 
-You can also see that for PX4 param3/PassThru is removed since it is not supported by PX.
+您还可以看到，对于 PX4 param3/PassThru，由于 PX 不支持它，因此已被删除。
 
-### Root - Firmware Type Specific - Vehicle Type Specific leaf node
-The last level of the hiearchy is both firmware and vehicle type specific.
+### 根－特定于固件的类型－特定于车辆类型的叶子节点
+层次结构的最后一个级别既针对固件又针对车辆类型。
 
 [ArduPilot/MR](https://github.com/mavlink/qgroundcontrol/blob/master/src/FirmwarePlugin/APM/MavCmdInfoMultiRotor.json#L7):
 
@@ -133,22 +133,22 @@ The last level of the hiearchy is both firmware and vehicle type specific.
         },
 ```
 
-Here you can see that for an ArduPilot Multi-Rotor vehicle param2/3/4 Acceptance/PassThru/Yaw are removed. Yaw for example is removed because it is not supported. Due to quirk of how this code works, you need to repeat the overrides from the lower level.
+在这里你可以看到，ArduPilot的多电机车辆参数2/3/4 Acceptance/PassThru/Yaw 已被移除。 例如，航向（Yaw）是因为不支持所以被移除。 由于此代码的工作原理的怪癖，您需要从较低级别重复重写。
 
-## Mission Command UI Info
-Two classes define the metadata associated with a command:
+## 任务命令 UI 信息
+两个类定义与命令相关联的元数据：
 
-* MissionCommandUIInfo - Metadata for the entire command
-* MissionCmdParamInfo - Metadata for a param in a command
+* MissionCommandUIInfo－整个命令的元数据
+* MissionCmdParamInfo－命令中参数的元数据
 
-The source is commented with full details of the json keys which are supported.
+源中注释了支持 json 键的完整详细信息。
 
 [MissionCommandUIInfo](https://github.com/mavlink/qgroundcontrol/blob/master/src/MissionManager/MissionCommandUIInfo.h#L82):
 
 ```
-/// UI Information associated with a mission command (MAV_CMD)
+/// 与任务命令关联的 UI 信息 （MAV_CMD）
 ///
-/// MissionCommandUIInfo is used to automatically generate editing ui for a MAV_CMD. This object also supports the concept of only having a set of partial
+///MissionCommandUIInfo用于自动为MAV_CMD生成编辑ui。 This object also supports the concept of only having a set of partial
 /// information for the command. This is used to create overrides of the base command information. For on override just specify the keys you want to modify
 /// from the base command ui info. To override param ui info you must specify the entire MissionParamInfo object.
 ///

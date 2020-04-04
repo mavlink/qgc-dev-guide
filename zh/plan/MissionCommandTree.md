@@ -70,15 +70,15 @@ QGC 创建用户界面，用于从 json 元数据的层次结构中动态编辑�
 
 步骤如下：
 * 在实例树种添加根
-* 将特定的车辆类型覆盖实例树
-* 将特定的硬件类型覆盖实例树
-* Apply the firmware/vehicle type specific overrides to the instance tree
+* 将特定的车辆类型重写实例树
+* 将特定的硬件类型重写实例树
+* 将特定的硬件／车辆类型重写实例树
 
-The resulting Mission Command Tree is then used to build UI for the Plan View item editors. In reality it is used for more than just that, there are many other places where knowing more information about a specific command id is useful.
+然后，生成的任务命令树将为平面项目编辑器构建UI。 实际上，它不仅用于此，还有许多其他地方可以帮助您了解有关特定命令id的更多信息。
 
-## Example hierarchy for `MAV_CMD_NAV_WAYPOINT`
+## 层次结构示例 `MAV_CMD_NAV_WAYPOINT`
 
-Let's walk through an example hierarchy for `MAV_CMD_NAV_WAYPOINT`. Root information is shown above.
+让我们来看看`MAV_CMD_NAV_WAYPOINT`的示例层次结构。 根信息如上图所示。
 
 ### Root - Vehicle Type Specific leaf node
 The next level of the hiearchy is generic mavlink but vehicle specific. Json files are here: [MR](https://github.com/mavlink/qgroundcontrol/blob/master/src/MissionManager/MavCmdInfoMultiRotor.json), [FW](https://github.com/mavlink/qgroundcontrol/blob/master/src/MissionManager/MavCmdInfoFixedWing.json), [ROVER](https://github.com/mavlink/qgroundcontrol/blob/master/src/MissionManager/MavCmdInfoRover.json), [Sub](https://github.com/mavlink/qgroundcontrol/blob/master/src/MissionManager/MavCmdInfoSub.json), [VTOL](https://github.com/mavlink/qgroundcontrol/blob/master/src/MissionManager/MavCmdInfoVTOL.json). And here are the overrides for (Fixed Wings)(https://github.com/mavlink/qgroundcontrol/blob/master/src/MissionManager/MavCmdInfoFixedWing.json#L7):

@@ -4,15 +4,15 @@ QGC 创建用户界面，用于从 json 元数据的层次结构中动态编辑�
 
 ## 为什么是一颗树？
 
-需要该树以不同的方式处理不同固件和／或不同的车辆类型，以支持不同的命令。 最简单的例子是 mavlink 规范可能包含了并非所有固件都支持的命令参数。 或着命令参数仅对某些车辆类型有效。 Also in some cases a GCS may decide to hide some of the command parameters from view to end users since they are too complex or cause usability problems.
+需要该树以不同的方式处理不同固件和／或不同的车辆类型，以支持不同的命令。 最简单的例子是 mavlink 规范可能包含了并非所有固件都支持的命令参数。 或着命令参数仅对某些车辆类型有效。 此外，在某些情况下，GCS 可能会决定将某些命令参数在视图中对最终用户进行隐藏，因为它们过于复杂或导致可用性问题。
 
-The tree is the MissionCommandTree class: [MissionCommandTree.cc](https://github.com/mavlink/qgroundcontrol/blob/master/src/MissionManager/MissionCommandTree.cc), [MissionCommandTree.h](https://github.com/mavlink/qgroundcontrol/blob/master/src/MissionManager/MissionCommandTree.h)
+该树是MissionCommandTree类： [MissionCommandTree.cc](https://github.com/mavlink/qgroundcontrol/blob/master/src/MissionManager/MissionCommandTree.cc), [MissionCommandTree.h](https://github.com/mavlink/qgroundcontrol/blob/master/src/MissionManager/MissionCommandTree.h)
 
-### Tree Root
+### 树根目录
 
-The root of the tree is json metadata which matches the mavlink spec exactly.
+树的根目录是与 mavlink 规范完全匹配的json元数据。
 
-Here you can see an example of the root [json](https://github.com/mavlink/qgroundcontrol/blob/master/src/MissionManager/MavCmdInfoCommon.json#L27) for `MAV_CMD_NAV_WAYPOINT`:
+您可以在这里看到`MAV_CMD_NAV_WAYPOINT`根目录[json](https://github.com/mavlink/qgroundcontrol/blob/master/src/MissionManager/MavCmdInfoCommon.json#L27)的示例：
 
 ```
         {

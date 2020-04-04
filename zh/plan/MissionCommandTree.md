@@ -74,7 +74,7 @@ QGC 创建用户界面，用于从 json 元数据的层次结构中动态编辑�
 * 将特定的硬件类型重写实例树
 * 将特定的硬件／车辆类型重写实例树
 
-然后，生成的任务命令树将为平面项目编辑器构建UI。 实际上，它不仅用于此，还有许多其他地方可以帮助您了解有关特定命令id的更多信息。
+然后，生成的任务命令树将为平面项目编辑器构建UI。 实际上，它不仅用于此，还有许多其他地方可以帮助您了解有关特定命令 id 的更多信息。
 
 ## 层次结构示例 `MAV_CMD_NAV_WAYPOINT`
 
@@ -143,7 +143,7 @@ QGC 创建用户界面，用于从 json 元数据的层次结构中动态编辑�
 
 源中注释了支持 json 键的完整详细信息。
 
-[MissionCommandUIInfo](https://github.com/mavlink/qgroundcontrol/blob/master/src/MissionManager/MissionCommandUIInfo.h#L82):
+[MissionCommandUIInfo](https://github.com/mavlink/qgroundcontrol/blob/master/src/MissionManager/MissionCommandUIInfo.h#L82)：
 
 ```
 /// 与任务命令关联的 UI 信息 （MAV_CMD）
@@ -172,7 +172,7 @@ QGC 创建用户界面，用于从 json 元数据的层次结构中动态编辑�
 
 ```
 
-[MissionCmdParamInfo](https://github.com/mavlink/qgroundcontrol/blob/master/src/MissionManager/MissionCommandUIInfo.h#L25):
+[MissionCmdParamInfo](https://github.com/mavlink/qgroundcontrol/blob/master/src/MissionManager/MissionCommandUIInfo.h#L25)：
 
 ```
 /// 与任务命令 （MAV_CMD） 参数关联的 UI 信息
@@ -185,8 +185,8 @@ QGC 创建用户界面，用于从 json 元数据的层次结构中动态编辑�
 /// label           string  required    文本字段标签
 /// units           string              值的单位，应使用 FactMetaData Units 字符串以获得自动转换
 /// default         double  0.0/NaN     默认参数值。 如果未指定默认值且 nanunchange==true，默认值为NaN。
-/// decimalPlaces   int     7           Number of decimal places to show for value
-/// enumStrings     string              Strings to show in combo box for selection
-/// enumValues      string              Values associated with each enum string
-/// nanUnchanged    bool    false       True: value can be set to NaN to signal unchanged
+/// decimalPlaces   int     7           显示值得小数位数
+/// enumStrings     string              要在组合框中显示以供选择的字符串
+/// enumValues      string              与每个枚举字符串关联的值
+/// nanUnchanged    bool    false       True: 值可以设置为NaN表示信号不变
 ```

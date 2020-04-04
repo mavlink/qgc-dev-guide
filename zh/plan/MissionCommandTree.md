@@ -80,8 +80,8 @@ QGC 创建用户界面，用于从 json 元数据的层次结构中动态编辑�
 
 让我们来看看`MAV_CMD_NAV_WAYPOINT`的示例层次结构。 根信息如上图所示。
 
-### Root - Vehicle Type Specific leaf node
-The next level of the hiearchy is generic mavlink but vehicle specific. Json files are here: [MR](https://github.com/mavlink/qgroundcontrol/blob/master/src/MissionManager/MavCmdInfoMultiRotor.json), [FW](https://github.com/mavlink/qgroundcontrol/blob/master/src/MissionManager/MavCmdInfoFixedWing.json), [ROVER](https://github.com/mavlink/qgroundcontrol/blob/master/src/MissionManager/MavCmdInfoRover.json), [Sub](https://github.com/mavlink/qgroundcontrol/blob/master/src/MissionManager/MavCmdInfoSub.json), [VTOL](https://github.com/mavlink/qgroundcontrol/blob/master/src/MissionManager/MavCmdInfoVTOL.json). And here are the overrides for (Fixed Wings)(https://github.com/mavlink/qgroundcontrol/blob/master/src/MissionManager/MavCmdInfoFixedWing.json#L7):
+### 根－车辆类型的特定叶节点
+层次结构的下一个层级是通用的 mavlink，但只针对特定的车辆。 这里的Json文件：[MR](https://github.com/mavlink/qgroundcontrol/blob/master/src/MissionManager/MavCmdInfoMultiRotor.json), [FW](https://github.com/mavlink/qgroundcontrol/blob/master/src/MissionManager/MavCmdInfoFixedWing.json), [ROVER](https://github.com/mavlink/qgroundcontrol/blob/master/src/MissionManager/MavCmdInfoRover.json), [Sub](https://github.com/mavlink/qgroundcontrol/blob/master/src/MissionManager/MavCmdInfoSub.json), [VTOL](https://github.com/mavlink/qgroundcontrol/blob/master/src/MissionManager/MavCmdInfoVTOL.json)。 这个是重写（固定翼）　
 
 ```
         {
@@ -91,9 +91,9 @@ The next level of the hiearchy is generic mavlink but vehicle specific. Json fil
         },
 ```
 
-What this does is remove the editing UI for param4 which is Yaw and not used by fixed wings. Since this is a leaf node of the root, this applies to all fixed wing vehicle no matter the firmware type.
+这样做是删除参数4的编辑 UI，固定翼没有使用航向（Yaw）参数。 由于这是根的叶节点，因此无论固件类型如何，这都适用于所有固定翼车辆。
 
-### Root - Firmware Type Specific leaf node
+### 根－硬件类型的特定叶节点
 The next level of the hiearchy are overrides which are specific to a firmware type but apply to all vehicle types.  Once again lets loook at the waypoint overrides:
 
 [ArduPilot](https://github.com/mavlink/qgroundcontrol/blob/master/src/FirmwarePlugin/APM/MavCmdInfoCommon.json#L6):

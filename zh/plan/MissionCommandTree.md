@@ -66,12 +66,12 @@ QGC 创建用户界面，用于从 json 元数据的层次结构中动态编辑�
 
 ### 从完整树中构建实例树
 
-由于 json 元数据提供了所有固件／车辆类型组合的信息，因此必须根据用于创建计划的固件和车辆类型来构建要使用的实际树。 This is done through a process call "collapsing" the full tree to a firmware/vehicle specific tree ([code](https://github.com/mavlink/qgroundcontrol/blob/master/src/MissionManager/MissionCommandTree.cc#L119)).
+由于 json 元数据提供了所有固件／车辆类型组合的信息，因此必须根据用于创建计划的固件和车辆类型来构建要使用的实际树。 这是通过一个进程调用“collapsing”的完整树到一个固件／车辆的特定树来完成的 ([code](https://github.com/mavlink/qgroundcontrol/blob/master/src/MissionManager/MissionCommandTree.cc#L119))。
 
-The steps are as follows:
-* Add the root to the instance tree
-* Apply the vehicle type specific overrides to the instance tree
-* Apply the firmware type specific overries to the instance tree
+步骤如下：
+* 在实例树种添加根
+* 将特定的车辆类型覆盖实例树
+* 将特定的硬件类型覆盖实例树
 * Apply the firmware/vehicle type specific overrides to the instance tree
 
 The resulting Mission Command Tree is then used to build UI for the Plan View item editors. In reality it is used for more than just that, there are many other places where knowing more information about a specific command id is useful.

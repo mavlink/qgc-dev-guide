@@ -4,7 +4,7 @@ QGC 创建用户界面，用于从 json 元数据的层次结构中动态编辑�
 
 ## 为什么是一颗树？
 
-需要该树以不同的方式处理不同固件和／或不同的车辆类型，以支持不同的命令。 The simplest example of that is mavlink spec may include command parameters which are not supported by all firmwares. Or command parameters which are only valid for certain vehicle types. Also in some cases a GCS may decide to hide some of the command parameters from view to end users since they are too complex or cause usability problems.
+需要该树以不同的方式处理不同固件和／或不同的车辆类型，以支持不同的命令。 最简单的例子是 mavlink 规范可能包含了并非所有固件都支持的命令参数。 或着命令参数仅对某些车辆类型有效。 Also in some cases a GCS may decide to hide some of the command parameters from view to end users since they are too complex or cause usability problems.
 
 The tree is the MissionCommandTree class: [MissionCommandTree.cc](https://github.com/mavlink/qgroundcontrol/blob/master/src/MissionManager/MissionCommandTree.cc), [MissionCommandTree.h](https://github.com/mavlink/qgroundcontrol/blob/master/src/MissionManager/MissionCommandTree.h)
 

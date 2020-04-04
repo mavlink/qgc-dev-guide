@@ -1,4 +1,4 @@
-# Mission Command Tree
+# 任务指令树
 
 QGC creates the user interface for editing a specific mission item command dynamically from a hierarchy of json metadata. This hierarchy is called the Mission Command Tree. This way only json metadata must be created when new commands are added.
 

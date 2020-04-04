@@ -55,18 +55,18 @@ QGC 创建用户界面，用于从 json 元数据的层次结构中动态编辑�
 
 ### 叶节点
 
-The leaf nodes then provides metadata which can override values for the command and/or remove parameters from display to the user. The full tree hierarchy is this:
+然后，叶节点提供元数据，这些元数据可以覆盖命令的值和/或从显示给用户的参数中删除参数。 完整的树层次结构是这样的：
 
-- Root - Generic Mavlink
-  - Vehicle Type Specific -  Vehicle specific overrides to the generic spec
-  - Firmware Type Specific - One optional leaf node for each firmware type (PX4/ArduPilot)
-     - Vehicle Type Specific - One optional leaf node for each vehicel type (FW/MR/VTOL/Rover/Sub)
+- 根－通用Mavlink
+  - 特定的车辆类型－特定于车辆的通用规范
+  - 特定的硬件类型－每个固件类型有一个可选的叶节点（PX4/ArduPilot）
+     - 特定的车辆类型－每个车辆类型有一个可选的叶节点（FW/MR/VTOL/Rover/Sub）
 
-Note: In reality this override capability should be part of mavlink spec and should be able to be queried from the vehicle.
+注意：实际上，此替代功能应该是mavlink规格的一部分，并且应该可以从车辆中查询。
 
-### Building the instance tree from the full tree
+### 从完整树中构建实例树
 
-Since the json metadata provides information for all firmware/vehicle type combinations the actual tree to use must be built based on the firmware and vehicle type which is being used to create a Plan. This is done through a process call "collapsing" the full tree to a firmware/vehicle specific tree ([code](https://github.com/mavlink/qgroundcontrol/blob/master/src/MissionManager/MissionCommandTree.cc#L119)).
+由于 json 元数据提供了所有固件／车辆类型组合的信息，因此必须根据用于创建计划的固件和车辆类型来构建要使用的实际树。 This is done through a process call "collapsing" the full tree to a firmware/vehicle specific tree ([code](https://github.com/mavlink/qgroundcontrol/blob/master/src/MissionManager/MissionCommandTree.cc#L119)).
 
 The steps are as follows:
 * Add the root to the instance tree

@@ -1,7 +1,7 @@
 # Git Branching Strategy for Custom Builds
 
-You are welcome to create whatever setup you want for your custom builds!
-That said the further you stray from layering on top of the standard QGC git strategy the more problems you are likely to have.
+You are welcome to use whatever branching and release strategy you want for your custom builds!
+However we strongly recommend that you layer on top of the standard QGC git/release strategy, as this will almost certainly reduce your effort and keep quality high.
 
 ## Simplest Strategy
 

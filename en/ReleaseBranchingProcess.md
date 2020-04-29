@@ -1,8 +1,8 @@
-# Git Branching
+# QGroundControl Release/Branching process
 
 ## Semantic Versioning
 
-QGC uses semantic version for the version numbers associated with its releases.
+QGC uses semantic versioning for the version numbers associated with its releases.
 Semantic versioning is a 3-component number in the format of `vX.Y.Z`, where:
 
 * `X` is the major version.
@@ -61,4 +61,4 @@ At that point the new stable branch is tagged with the new version tag and the f
 
 ## Custom Builds
 
-A proposed strategy for branching on custom builds can be found [here](custom_build/GitBranching.md).
+A proposed strategy for branching on custom builds can be found [here](custom_build/ReleaseBranchingProcess.md).

@@ -6,7 +6,7 @@ The suggested mechanism for working on QGC and a custom build version of QGC is 
 
 This repo is used to work on changes to mainline QGC. When creating your own custom build it is not uncommon to discover that you may need a tweak/addition to the custom build to achieve what you want. By discussing those needed changes firsthand with QGC devs and submitting pulls to make the custom build architecture better you make QGC more powerful for everyone and give back to the community.
 
-The best way to create this repo is to fork teh regular QGC repo to your own GitHub account.
+The best way to create this repo is to fork the regular QGC repo to your own GitHub account.
 
 ## Custom Build Respository
 

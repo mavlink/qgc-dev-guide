@@ -2,12 +2,23 @@
 
 ## Repository Setup
 
-* Create a new repository from the main QGC repo. One way of achieving this in Github is by clicking "import a repository" when creating the very repo.
+In order to develop a custom build you tend to need two repositories:
+- A regular QGC repo that you can use to make needed changes to upstream QGC. 
+- A repo for your custom build.
+
+The easiest way would be to fork the repository twice, but that is not supported.
+
+The approach below explains the *recommended* way to do this:
+* Create a new repository from the main QGC repo (i.e. in Github you can do this by clicking *Import a repository* when creating the repo).
 * You can now clone the above repo to do your work in and create pull requests from.
-* In your clone create a remote called 'mavlink' which points back to the main QGC repo.
+* In your clone create a remote called 'mavlink' that points back to the main QGC repo.
   ```
   git remote add mavlink https://github.com/mavlink/qgroundcontrol.git
   ```
+
+> **Warning** You can also use just one repro containing your custom build to achieve the same thing. 
+  If you use this approach be **very careful** when creating pulls to upstream QGC that you never include anything from your custom directory code!
+
 
 ## Upstream Merge
 

@@ -21,6 +21,8 @@ There is a plugin architecture in QGC which allows for this custom build creatio
 
 There is also a mechanism which allows you to overrides resources so you can change the smaller visual elements in QGC.
 
+Also internal to QGC is the concept of an "Advanced Mode". Whereas a standard QGC builds always runs in advanced mode. A custom build always starts out in regular/not advanced mode. There is an easter mechanism in the build to turn on advanced mode which is to click the fly view button 5 times in a row fairly quickly. If you do this in a custom build you will be warned about entering advanced mode. The concept here is to hide things which normal users should not have access to behind advanced mode. For example a commercial vehicle will not need acces to most setup pages which are oriented to DIY setup. So a custom build can hide this. The custom example code shows how to do this.
+
 If you want to understand the possibilities, the first step is to read through those files which document what is possible. Next look through the [
 
     custom-example](https://github.com/mavlink/qgroundcontrol/tree/master/custom-example) source code including the 

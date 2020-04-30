@@ -1,14 +1,8 @@
 # Custom Build Plugins
 
-The main mechanism for customizing QGC from a custom build is through a plugin architecture. By creating these plugins and implementing overrides of the plugin methods you can change the behavior or QGC to suit your needs.
+The mechanisms for customizing QGC for a custom build is through the existing `FirmwarePlugin`,  `AutoPilotPlugin` and `QGCCorePlugin` architectures. By creating subclasses of these plugins in your custom build you can change the behavior or QGC to suit your needs without needed to modify the upstream code.
 
 
-Although the MAVLink spec defines a standard communication protocol to communicate with a vehicle. There are many aspects of that spec that at up for interpretation by the firmware developers. Because of this there are many cases where communication with a vehicle running one firmware must be slightly different to communication with a vehicle running a different firmware in order to accomplish the same task. Also each firmware may implement a subset of the MAVLink command set.
+## QGCCorePlugin
 
-Another major issue is that the MAVLink spec does not cover vehicle configuration or a common parameter set. Due to this all code which relates to vehicle config ends up being firmware specific. Also any code which must refer to a specific parameter is also firmware specific.
-
-Given all of these differences between firmware implementations it can be quite tricky to create a single ground station application that can support each without having the codebase degrade into a massive pile of if/then/else statements peppered everywhere based on the firmware the vehicle is using.
-
-QGC uses a plugin architecture to isolate the firmware specific code from the code which is generic to all firmwares.
-
-## FirmwarePluginManager, FirmwarePlugin
+This allows you to modify the parts of QGC which are not directly related to vehicle but are related to the QGC application itself. This includes things like application settings, color palettes, branding and so forth.

@@ -1,55 +1,34 @@
-# Git Branching Strategy for Custom Builds
+# Release Process for Custom Builds [WIP Docs]
 
-You are welcome to use whatever branching and release strategy you want for your custom builds!
-However we strongly recommend that you layer on top of the standard QGC git/release strategy, as this will almost certainly reduce your effort and keep quality high.
+One of the trickier aspects of creating your own custom build is the process to keep it up to date with regular QGC. This document describes a suggested process to follow. But in reality you are welcome to use whatever branching and release strategy you want for your custom builds. 
 
-## Simplest Strategy
+## Upstream QGC release/branching strategy
+The best place to start is understanding the mechanism QGC uses to do it's own releases. We will layer a custom build release process on top of that. You can find standard QGC [release process here](../ReleaseBranchingProcess.md).
 
-The simplest approach is to mirror the [QGC Git Branching process](GitBranching.md), timing your releases to fall after QGC releases.
-This means you release your custom builds only after upstream QGC releases it's own builds.
+## Custom build/release types
+Regular QGC has two main build types: Stable and Daily. The build types for a custom build and more complex. Throughout this discussion we will use the term "upstream" to refer to the main QGC repo (https://github.com/mavlink/qgroundcontrol). Also when we talk about a "new" upstream stable release, this means a major/minor release, not a patch release.
 
-The next part of the document outlines how you do this.
-Out-of-band releases are discussed [near the end](#out_of_band).
+### Synchronized Stable
+This type of release is synchronized with the release of an upstream stable. Once QGC releases stable you then release a version of your custom build which is based on this stable. This build will include all the new features from upstream including the new feature in your own custom code.
 
-## Daily Builds
+### Out-Of-Band Stable
+This a subsequent release of your custom build after you have released a synchronized stable but prior to upstream releasing a new stable. It only includes new features for your own custom build and include no new features from upstream. Work on this type of release would occur on a branch which is either based on your latest synchronized stable or your last out of band release if it exists. You can release out of band stable releases at any time past your first synchronized stable release.
 
-### Development Stage
-
-Your custom daily builds are built from master and this is where all new major feature development happens.
-
-You must keep custom master up to date with QGC master!
-It is important to not lag behind, because new upstream features may require some effort to integrate with your build, or may even require changes to "core" QGC in order to work with your code. 
+### Daily
+Your custom daily builds are built from your ```master``` branch. It is important to keep your custom master up to date with QGC master. If you lag behind you may be surprised by upstream features mwhichy require some effort to integrate with your build. Or you may even require changes to "core" QGC in order to work with your code. 
 If you don't let QGC development team know soon enough, it may end up being too late to get things changed.
 
+## Options for your first build
+### Starting with a Synchronized Stable release
+It is suggested that you start with releasing a Synchronized Stable. This isn't necessary but it is the simplest way to get started. To set your self up for a synchronized stable you create your own branch for development which is based on the upstream current stable.
 
-## Stable Builds
+### Starting with Daily builds
+The reason why you may consider this as your starting point is because you need features which are only in upstream master for your own custom builds. In this case you will have to live with releasing custom Daily builds until the next upstream stable. At which point you would release you first Synchronized Stable. For this setup you use your master branch and keep it in sync with upstream master as you develop.
 
-### Release Stage
-
-You can do a patch release following QGC patch releases. 
-
-The process of stablization, branching and tagging should match the upstream process.
-Your release branch should be created from the upstream stable branch and only be synced with the upstream stable branch to bring across patches.
-You can apply your own patches to your code in that branch as well as needed.
+## After you release your first Synchronized Stable
 
 ### Patch Releases
+As upstream QGC does patch releases on Stable you should also release your own patch releases based on upstream to keep your stable up to date with latest criticial bug fixes.
 
-Your custom patch releases should be built from your own stable branches.
-Make sure again to keep your stable branch in sync with upstream stable (or you will miss fixes).
-
-Since upstream stable is always at high quality you can release your own patches based on upstream stable HEAD at any time you want (there is no need to wait on QGC to release it's next patch release).
-
-### Out Of Band Release {#out_of_band}
-
-An "Out of band" release is one where you want to release some of your next features prior to upstream QGC doing a patch release.
-In this case you create the branch for your own patch release off of your latest stable branch prior to doing any development.
-You then do your new feature development in that branch.
-
-You should continue to keep this branch in sync with the associated upstream stable branch.
-When you are ready to release you just go through the normal tagging release process.
-
-## Never Release Custom Stable Builds off QGC Master
-
-You should never release any of your custom stable builds based on upstream QGC master.
-
-If you do you will have no idea of the quality of that release since, although upstream daily build quality is fairly high, it is not as good as the upstream stable quality.
+### Out-Of-Band, Daily: One or the other or both?
+At this point you can decide which type of follow on releases you want. You can also decide to possibly do both. You can do smaller new features which don't require new upstream features using out of band releases. And you can do major new feature work as daily/master until the point you can do a new synchronized stable.

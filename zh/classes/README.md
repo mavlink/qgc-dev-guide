@@ -25,5 +25,3 @@ Vehicle类所生成的对象是QGC代码与物理载具通信的主要接口。
 FirmwarePlugin类为固件插件的基类。 固件插件包含固件特定代码，因此Vehicle对象相对于它是识别的，支持UI的单个标准接口。
 
 FirmwarePluginManager是一个工厂类，它根据Vehicle类的成员MAV_AUTOPILOT / MAV_TYPE组合创建FirmwarePlugin类的实例。
-
-> **Note**AutoPilotPlugin和AutoPilotPluginManager是不推荐使用的类，它还包含特定于固件的代码。 其中的所有功能都将移至较新的FirmwarePlugin和FirmwarePluginManager实现。 这里不应该添加新代码。

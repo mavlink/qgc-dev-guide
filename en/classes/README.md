@@ -25,5 +25,3 @@ Note: There is also a UAS object associated with each Vehicle which is a depreca
 The FirmwarePlugin class is the base class for firmware plugins. A firmware plugin contains the firmware specific code, such that the Vehicle object is clean with respect to it supporting a single standard interface to the UI.
 
 FirmwarePluginManager is a factory class which creates a FirmwarePlugin instance based on the MAV_AUTOPILOT/MAV_TYPE combination for the Vehicle.
-
-> **Note** AutoPilotPlugin and AutoPilotPluginManager are deprecated class which also contains firmware specific code. All functionality in these are being moved to the newer FirmwarePlugin and FirmwarePluginManager implementations. No new code should be added here.

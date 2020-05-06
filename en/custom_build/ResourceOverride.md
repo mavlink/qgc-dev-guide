@@ -18,7 +18,7 @@ This is done using the ```updateqrc.py``` python script. It will read the upstre
 
 ## Custom Build Example
 
-You can see an example of a custom build qgsresource override in the repo custom build example:
+You can see an examples of custom build qgsresource overrides in the repo custom build example:
 
 * [qgcresources.qrc](https://github.com/mavlink/qgroundcontrol/blob/master/custom-example/qgcresources.exclusion)
 * [custom.qrc](https://github.com/mavlink/qgroundcontrol/blob/master/custom-example/custom.qrc)

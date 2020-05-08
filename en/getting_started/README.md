@@ -77,7 +77,6 @@ To install Qt:
    - **Ubuntu:** `sudo apt-get install speech-dispatcher libudev-dev libsdl2-dev`
    - **Fedora:** `sudo dnf install speech-dispatcher SDL2-devel SDL2 systemd-devel`
    - **Arch Linux:** `pacman -Sy speech-dispatcher`
-   - **Windows:** [USB Driver](http://www.pixhawk.org/firmware/downloads) to connect to Pixhawk/PX4Flow/3DR Radio
    - **Android:** [Qt Android Setup](http://doc.qt.io/qt-5/androidgs.html)
 
 #### Building using Qt Creator

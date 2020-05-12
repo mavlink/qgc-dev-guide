@@ -77,7 +77,6 @@ macos、linux、windows、ios 和 android 平台均可支持 *QGroundControl* �
         - **Ubuntu:** `sudo apt-get install speech-dispatcher libudev-dev libsdl2-dev`
         - **Fedora:** `sudo dnf install speech-dispatcher SDL2-devel SDL2 systemd-devel`
         - Arch Linux: pacman -Sy speech-dispatcher
-        - Windows: USB Driver to connect to Pixhawk/PX4Flow/3DR Radio
         - **Android:** [Qt Android Setup](http://doc.qt.io/qt-5/androidgs.html)
         
         #### 使用Qt Creator构建
@@ -114,7 +113,7 @@ macos、linux、windows、ios 和 android 平台均可支持 *QGroundControl* �
         
         ### 视频流
         
-        Check the [Video Streaming](https://github.com/mavlink/qgroundcontrol/tree/master/src/VideoStreaming) directory for further instructions.
+        Check the [Video Streaming](https://github.com/mavlink/qgroundcontrol/blob/master/src/VideoReceiver/README.md) directory for further instructions.
         
         ## 构建 QGC 安装文件
         

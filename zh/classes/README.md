@@ -1,4 +1,4 @@
-# 类层次结构（高级）
+# 类层次结构（上层）
 
 ## (LinkManager)链接管理器类，(LinkInterface)链接接口类
 
@@ -8,7 +8,7 @@ LinkManager类所生成对象管理系统中的所有打开链接。 `LinkManage
 
 ## MAVLink协议类
 
-系统中有一个MAVLink协议对象。 它的功能是从链接获取传入的字节并将它们转换为MAVLink消息。 MAVLink HEARTBEAT消息是被分发到Multi Vehicle Manager(多机管理类)。 所有MAVLink消息都将关联到与链接相对应的载具。
+系统中有一个MAVLink协议对象。 它的功能是从链接获取传入的字节并将它们转换为MAVLink消息。 MAVLink HEARTBEAT消息被分发到Multi Vehicle Manager(多机管理类)。 所有MAVLink消息都将分发到与链接相对应的载具。
 
 ## (MultiVehicleManager)多机管理类
 
@@ -25,5 +25,3 @@ Vehicle类所生成的对象是QGC代码与物理载具通信的主要接口。
 FirmwarePlugin类为固件插件的基类。 固件插件包含固件特定代码，因此Vehicle对象相对于它是识别的，支持UI的单个标准接口。
 
 FirmwarePluginManager是一个工厂类，它根据Vehicle类的成员MAV_AUTOPILOT / MAV_TYPE组合创建FirmwarePlugin类的实例。
-
-> **Note**AutoPilotPlugin和AutoPilotPluginManager是不推荐使用的类，它还包含特定于固件的代码。 其中的所有功能都将移至较新的FirmwarePlugin和FirmwarePluginManager实现。 这里不应该添加新代码。

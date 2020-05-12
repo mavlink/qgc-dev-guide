@@ -20,13 +20,15 @@ QGC 用户界面使用[Qt QML](http://doc.qt.io/qt-5/qtqml-index.html)实现。 
 
 ## 支持 {#support}
 
-可以在QGroundControl Developer讨论组或QGroundControl Gitter频道中提出开发问题。
+Development questions can be raised in the [QGroundControl Developer](http://discuss.px4.io/c/qgroundcontrol/qgroundcontrol-developers) discuss category or the [#QGroundControl Slack channel](https://px4.slack.com/).
+
+> **Note** The [Gitter](https://gitter.im/mavlink/qgroundcontrol) channel will be closed in early March 2020.
 
 ## 贡献
 
 有关贡献的信息，包括编码样式，测试和许可证，可以在代码提交中找到。
 
-> 提示我们希望所有贡献者都遵守QGroundControl行为准则。 该守则旨在营造一个开放和热情的环境。
+> **Tip** We expect all contributors to adhere to the [QGroundControl code of conduct](https://github.com/mavlink/qgroundcontrol/blob/master/CODE_OF_CONDUCT.md). This code aims to foster an open and welcoming environment.
 
 ### 翻译
 

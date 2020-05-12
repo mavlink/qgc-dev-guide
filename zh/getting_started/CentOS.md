@@ -51,9 +51,22 @@ CentOS 安装并启动后，我们需要为QGC 搭建环境。 首先，我们�
     sudo yum install gstreamer1-libav
     
 
+**Note:** Install these to enable hardware accelerated video decoding
+
+    sudo yum install libva
+    sudo yum install libva-utils
+    sudo yum install libva-intel-driver
+    
+
+If libva-intel-driver is not found you can download it and install it manually
+
+    wget http://download1.rpmfusion.org/free/el/updates/7/x86_64/l/libva-intel-driver-1.8.3-4.el7.x86_64.rpm
+    sudo yum localinstall libva-intel-driver-1.8.3-4.el7.x86_64.rpm -y
+    
+
 ### 安装SDL2
 
-SDL2 用于游戏杆支持。
+SDL2 is used for joystick support.
 
     sudo yum install SDL2 SDL2-devel -y
     
@@ -62,65 +75,65 @@ SDL2 用于游戏杆支持。
 
 > **Tip**当运行命令`/dev/input/*` 时， 如果游戏杆被成功识别并显示为`/dev/input/js0` ，则可以跳过这一步。
 
-我们建议更新内核的原因为：
+We recommend updating the kernel for:
 
 - 更好地触摸屏幕响应性能。
 - 正确识别某些USB设备 - 特别是游戏杆。
 
-下面的游戏杆已确信无法用默认的 CentOS 7 内核(3.10.0):
+The following joysticks are known not do work out of the box with the default CentOS 7 kernel (3.10.0):
 
 - Logitech F310
 - Microsoft Xbox 360 controller (USB)
 
-要修复无法识别的游戏杆(即使在Windows或Ubuntu可正常工作)，请[遵循本指南更新内核](https://www.howtoforge.com/tutorial/how-to-upgrade-kernel-in-centos-7-server/)。
+To fix the joystick not being recognized (even if the same unit is working under Windows or Ubuntu) please [follow this guide to update the kernel](https://www.howtoforge.com/tutorial/how-to-upgrade-kernel-in-centos-7-server/).
 
-更新内核需要执行的命令简短摘要如下：
+Here's a short summary of the commands that you need to execute to update the kernel:
 
-    sudo rpm --importer https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
+    sudo rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
     sudo rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm
     sudo yum --enablerepo=elrepo-kernel install kernel-ml -y
     
 
-成功执行上述命令后，重启设备，并确保新的内核版本与启动时GRUB菜单中的默认起始选项一致。
+Reboot your device afterwards and make sure the new kernel version shows up as the default start option in the GRUB menu on boot.
 
 > **Note** 您可能需要在 BIOS 中禁用安全启动才能启动新内核。
 
 ## 在 CentOS 上运行 QGC
 
-在启动 QGC 之前，您需要确保当前用户可以访问拨号组 (串行端口访问权限)：
+Before launching QGC, you need to make sure the current user has access to the dialout group (serial port access permission):
 
-    shsudo usermod -a -G dialout $USER
+    sudo usermod -a -G dialout $USER
     
 
 ### 防火墙
 
-CentOS作为 Red Hat的分发版本，其默认防火墙安全级别会 阻止MAVLink通讯和摄像头视频流。 因此，需要创建规则来打开传入端口的 MAVLink 和相机流。 仅为非生产性的本地环境测试目的，您可以使用以下命令暂时禁用防火墙 ([从这里](https://www.liquidweb.com/kb/how-to-stop-and-disable-firewalld-on-centos-7/))：
+The default firewall security level of Red Hat distributions like CentOS block MAVLink communication and also the camera video stream. So you need to create rules to open the incoming ports for MAVLink and camera stream. For non-production local environment testing purposes ONLY you can temporarily disable the firewall using the following commands ([from here](https://www.liquidweb.com/kb/how-to-stop-and-disable-firewalld-on-centos-7/)):
 
-临时
-
-    systemctl stop firewalld
-    
-
-永久性(风险自负)：
+Temporary:
 
     systemctl stop firewalld
     
 
-撤销永久更改：
+Permanent (at your own risk):
 
-    systemctl stop firewalld
+    systemctl disable firewalld
+    
+
+Undo permanent change:
+
+    systemctl enable firewalld
     
 
 ### 与多网络的连接问题
 
-在 CentOS 测试中，即使有适当的IP地址和子网分配，在通过多个网络设备连接到多个网络时依然遇到了一些问题，。
+In our test with CentOS we had problems when connecting to multiple networks through multiple network devices even with appropriate IP address and subnet assignment.
 
-问题包括：
+Issues consisted of:
 
 - 连接到第二个网络时失去互联网连接
 - 与载具的连接质量不佳，存在有大量不确定非再现问题和包丢失（例如，在常规模式中， 30秒完美连接，4秒丢失数据包)
 
-如果遇到以上任一问题，一次只连接一个网络，即可规避问题（例如，在WiFi和Microhard之间切换）。
+If you face any of these problems avoid them by only connecting one network at a time e.g. switching between WiFi and Microhard.
 
 ### 执行预构建的 QGC 二进制文件
 
@@ -129,47 +142,47 @@ CentOS作为 Red Hat的分发版本，其默认防火墙安全级别会 阻止MA
 - 从解压文件里找到脚本文件`qgroundcontrol-run.sh`
 - 输入如下命令，运行该脚本
 
-      ./qgroundcontroll-run.sh
+      ./qgroundcontrol-run.sh
       ```
     
     ## Building QGC on CentOS
     
-    ### 安装 Qt
+    ### Installing Qt
     
 
 mkdir ~/devel cd ~/devel
 
-    <br />从 Qt 安装脚本安装 Qt 5.12.4 ，可以从此链接下载所需文件 [here](https://www.qt.io/download-thank-you?os=linux&hsLang=en)。
-    下载完毕后，输入如下指令，即可执行安装文件，并运行Qt：
+    <br />Install Qt 5.12.4 from the Qt installation script that can be downloaded [here](https://www.qt.io/download-thank-you?os=linux&hsLang=en).
+    Once downloaded, make it executable and run it:
     
 
-chmod +x qt-unified-linux-x64-3.1-online.run ./qt-unified-linux-x64-3.1-online.run
+chmod +x qt-unified-linux-x64-3.1.1-online.run ./qt-unified-linux-x64-3.1.1-online.run
 
-    <br />选择以下选项并在“~/devel/Qt`下安装它：
+    <br />Select the following options and install it under `~/devel/Qt`:
     
     ![Qt Software Selection](../../assets/getting_started/centos/qt_setup.png)
     
-    ### 克隆并构建 QGC
+    ### Clone and Build QGC
     
     
 
-git clone --recursive https://github.com/mavlink/qgroundcontrol.git mkdir build cd building
+git clone --recursive https://github.com/mavlink/qgroundcontrol.git mkdir build cd build
 
-    调试/测试版本构建：
+    For a debug/test build:
     
 
 ../Qt/5.12.4/gcc_64/bin/qmake ../qgroundcontrol/qgroundcontrol.pro -spec linux-g++ CONFIG+=debug
 
-    发行版本构建：
+    For a release build:
     
 
-../Qt/5.12.4/gcc_64/bin/qmake ../qgroundcontrol/qgroundcontrol.pr-spec linux-g++ CONFIG+=qtquickcompiler
+../Qt/5.12.4/gcc_64/bin/qmake ../qgroundcontrol/qgroundcontrol.pro -spec linux-g++ CONFIG+=qtquickcompiler
 
-    构建
+    Build it:
     
 
 make -j4 ```
 
-您也可以先启动*QtCreator* (在 `~/devel/Qt/Tools/QtCreator/bin/qtcreator`目录下)，然后从IDE之中打开`qgroundContro.pro` 项目，构建build版和debug版 。
+You can alternatively launch *QtCreator* (found under `~/devel/Qt/Tools/QtCreator/bin/qtcreator`), load the `qgroundcontro.pro` project and build/debug from within its IDE.
 
-默认情况下，这将构建常规的 QGC。 请参阅[这些说明](https://github.com/mavlink/qgroundcontrol/blob/master/custom-example/README.md)，构建样本，并自定义UI版本
+By default, this will build the regular QGC. To build the sample, customized UI version, follow [these instructions](https://github.com/mavlink/qgroundcontrol/blob/master/custom-example/README.md).

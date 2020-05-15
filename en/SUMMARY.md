@@ -29,8 +29,10 @@
   * [Initial Repository Setup For Custom Build](custom_build/CreateRepos.md) 
   * [Custom Build Plugins](custom_build/Plugins.md)
   * [Resources Overrides](custom_build/ResourceOverride.md)
-  * [Toolbar customization](custom_build/Toolbar.md)
-  * [Fly View Customization](custom_build/FlyView.md)
+  * Customization
+     * [First Run Prompts](custom_build/FirstRunPrompts.md)
+     * [Toolbar customization](custom_build/Toolbar.md)
+     * [Fly View Customization](custom_build/FlyView.md)
   * [Release/Branching Process For Custom Builds](custom_build/ReleaseBranchingProcess.md)
 * [Code Submission](contribute/README.md)
   * [Coding Style](contribute/coding_style.md)

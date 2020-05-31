@@ -26,7 +26,7 @@
   * [Initial Repository Setup For Custom Build](custom_build/CreateRepos.md) 
   * [Custom Build Plugins](custom_build/Plugins.md)
   * [Resources Overrides](custom_build/ResourceOverride.md)
-  * Customization 
+  * [Customization](custom_build/customization.md) 
     * [First Run Prompts](custom_build/FirstRunPrompts.md)
     * [Toolbar customization](custom_build/Toolbar.md)
     * [Fly View Customization](custom_build/FlyView.md)

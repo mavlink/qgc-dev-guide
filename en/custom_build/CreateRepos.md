@@ -8,8 +8,8 @@ This repo is used to work on changes to mainline QGC. When creating your own cus
 
 The best way to create this repo is to fork the regular QGC repo to your own GitHub account.
 
-## Custom Build Respository
+## Custom Build Repository
 
 This is where you will do your main custom build development. All changes here should be within the custom directory as opposed to bleeding out into the regular QGC codebase.
 
-Since you can only fork a repro once, the way to create this repo is to "Create a new repository" in your GitHub account. Do not add any additional files to it like gitignore, readme's and so forth. One it create you will be given the option to setup up the Repo. No you can select to "import code from another repository". Just import the regular QGC repo using the "Import Code" button.
+Since you can only fork a repo once, the way to create this repo is to "Create a new repository" in your GitHub account. Do not add any additional files to it like gitignore, readme's and so forth. Once it is created you will be given the option to setup up the Repo. Now you can select to "import code from another repository". Just import the regular QGC repo using the "Import Code" button.

@@ -15,3 +15,13 @@ There is `FactMetaData` associated with each fact. It provides details on the Fa
 A Fact Control is a QML user interface control which connects to a Fact and it's `FactMetaData` to provide a control to the user to modify/display the value associated with the Fact.
 
 ## FactGroup
+
+A Fact Group is a group of facts. It is used to organise facts and manage user defined facts. 
+
+## Custom Build Support
+
+User defined facts can be added by overriding `factGroups` function of `FirmwarePlugin` in a custom firmware plugin class. This functions returns a name to fact group map which is used to identify added fact groups. A custom fact group can be added by extending `FactGroup` class. FactMetaDatas could be defined using the appopriate `FactGroup` constructor by providing a json file containing necessery information.
+
+Changing the metadata of existing facts is also possible by overriding `adjustMetaData` of `FirmwarePlugin` class.
+
+A fact asosicated with a vehicle (including facts belonging to fact groups returned in `factGroups` function of the vehicles Firmware plugin) can be reached using `getFact("factName")` or `getFact("factGroupName.factName")` 

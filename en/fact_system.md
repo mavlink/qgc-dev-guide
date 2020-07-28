@@ -27,4 +27,6 @@ FactMetaDatas could be defined using the appopriate `FactGroup` constructor by p
 
 Changing the metadata of existing facts is also possible by overriding `adjustMetaData` of `FirmwarePlugin` class.
 
-A fact associated with a vehicle (including facts belonging to fact groups returned in `factGroups` function of the vehicles Firmware plugin) can be reached using `getFact("factName")` or `getFact("factGroupName.factName")` 
+A fact associated with a vehicle (including facts belonging to fact groups returned in `factGroups` function of the vehicles Firmware plugin) can be reached using `getFact("factName")` or `getFact("factGroupName.factName")`
+
+For additional infromation please refer to comments of [FirmwarePlugin.h](https://github.com/mavlink/qgroundcontrol/blob/v4.0.8/src/FirmwarePlugin/FirmwarePlugin.h) 

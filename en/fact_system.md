@@ -21,12 +21,13 @@ It is used to organise facts and manage user defined facts.
 
 ## Custom Build Support
 
-User defined facts can be added by overriding `factGroups` function of `FirmwarePlugin` in a custom firmware plugin class
-This functions returns a name to fact group map which is used to identify added fact groups. A custom fact group can be added by extending `FactGroup` class.
+User defined facts can be added by overriding `factGroups` function of `FirmwarePlugin` in a custom firmware plugin class.
+These functions return a name to fact group map that is used to identify added fact groups.
+A custom fact group can be added by extending `FactGroup` class.
 FactMetaDatas could be defined using the appopriate `FactGroup` constructor by providing a json file containing necessery information.
 
 Changing the metadata of existing facts is also possible by overriding `adjustMetaData` of `FirmwarePlugin` class.
 
 A fact associated with a vehicle (including facts belonging to fact groups returned in `factGroups` function of the vehicles Firmware plugin) can be reached using `getFact("factName")` or `getFact("factGroupName.factName")`
 
-For additional infromation please refer to comments of [FirmwarePlugin.h](https://github.com/mavlink/qgroundcontrol/blob/v4.0.8/src/FirmwarePlugin/FirmwarePlugin.h) 
+For additional information please refer to comments in [FirmwarePlugin.h](https://github.com/mavlink/qgroundcontrol/blob/v4.0.8/src/FirmwarePlugin/FirmwarePlugin.h).

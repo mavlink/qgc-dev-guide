@@ -78,9 +78,13 @@ To install Qt:
    - **Fedora:** `sudo dnf install speech-dispatcher SDL2-devel SDL2 systemd-devel`
    - **Arch Linux:** `pacman -Sy speech-dispatcher`
    - **Android:** [Qt Android Setup](http://doc.qt.io/qt-5/androidgs.html)
-1. Install GStreamer (Optional)
-   - **Ubuntu:** `gstreamer1.0-plugins-bad gstreamer1.0-libav gstreamer1.0-gl`
-   - **Fedora:** `sudo dnf install gstreamer1-devel gstreamer1-plugins-base-tools gstreamer1-devel-docs gstreamer1-plugins-base-devel gstreamer1-plugins-base-devel-docs gstreamer1-plugins-good gstreamer1-plugins-good-extras gstreamer1-plugins-ugly  gstreamer1-plugins-bad-free gstreamer1-plugins-bad-free-devel gstreamer1-plugins-bad-free-extras`
+1. Install Optional/OS-Specific Functionality
+
+   > **Note** Optional features that are dependent on the operating system and user-installed libraries are linked/described below.
+     These features can be forcibly enabled/disabled by specifying additional values to qmake.
+
+   - **Video Streaming/Gstreamer:** - see [Video Streaming](https://github.com/mavlink/qgroundcontrol/blob/master/src/VideoReceiver/README.md).
+
 
 
 #### Building using Qt Creator
@@ -112,14 +116,6 @@ To install Qt:
 * **If you get this error when running _QGroundControl_**: `/usr/lib/x86_64-linux-gnu/libstdc++.so.6: version 'GLIBCXX_3.4.20' not found.`, you need to either update to the latest *gcc*, or install the latest *libstdc++.6* using: `sudo apt-get install libstdc++6`.
 * **Unit tests:** To run the [unit tests](../contribute/unit_tests.md), build in `debug` mode with `UNITTEST_BUILD` definition, and then copy `deploy/qgroundcontrol-start.sh` script into the `debug` directory before running the tests.
 
-
-## Optional/OS-Specific Functionality
-
-*QGroundControl* has functionality that is dependent on the operating system and libraries installed by the user. The following sections describe these features, their dependencies, and how to disable/alter them during the build process. These features can be forcibly enabled/disabled by specifying additional values to qmake. 
-
-### Video Streaming
-
-Check the [Video Streaming](https://github.com/mavlink/qgroundcontrol/blob/master/src/VideoReceiver/README.md) directory for further instructions.
 
 ## Building QGC Installation Files
 

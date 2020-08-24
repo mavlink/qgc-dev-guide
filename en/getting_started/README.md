@@ -76,9 +76,12 @@ To install Qt:
 1. Install Additional Packages (Platform Specific)
    - **Ubuntu:** `sudo apt-get install speech-dispatcher libudev-dev libsdl2-dev`
    - **Fedora:** `sudo dnf install speech-dispatcher SDL2-devel SDL2 systemd-devel`
-     For GStreamer you need: sudo dnf install gstreamer1-devel gstreamer1-plugins-base-tools gstreamer1-devel-docs gstreamer1-plugins-base-devel gstreamer1-plugins-base-devel-docs gstreamer1-plugins-good gstreamer1-plugins-good-extras gstreamer1-plugins-ugly  gstreamer1-plugins-bad-free gstreamer1-plugins-bad-free-devel gstreamer1-plugins-bad-free-extras
    - **Arch Linux:** `pacman -Sy speech-dispatcher`
    - **Android:** [Qt Android Setup](http://doc.qt.io/qt-5/androidgs.html)
+1. Install GStreamer (Optional)
+   - **Ubuntu:** `gstreamer1.0-plugins-bad gstreamer1.0-libav gstreamer1.0-gl`
+   - **Fedora:** `sudo dnf install gstreamer1-devel gstreamer1-plugins-base-tools gstreamer1-devel-docs gstreamer1-plugins-base-devel gstreamer1-plugins-base-devel-docs gstreamer1-plugins-good gstreamer1-plugins-good-extras gstreamer1-plugins-ugly  gstreamer1-plugins-bad-free gstreamer1-plugins-bad-free-devel gstreamer1-plugins-bad-free-extras`
+
 
 #### Building using Qt Creator
 

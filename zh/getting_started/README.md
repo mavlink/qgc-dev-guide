@@ -78,6 +78,12 @@ macos、linux、windows、ios 和 android 平台均可支持 *QGroundControl* �
         - **Fedora:** `sudo dnf install speech-dispatcher SDL2-devel SDL2 systemd-devel`
         - Arch Linux: pacman -Sy speech-dispatcher
         - **Android:** [Qt Android Setup](http://doc.qt.io/qt-5/androidgs.html)
+            
+            1. Install Optional/OS-Specific Functionality
+            
+            > **Note** Optional features that are dependent on the operating system and user-installed libraries are linked/described below. These features can be forcibly enabled/disabled by specifying additional values to qmake.
+        
+        - **Video Streaming/Gstreamer:** - see [Video Streaming](https://github.com/mavlink/qgroundcontrol/blob/master/src/VideoReceiver/README.md).
         
         #### 使用Qt Creator构建
         
@@ -107,15 +113,7 @@ macos、linux、windows、ios 和 android 平台均可支持 *QGroundControl* �
         - **如果在运行*QGroundControl*时出现报错：** `/usr/lib/x86_64-linux-gnu/libstdc++.so.6: version 'GLIBCXX_3.4.20' not found.` ，则需将*gcc*更新到最新版本，或安装最新版本的*libstdc++.6* ：`sudo apt-get install libstdc ++ 6 ` 。
         - **单元测试：** 如需运行[unit tests](../contribute/unit_tests.md),请使用`UNITTEST_BUILD`定义 `debug`模式，然后在运行测试之前将`deploy / qgroundcontrol-start.sh`脚本文件复制到 `debug`目录中。
         
-        ## 选项/与OS相关的特定功能
-        
-        *QGroundControl* has functionality that is dependent on the operating system and libraries installed by the user. The following sections describe these features, their dependencies, and how to disable/alter them during the build process. These features can be forcibly enabled/disabled by specifying additional values to qmake.
-        
-        ### 视频流
-        
-        Check the [Video Streaming](https://github.com/mavlink/qgroundcontrol/blob/master/src/VideoReceiver/README.md) directory for further instructions.
-        
-        ## 构建 QGC 安装文件
+        ## Building QGC Installation Files
         
         You can additionally create installation file(s) for *QGroundControl* as part of the normal build process.
         

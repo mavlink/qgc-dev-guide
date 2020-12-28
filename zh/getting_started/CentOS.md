@@ -39,10 +39,10 @@ CentOS 安装并启动后，我们需要为QGC 搭建环境。 首先，我们�
 
     sudo yum install epel-release -y
     wget http://awel.domblogger.net/7/media/x86_64/awel-media-release-7-6.noarch.rpm
-    sudo yum localinstall awel-media-release-7-6. orarch.rpm -y
-    sudo yum clearing all
+    sudo yum localinstall awel-media-release-7-6.noarch.rpm -y
+    sudo yum clean all
     sudo yum update
-    sudo yum install gstreamer1* --skip-break-y
+    sudo yum install gstreamer1* --skip-broken -y
     
 
 **Note:**确保如下组件已安装 (Intel GPUs的 vaapi)

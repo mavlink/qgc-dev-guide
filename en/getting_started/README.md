@@ -1,11 +1,11 @@
 # Getting Started
 
-This topic explains how to get the *QGroundControl* source code and build it either natively or within a *Vagrant* environment. 
+This topic explains how to get the *QGroundControl* source code and build it either natively or within a *Vagrant* environment.
 It also provides information about optional or OS specific functionality.
 
 ## Daily Builds
 
-If you just want to test (and not debug) a recent build of *QGroundControl* you can use the [Daily Build](https://docs.qgroundcontrol.com/en/releases/daily_builds.html). Versions are provided for all platforms. 
+If you just want to test (and not debug) a recent build of *QGroundControl* you can use the [Daily Build](https://docs.qgroundcontrol.com/en/releases/daily_builds.html). Versions are provided for all platforms.
 
 ## Source Code
 
@@ -15,11 +15,11 @@ It is [dual-licensed under Apache 2.0 and GPLv3](https://github.com/mavlink/qgro
 To get the source files:
 1. Clone the repo (or your fork) including submodules:
    ```
-   git clone https://github.com/mavlink/qgroundcontrol.git --recursive
+   git clone --recursive -j8 https://github.com/mavlink/qgroundcontrol.git
    ```
 2. Update submodules (required each time you pull new source code):
    ```
-   git submodule update
+   git submodule update --recursive
    ```
 
 > **Tip** Github source-code zip files cannot be used because these do not contain the appropriate submodule source code. You must use git!
@@ -59,14 +59,15 @@ You **need to install Qt as described below** instead of using pre-built package
 To install Qt:
 
 1. Download and run the [Qt Online Installer](http://www.qt.io/download-open-source)
-   - **Ubuntu:** 
-     - Set the downloaded file to executable using: `chmod +x`. 
+   - **Ubuntu:**
+     - Set the downloaded file to executable using: `chmod +x`.
      - Install to default location for use with **./qgroundcontrol-start.sh.** If you install Qt to a non-default location you will need to modify **qgroundcontrol-start.sh** in order to run downloaded builds.
+   - **Arch Linux:** Run the [setup script](https://github.com/mavlink/qgroundcontrol/blob/master/tools/setup/arch.sh) for all dependiencies **including Qt**.
 1. In the installer *Select Components* dialog choose: {{ book.qt_version }}.
-   
+
    > **Note** If the version needed is not displayed, check the archive (show archive and refresh).
-   
-   Then install just the following components: 
+
+   Then install just the following components:
    - **Windows**: *MSVC 2017 64 bit*
    - **MacOS**: *macOS*
    - **Linux**: *Desktop gcc 64-bit*
@@ -76,7 +77,6 @@ To install Qt:
 1. Install Additional Packages (Platform Specific)
    - **Ubuntu:** `sudo apt-get install speech-dispatcher libudev-dev libsdl2-dev`
    - **Fedora:** `sudo dnf install speech-dispatcher SDL2-devel SDL2 systemd-devel`
-   - **Arch Linux:** `pacman -Sy speech-dispatcher`
    - **Android:** [Qt Android Setup](http://doc.qt.io/qt-5/androidgs.html)
 1. Install Optional/OS-Specific Functionality
 
@@ -97,9 +97,34 @@ To install Qt:
   - **Windows:** Desktop Qt {{ book.qt_version }} MSVC2017 **64bit**
   - **Android:** Android for armeabi-v7a (GCC 4.9, Qt {{ book.qt_version }})
 1. Build using the "hammer" (or "play") icons:
-   
+
    ![QtCreator Build Button](../../assets/getting_started/qt_creator_build_qgc.png)
 
+#### Build using qmake on CLI
+
+Example commands to build a default QGC and run it afterwards:
+
+1. Make sure you cloned the repository and updated the submodules before, see chapter *Source Code* above and switch into the repository folder:
+   ```
+   cd qgroundcontrol
+   ```
+1. Create and enter a shadow build directory:
+   ```
+   mkdir build
+   cd build
+   ```
+1. Configure the build using the qmake script in the root of the repository:
+   ```
+   qmake ../
+   ```
+1. Run make to compile and link. To accelerate the process things you can use the -j{number of threds} parameter.
+   ```
+   make -j12
+   ```
+1. Run the QGroundcontrol binary that was just built:
+   ```
+   ./staging/QGroundControl
+   ```
 
 ### Vagrant
 

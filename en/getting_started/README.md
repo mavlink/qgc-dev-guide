@@ -15,11 +15,11 @@ It is [dual-licensed under Apache 2.0 and GPLv3](https://github.com/mavlink/qgro
 To get the source files:
 1. Clone the repo (or your fork) including submodules:
    ```
-   git clone https://github.com/mavlink/qgroundcontrol.git --recursive
+   git clone --recursive -j8 https://github.com/mavlink/qgroundcontrol.git
    ```
 2. Update submodules (required each time you pull new source code):
    ```
-   git submodule update
+   git submodule update --recursive
    ```
 
 > **Tip** Github source-code zip files cannot be used because these do not contain the appropriate submodule source code. You must use git!

@@ -1,11 +1,11 @@
 # Getting Started
 
-This topic explains how to get the *QGroundControl* source code and build it either natively or within a *Vagrant* environment. 
+This topic explains how to get the *QGroundControl* source code and build it either natively or within a *Vagrant* environment.
 It also provides information about optional or OS specific functionality.
 
 ## Daily Builds
 
-If you just want to test (and not debug) a recent build of *QGroundControl* you can use the [Daily Build](https://docs.qgroundcontrol.com/en/releases/daily_builds.html). Versions are provided for all platforms. 
+If you just want to test (and not debug) a recent build of *QGroundControl* you can use the [Daily Build](https://docs.qgroundcontrol.com/en/releases/daily_builds.html). Versions are provided for all platforms.
 
 ## Source Code
 
@@ -59,14 +59,14 @@ You **need to install Qt as described below** instead of using pre-built package
 To install Qt:
 
 1. Download and run the [Qt Online Installer](http://www.qt.io/download-open-source)
-   - **Ubuntu:** 
-     - Set the downloaded file to executable using: `chmod +x`. 
+   - **Ubuntu:**
+     - Set the downloaded file to executable using: `chmod +x`.
      - Install to default location for use with **./qgroundcontrol-start.sh.** If you install Qt to a non-default location you will need to modify **qgroundcontrol-start.sh** in order to run downloaded builds.
 1. In the installer *Select Components* dialog choose: {{ book.qt_version }}.
-   
+
    > **Note** If the version needed is not displayed, check the archive (show archive and refresh).
-   
-   Then install just the following components: 
+
+   Then install just the following components:
    - **Windows**: *MSVC 2017 64 bit*
    - **MacOS**: *macOS*
    - **Linux**: *Desktop gcc 64-bit*

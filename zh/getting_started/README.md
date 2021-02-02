@@ -12,8 +12,8 @@
 
 要获取源文件, 请执行以下操作:
 
-1. 克隆存储库 (或您的分叉), 包括子模块: ```git clone https://github.com/mavlink/qgroundcontrol.git --recursive```
-2. 2.更新子模块（每次拉新源代码时都这样做）： ```git submodule update```
+1. 克隆存储库 (或您的分叉), 包括子模块: ```git clone --recursive -j8 https://github.com/mavlink/qgroundcontrol.git```
+2. 2.更新子模块（每次拉新源代码时都这样做）： ```git submodule update --recursive```
 
 > 提示：不能使用Github以zip形式下载源文件，因为zip压缩包中不包含相应的子模块源代码。 你必须使用git工具！
 
@@ -55,8 +55,9 @@ macos、linux、windows、ios 和 android 平台均可支持 *QGroundControl* �
     
     1. 下载并运行[Qt Online Installer](http://www.qt.io/download-open-source) 
         - **Ubuntu:** 
-            - 使用以下命令将下载的文件设置为可执行文件：`chmod + x` 
+            - 使用以下命令将下载的文件设置为可执行文件：`chmod + x`
             - 请安装到默认位置, 以便与 **./qgroundcontrol-start.sh** 一起使用。如果将 Qt 安装到非默认位置, 则需要修改 **qgroundcontrol-start.sh** ，才能运行下载的组件。
+        - **Arch Linux:** Run the [setup script](https://github.com/mavlink/qgroundcontrol/blob/master/tools/setup/arch.sh) for all dependiencies **including Qt**.
     
     2. 在安装程序 的*Select 组件 </0 > 对话框中, 选择 {{ book.qt_version }}。</p> 
         
@@ -76,7 +77,6 @@ macos、linux、windows、ios 和 android 平台均可支持 *QGroundControl* �
                 1. 安装附加软件包（特定于平台）
         - **Ubuntu:** `sudo apt-get install speech-dispatcher libudev-dev libsdl2-dev`
         - **Fedora:** `sudo dnf install speech-dispatcher SDL2-devel SDL2 systemd-devel`
-        - Arch Linux: pacman -Sy speech-dispatcher
         - **Android:** [Qt Android Setup](http://doc.qt.io/qt-5/androidgs.html)
             
             1. Install Optional/OS-Specific Functionality
@@ -98,13 +98,26 @@ macos、linux、windows、ios 和 android 平台均可支持 *QGroundControl* �
             
             ![QtCreator构建按键](../../assets/getting_started/qt_creator_build_qgc.png)
         
+        #### Build using qmake on CLI
+        
+        Example commands to build a default QGC and run it afterwards:
+        
+        1. Make sure you cloned the repository and updated the submodules before, see chapter *Source Code* above and switch into the repository folder: ```cd qgroundcontrol```
+        2. Create and enter a shadow build directory: 
+                mkdir build
+                cd build
+        
+        3. Configure the build using the qmake script in the root of the repository: ```qmake ../```
+        4. Run make to compile and link. To accelerate the process things you can use the -j{number of threds} parameter. ```make -j12```
+        5. Run the QGroundcontrol binary that was just built: ```./staging/QGroundControl```
+        
         ### Vagrant
         
         [Vagrant](https://www.vagrantup.com/) can be used to build and run *QGroundControl* within a Linux virtual machine (the build can also be run on the host machine if it is compatible).
         
-        1. 1. 下载并安装Vagrant
-        2. 2. 从QGroundControl存储库的根目录运行vagrant up
-        3. 3 .为了使用图形环境，请运行vagrant reload
+        1. [Download](https://www.vagrantup.com/downloads.html) and [Install](https://www.vagrantup.com/docs/getting-started/) Vagrant
+        2. From the root directory of the *QGroundControl* repository run `vagrant up`
+        3. To use the graphical environment run `vagrant reload`
         
         ### 所有支持操作系统的附加构建说明
         

@@ -97,9 +97,34 @@ To install Qt:
   - **Windows:** Desktop Qt {{ book.qt_version }} MSVC2017 **64bit**
   - **Android:** Android for armeabi-v7a (GCC 4.9, Qt {{ book.qt_version }})
 1. Build using the "hammer" (or "play") icons:
-   
+
    ![QtCreator Build Button](../../assets/getting_started/qt_creator_build_qgc.png)
 
+#### Build using qmake on CLI
+
+Example commands to build a default QGC and run it afterwards:
+
+1. Make sure you cloned the repository and updated the submodules before, see chapter *Source Code* above and switch into the repository folder:
+   ```
+   cd qgroundcontrol
+   ```
+1. Create and enter a shadow build directory:
+   ```
+   mkdir build
+   cd build
+   ```
+1. Configure the build using the qmake script in the root of the repository:
+   ```
+   qmake ../
+   ```
+1. Run make to compile and link. To accelerate the process things you can use the -j{number of threds} parameter.
+   ```
+   make -j12
+   ```
+1. Run the QGroundcontrol binary that was just built:
+   ```
+   ./staging/QGroundControl
+   ```
 
 ### Vagrant
 

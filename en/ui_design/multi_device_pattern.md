@@ -5,9 +5,9 @@ QGroundControl is designed to run on multiple device types from desktop to lapto
 ## Efficient 1 person dev team
 The design pattern that QGC development uses to solve this problem is based around making new feature development quick and allowing the code base to be testable and maintained by a very small team (let's say 1 developer as the default dev team size). The pattern to achieve this is followed very strictly, because not following it will lead to slower dev times and lower quality.
 
-Supporting this 1 person dev team concept leads to some tough decisions which not everyone may be happy about. But it does lead to QGC being released on many OS and form factors using a single codebase. This is something most other ground stations out their are not capable of achieving.
+Supporting this 1 person dev team concept leads to some tough decisions which not everyone may be happy about. But it does lead to QGC being released on many OS and form factors using a single codebase. This is something most other ground stations out there are not capable of achieving.
 
-What about contributors you ask? QGC has a decent amount of contributors. Can't they help move things past this 1 person dev team concept. Yes QGC has quite a few contributors. But unfortunately they come and go over time. And when they go, the code they contributed still must be maintained. Hence you fall back to the 1 person dev team concept which is mostly what has been around as an average over the last three years of development.
+What about contributors you ask? QGC has a decent amount of contributors. Can't they help move things past this 1 person dev team concept? Yes QGC has quite a few contributors. But unfortunately they come and go over time. And when they go, the code they contributed still must be maintained. Hence you fall back to the 1 person dev team concept which is mostly what has been around as an average over the last three years of development.
 
 ## Target Device
 
@@ -15,7 +15,7 @@ The priority target for QGC UI design is a tablet, both from a touch standpoint 
 
 ### Phone sized screen support
 
-At specified above, at this point smaller phone sized screens are the lowest level priority for QGC. More focus is put onto making active flight level displays such as the Fly view more usable. Less focus is placed on Setup related views such as Setup and Plan. Those specific view are tested to be functionally usable on small screens but they may be painful to use.
+As specified above, at this point smaller phone sized screens are the lowest level priority for QGC. More focus is put onto making active flight level displays, such as the Fly view, more usable. Less focus is placed on Setup related views such as Setup and Plan. Those specific views are tested to be functionally usable on small screens but they may be painful to use.
 
 ## Development tools used
 ### Qt Layout controls 

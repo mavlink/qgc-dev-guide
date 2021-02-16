@@ -6,9 +6,9 @@ QGroundControl设计用于从桌面到笔记本电脑，平板电脑和使用鼠
 
 QGC开发用于解决此问题的设计模式基于快速开发新功能并允许代码库由一个非常小的团队测试和维护（假设1个开发人员作为默认的开发团队规模）。 实现这一目标的模式非常严格，因为不遵循它将导致更慢的开发时间和更低的质量。
 
-支持这个1人开发团队概念导致一些艰难的决定，并不是每个人都可能感到高兴。 但它确实导致QGC使用单个代码库在许多操作系统和硬件平台上发布。 这是大多数其他地面站无法实现的。
+支持这个1人开发团队概念导致一些艰难的决定，并不是每个人都可能感到高兴。 但它确实导致QGC使用单个代码库在许多操作系统和硬件平台上发布。 This is something most other ground stations out there are not capable of achieving.
 
-你可能会问，贡献者呢？ QGC拥有相当数量的贡献者。 他们不能帮助把东西移动超过这1人开发团队的概念。 是的QGC有几个贡献者。 但是，他们随着时间的推移加入而来。 当它们离开时，它们贡献的代码仍然必须保持 因此，你回到了过去三年发展中的平均1人开发团队的概念
+你可能会问，贡献者呢？ QGC拥有相当数量的贡献者。 Can't they help move things past this 1 person dev team concept? 是的QGC有几个贡献者。 但是，他们随着时间的推移加入而来。 当它们离开时，它们贡献的代码仍然必须保持 因此，你回到了过去三年发展中的平均1人开发团队的概念
 
 ## 目标设备
 
@@ -16,7 +16,7 @@ QGC开发用于解决此问题的设计模式基于快速开发新功能并允�
 
 ### 手机大小的屏幕支持
 
-如上所述，此时较小的手机大小屏幕是QGC的最低级别优先级。 我们把更多的重点放在制作有效的飞行高度显示，例如Fly视图更有用。 较少关注设置相关视图，例如“设置”和“计划”。 这些特定视图在小屏幕上进行了功能测试，但使用起来可能会很痛苦。
+As specified above, at this point smaller phone sized screens are the lowest level priority for QGC. More focus is put onto making active flight level displays, such as the Fly view, more usable. 较少关注设置相关视图，例如“设置”和“计划”。 Those specific views are tested to be functionally usable on small screens but they may be painful to use.
 
 ## 使用的开发工具
 

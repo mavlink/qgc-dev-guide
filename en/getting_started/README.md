@@ -39,7 +39,7 @@ To get the source files:
 - **Qt version:** {{ book.qt_version }} **(only)** <!-- NOTE {{ book.qt_version }} is set in the variables section of gitbook file https://github.com/mavlink/qgc-dev-guide/blob/master/book.json -->
   > **Warning** **Do not use any other version of Qt!**
     QGC has been thoroughly tested with the specified version of Qt ({{ book.qt_version }}).
-    While it may well compile with a different version, there is a significant risk that this will affect stability and safety.
+    There is a significant risk that other Qt versions will inject bugs that affect stability and safety (even if QGC compiles).
 
 For more information see: [Qt 5 supported platform list](http://doc.qt.io/qt-5/supported-platforms.html).
 

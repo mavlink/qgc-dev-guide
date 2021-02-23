@@ -30,30 +30,34 @@ Development questions can be raised in the [QGroundControl Developer](http://dis
 
 > **Tip** We expect all contributors to adhere to the [QGroundControl code of conduct](https://github.com/mavlink/qgroundcontrol/blob/master/CODE_OF_CONDUCT.md). This code aims to foster an open and welcoming environment.
 
-### 翻译
+### Coordination Call
 
-我们使用Crowdin来更轻松地管理QGroundControl和文档的翻译。
+The developer team meets bi-weekly to discuss the highest priority issues, project coordination, and discuss any Issues, PRs, or Questions from the Community. ([Developer Call Details](contribute/dev_call.md))
 
-翻译项目（和加入链接）如下：
+### Translations
+
+We use [Crowdin](https://crowdin.com) to make it easier to manage translation for both *QGroundControl* and the documentation.
+
+The translation projects (and join links) are listed below:
 
 - [QGroundControl](https://crowdin.com/project/qgroundcontrol)（[加入](https://crwd.in/qgroundcontrol)）
 - [QGroundControl使用指南](https://crowdin.com/project/qgroundcontrol-user-guide)（[加入](https://crwd.in/qgroundcontrol-user-guide)）
 - [QGroundControl开发者指南](https://crowdin.com/project/qgroundcontrol-developer-guide)（[加入](https://crwd.in/qgroundcontrol-developer-guide)）
 
-PX4 开发者指南包含更多关于(通用) 文件/翻译工具链的信息：
+The PX4 Developer Guide contains additional information about the (common) docs/translation toolchain:
 
 - [文档](https://dev.px4.io/en/contribute/docs.html)
 - [翻译](https://dev.px4.io/en/contribute/docs.html)
 
 ## 许可证
 
-QGroundControl源代码在Apache 2.0和GPLv3下是双许可的。 有关更多信息，请参阅：许可证。 有关更多信息，请参阅：许可证。
+*QGroundControl* source code is [dual-licensed under Apache 2.0 and GPLv3](https://github.com/mavlink/qgroundcontrol/blob/master/COPYING.md). For more information see: [Licenses](contribute/licences.md).
 
 ## 管理
 
-QGroundControl任务计划程序托管在Dronecode项目的管理下。
+The QGroundControl mission planner is hosted under the governance of the [Dronecode Project](https://www.dronecode.org/).
 
-<a href="https://www.dronecode.org/" style="padding:20px"><img src="https://mavlink.io/assets/site/logo_dronecode.png" alt="Dronecode徽标" width="110px"/></a>
-<a href="https://www.linuxfoundation.org/projects" style="padding:20px;"><img src="https://mavlink.io/assets/site/logo_linux_foundation.png" alt="Linux基金会徽标" width="80px" /></a>
+<a href="https://www.dronecode.org/" style="padding:20px"><img src="https://mavlink.io/assets/site/logo_dronecode.png" alt="Dronecode Logo" width="110px"/></a>
+<a href="https://www.linuxfoundation.org/projects" style="padding:20px;"><img src="https://mavlink.io/assets/site/logo_linux_foundation.png" alt="Linux Foundation Logo" width="80px" /></a>
 
 <div style="padding:10px">&nbsp</div>

@@ -32,6 +32,10 @@ Information about contributing, including coding styles, testing and licenses ca
 > **Tip** We expect all contributors to adhere to the [QGroundControl code of conduct](https://github.com/mavlink/qgroundcontrol/blob/master/CODE_OF_CONDUCT.md). 
   This code aims to foster an open and welcoming environment.
 
+### Coordination Call
+
+The developer team meets bi-weekly to discuss the highest priority issues, project coordination, and discuss any Issues, PRs, or Questions from the Community. ([Developer Call Details](contribute/dev_call.md))
+
 ### Translations
 
 We use [Crowdin](https://crowdin.com) to make it easier to manage translation for both *QGroundControl* and the documentation.

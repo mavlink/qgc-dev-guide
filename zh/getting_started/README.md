@@ -57,7 +57,6 @@ macos、linux、windows、ios 和 android 平台均可支持 *QGroundControl* �
         - **Ubuntu:** 
             - 使用以下命令将下载的文件设置为可执行文件：`chmod + x`
             - 请安装到默认位置, 以便与 **./qgroundcontrol-start.sh** 一起使用。如果将 Qt 安装到非默认位置, 则需要修改 **qgroundcontrol-start.sh** ，才能运行下载的组件。
-        - **Arch Linux:** Run the [setup script](https://github.com/mavlink/qgroundcontrol/blob/master/tools/setup/arch.sh) for all dependiencies **including Qt**.
     
     2. 在安装程序 的*Select 组件 </0 > 对话框中, 选择 {{ book.qt_version }}。</p> 
         
@@ -77,6 +76,7 @@ macos、linux、windows、ios 和 android 平台均可支持 *QGroundControl* �
                 1. 安装附加软件包（特定于平台）
         - **Ubuntu:** `sudo apt-get install speech-dispatcher libudev-dev libsdl2-dev`
         - **Fedora:** `sudo dnf install speech-dispatcher SDL2-devel SDL2 systemd-devel`
+        - **Arch Linux:** `pacman -Sy speech-dispatcher`
         - **Android:** [Qt Android Setup](http://doc.qt.io/qt-5/androidgs.html)
             
             1. Install Optional/OS-Specific Functionality

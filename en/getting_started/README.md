@@ -62,7 +62,6 @@ To install Qt:
    - **Ubuntu:**
      - Set the downloaded file to executable using: `chmod +x`.
      - Install to default location for use with **./qgroundcontrol-start.sh.** If you install Qt to a non-default location you will need to modify **qgroundcontrol-start.sh** in order to run downloaded builds.
-   - **Arch Linux:** Run the [setup script](https://github.com/mavlink/qgroundcontrol/blob/master/tools/setup/arch.sh) for all dependiencies **including Qt**.
 1. In the installer *Select Components* dialog choose: {{ book.qt_version }}.
 
    > **Note** If the version needed is not displayed, check the archive (show archive and refresh).
@@ -77,6 +76,7 @@ To install Qt:
 1. Install Additional Packages (Platform Specific)
    - **Ubuntu:** `sudo apt-get install speech-dispatcher libudev-dev libsdl2-dev`
    - **Fedora:** `sudo dnf install speech-dispatcher SDL2-devel SDL2 systemd-devel`
+   - **Arch Linux:** `pacman -Sy speech-dispatcher`
    - **Android:** [Qt Android Setup](http://doc.qt.io/qt-5/androidgs.html)
 1. Install Optional/OS-Specific Functionality
 

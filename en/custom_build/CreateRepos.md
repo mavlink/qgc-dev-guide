@@ -1,6 +1,6 @@
 # Initial Repository Setup For Custom Build
 
-The suggested mechanism for working on QGC and a custom build version of QGC is two have two separate reposities. The first repo is your main QGC fork. The second repo is your custom build repo.
+The suggested mechanism for working on QGC and a custom build version of QGC is to have two separate repositories. The first repo is your main QGC fork. The second repo is your custom build repo.
 
 ## Main QGC Respository
 

@@ -37,8 +37,11 @@ To get the source files:
 - **iOS:** 10.0 and higher
 - **Android:** Jelly Bean (4.1) and higher. Standard QGC is built against ndk version 19.
 - **Qt version:** {{ book.qt_version }} **(only)** <!-- NOTE {{ book.qt_version }} is set in the variables section of gitbook file https://github.com/mavlink/qgc-dev-guide/blob/master/book.json -->
+  > **Warning** **Do not use any other version of Qt!**
+    QGC has been thoroughly tested with the specified version of Qt ({{ book.qt_version }}).
+    There is a significant risk that other Qt versions will inject bugs that affect stability and safety (even if QGC compiles).
 
-> **Tip** For more information see: [Qt 5 supported platform list](http://doc.qt.io/qt-5/supported-platforms.html).
+For more information see: [Qt 5 supported platform list](http://doc.qt.io/qt-5/supported-platforms.html).
 
 <span></span>
 > **Note** Native [CentOS Builds](../getting_started/CentOS.md) are also supported, but are documented separately (as the tested environment is different).

@@ -45,4 +45,4 @@ Your QGCCorePlugin should override these two methods as well as provide static c
 The set of first run prompts shown to the user are in the order returned by the `QGCCorePlugin::firstRunPromptStdIds` and `QGCCorePlugin::firstRunPromptCustomIds` with standard prompts shown before the custom prompts. Only the prompts which have not been previously shown to the user are shown.
 
 ## Always On Prompts
-By setting the `markAsShownOnClose: false` property in your prompt ui implementation you can create a prompt which will show up each time QGC boots. This can be used for things like showing usage tips to your users. If you do this it is best to make sure this are displayed last.
+By setting the `markAsShownOnClose: false` property in your prompt ui implementation you can create a prompt which will show up each time QGC starts. This can be used for things like showing usage tips to your users. If you do this it is best to make sure that this is displayed last.

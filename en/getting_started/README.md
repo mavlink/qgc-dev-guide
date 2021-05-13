@@ -27,7 +27,7 @@ To get the source files:
 
 ## Build QGroundControl
 
-## Using Containers
+### Using Containers
 We support Linux builds using a container found on the source tree of the repository, which can help you develop and deploy the QGC apps without having to install any of the requirements on your local environment.
 
 [Container Guide](../getting_started/container.md)

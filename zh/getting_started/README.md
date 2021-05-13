@@ -19,9 +19,15 @@
 
 ## 构建QGroundControl开发环境
 
-### 原生构建
+### Using Containers
 
-macos、linux、windows、ios 和 android 平台均可支持 *QGroundControl* 的构建。 *QGroundControl* 使用 [Qt](http://www.qt.io) 作为其跨平台支持库, 并将 [QtCreator](http://doc.qt.io/qtcreator/index.html) 用作其默认构建环境。
+We support Linux builds using a container found on the source tree of the repository, which can help you develop and deploy the QGC apps without having to install any of the requirements on your local environment.
+
+[Container Guide](../getting_started/container.md)
+
+### Native Builds
+
+*QGroundControl* builds are supported for macOS, Linux, Windows, iOS and Android. *QGroundControl* uses [Qt](http://www.qt.io) as its cross-platform support library and uses [QtCreator](http://doc.qt.io/qtcreator/index.html) as its default build environment.
 
 - macOS：v10.11或更高版本
 - Ubuntu：64位，gcc编译器
@@ -118,7 +124,7 @@ To install Qt:
     2. From the root directory of the *QGroundControl* repository run `vagrant up`
     3. To use the graphical environment run `vagrant reload`
     
-    ### 所有支持操作系统的附加构建说明
+    ### Additional Build Notes for all Supported OS
     
     - **并行构建：** 对于非Windows系统下的构建，您可以使用`-j＃`选项来运行并行构建。
     - **构建文件的位置：** 可以在`build_debug`或`build_release`目录中找到单个构建文件结果。 可以在`debug`或`release`目录中找到构建的可执行文件。

@@ -1,7 +1,8 @@
 # Summary
 
 * [Overview](README.md)
-* [Getting Started](getting_started/README.md)
+* [Getting Started with source & builds)](getting_started/README.md)
+  * [Build using Containers](getting_started/container.md)
   * [Using QGC on CentOS](getting_started/CentOS.md)
 * [QGC Release/Branching Process](ReleaseBranchingProcess.md)
 * [Communication Flow](communication_flow.md)

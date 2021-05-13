@@ -27,6 +27,11 @@ To get the source files:
 
 ## Build QGroundControl
 
+### Using Containers
+We support Linux builds using a container found on the source tree of the repository, which can help you develop and deploy the QGC apps without having to install any of the requirements on your local environment.
+
+[Container Guide](../getting_started/container.md)
+
 ### Native Builds
 
 *QGroundControl* builds are supported for macOS, Linux, Windows, iOS and Android. *QGroundControl* uses [Qt](http://www.qt.io) as its cross-platform support library and uses [QtCreator](http://doc.qt.io/qtcreator/index.html) as its default build environment.

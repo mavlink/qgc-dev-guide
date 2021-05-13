@@ -25,4 +25,4 @@ mkdir build
 docker run --rm -v $PWD./project/source -v $PWD/build./project/build qgc-linux-docker
 ```
 
-> ::Note:: Depending on your system resources, or the resources assigned to your Docker Daemon, this step can take some time.
+> **Note** Depending on your system resources, or the resources assigned to your Docker Daemon, this step can take some time.

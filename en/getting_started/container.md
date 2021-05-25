@@ -29,7 +29,7 @@ We recommend you create a `build` directory on the source tree and then run the 
 
 ```
 mkdir build
-docker run --rm -v $PWD./project/source -v $PWD/build./project/build qgc-linux-docker
+docker run --rm -v ${PWD}:/project/source -v ${PWD}/build:/project/build qgc-linux-docker
 ```
 
 > **Note** Depending on your system resources, or the resources assigned to your Docker Daemon, this step can take some time.

@@ -1,6 +1,6 @@
 # 单元测试
 
-QGroundControl（QGC）包含一组必须在接受拉取请求之前通过的单元测试。 向QGC添加新的复杂子系统应该有相应的新单元测试来测试它。
+*QGroundControl* (QGC) contains a set of unit tests that must pass before a pull request will be accepted. 向QGC添加新的复杂子系统应该有相应的新单元测试来测试它。
 
 单元测试的完整列表可以在UnitTestList.cc中找到。
 

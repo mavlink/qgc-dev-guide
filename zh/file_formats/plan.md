@@ -171,16 +171,16 @@
 
 复杂项目具有与之关联的这些值：
 
-| 键                                                        | 描述                                                          |
-| -------------------------------------------------------- | ----------------------------------------------------------- |
-| `version`                                                | 此调查定义的版本号。 目前的版本是3。                                         |
-| `type`                                                   | ComplexItem（这是一个复杂的项目）。                                     |
-| `complexItemType`                                        | `survey`                                                    |
-| [`TransectStyleComplexItem	`](#TransectStyleComplexItem) | Survey和CorridorScan复杂项目的通用基础定义。                             |
-| `angle`                                                  | 横断面的角度（度数）。                                                 |
-| `entryLocation`                                          | ?                                                           |
-| `flyAlternateTransects`                                  | 如果是，则载具会跳过每个其他横断面，然后在最后返回并飞行这些替代。 这可以用于固定翼飞机，当转弯对于载具转弯来说太急剧 |
-| `polygon`                                                | 表示多边形测量区域的多边形数组。 每个点都是多边形顶点的纬度，经度对。                         |
+| 键                                                        | 描述                                                                                                                                                  |
+| -------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `version`                                                | 此调查定义的版本号。 目前的版本是3。                                                                                                                                 |
+| `type`                                                   | ComplexItem（这是一个复杂的项目）。                                                                                                                             |
+| `complexItemType`                                        | `survey`                                                                                                                                            |
+| [`TransectStyleComplexItem	`](#TransectStyleComplexItem) | Survey和CorridorScan复杂项目的通用基础定义。                                                                                                                     |
+| `angle`                                                  | 横断面的角度（度数）。                                                                                                                                         |
+| `entryLocation`                                          | ?                                                                                                                                                   |
+| `flyAlternateTransects`                                  | 如果是，则载具会跳过每个其他横断面，然后在最后返回并飞行这些替代。 This can be used for fixed wing aircraft when the turnaround would be too acute for the vehicle to make the turn. |
+| `polygon`                                                | 表示多边形测量区域的多边形数组。 每个点都是多边形顶点的纬度，经度对。                                                                                                                 |
 
 #### 走廊扫描 {#corridor_scan}
 

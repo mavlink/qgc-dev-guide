@@ -13,13 +13,11 @@
         "page-toc-button",
         "collapsible-menu",
         "language-picker",
-        "language-redirect@git+https://github.com/hamishwillee/gitbook-plugin-language-redirect.git",
         "custom-favicon",
+        "language-redirect@git+https://github.com/hamishwillee/gitbook-plugin-language-redirect.git",
         "toolbar@git+https://github.com/hamishwillee/gitbook-plugin-toolbar.git",
-        "validate-links",
         "versions-select@git+https://github.com/Dronecode/gitbook-plugin-versions-select.git",
-        "theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git" 
-        
+        "theme-dronecode@git+https://github.com/dronecode/theme-dronecode.git"
     ],
     "pluginsConfig": {       
         "language-redirect": {

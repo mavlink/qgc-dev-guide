@@ -38,7 +38,7 @@ We support Linux builds using a container found on the source tree of the reposi
 
 - **macOS:** v10.11 or higher
 - **Ubuntu:** 64 bit, gcc compiler
-- **Windows:** Vista or higher, [Visual Studio 2017 compiler](#vs) (64 bit)
+- **Windows:** Vista or higher, [Visual Studio 2019 compiler](#vs) (64 bit)
 - **iOS:** 10.0 and higher
 - **Android:** Jelly Bean (4.1) and higher. Standard QGC is built against ndk version 19.
 - **Qt version:** {{ book.qt_version }} **(only)** <!-- NOTE {{ book.qt_version }} is set in the variables section of gitbook file https://github.com/mavlink/qgc-dev-guide/blob/master/book.json -->
@@ -51,13 +51,15 @@ For more information see: [Qt 5 supported platform list](http://doc.qt.io/qt-5/s
 <span></span>
 > **Note** Native [CentOS Builds](../getting_started/CentOS.md) are also supported, but are documented separately (as the tested environment is different).
 
-#### Install Visual Studio 2017 (Windows Only) {#vs}
+#### Install Visual Studio 2019 (Windows Only) {#vs}
 
-The Windows compiler can be found here: [Visual Studio 2017 compiler](https://visualstudio.microsoft.com/vs/older-downloads/) (64 bit)
+The Windows compiler can be found here: [Visual Studio 2019 compiler](https://visualstudio.microsoft.com/vs/older-downloads/) (64 bit)
 
 When installing, select *Desktop development with C++* as shown:
 
-![Visual Studio 2017 - Select Desktop Environment with C++](../../assets/getting_started/visual_studio_select_features.png)
+![Visual Studio 2019 - Select Desktop Environment with C++](../../assets/getting_started/visual_studio_select_features.png)
+
+   > **Note** Visual Studio is ONLY used to get the compiler. Actually building *QGroundControl* should be done using [Qt Creator](#qt-creator) or [qmake](#qmake) as outlined below.
 
 
 #### Install Qt
@@ -75,12 +77,14 @@ To install Qt:
    > **Note** If the version needed is not displayed, check the archive (show archive and refresh).
 
    Then install just the following components:
-   - **Windows**: *MSVC 2017 64 bit*
+   - **Windows**: *MSVC 2019 64 bit*
    - **MacOS**: *macOS*
    - **Linux**: *Desktop gcc 64-bit*
    - All:
      - *Qt Charts* <!-- and *Qt Remote Objects (TP)* -->
-     - *Android ARMv7* (to build Android)
+     - *Android ARMv7* (optional, used to build Android)
+   
+   ![QtCreator Select Components (Windows)](../../assets/getting_started/qt_creator_select_components.jpg)
 1. Install Additional Packages (Platform Specific)
    - **Ubuntu:** `sudo apt-get install speech-dispatcher libudev-dev libsdl2-dev`
    - **Fedora:** `sudo dnf install speech-dispatcher SDL2-devel SDL2 systemd-devel`
@@ -95,20 +99,20 @@ To install Qt:
 
 
 
-#### Building using Qt Creator
+#### Building using Qt Creator {#qt-creator}
 
 1. Launch *Qt Creator* and open the **qgroundcontrol.pro** project.
 1. Select the appropriate kit for your needs:
   - **OSX:** Desktop Qt {{ book.qt_version }} clang 64 bit
     > **Note** iOS builds must be built using [XCode](http://doc.qt.io/qt-5/ios-support.html).
   - **Ubuntu:** Desktop Qt {{ book.qt_version }} GCC 64bit
-  - **Windows:** Desktop Qt {{ book.qt_version }} MSVC2017 **64bit**
+  - **Windows:** Desktop Qt {{ book.qt_version }} MSVC2019 **64bit**
   - **Android:** Android for armeabi-v7a (GCC 4.9, Qt {{ book.qt_version }})
 1. Build using the "hammer" (or "play") icons:
 
    ![QtCreator Build Button](../../assets/getting_started/qt_creator_build_qgc.png)
 
-#### Build using qmake on CLI
+#### Build using qmake on CLI {#qmake}
 
 Example commands to build a default QGC and run it afterwards:
 
@@ -162,4 +166,3 @@ To do this in *Qt Creator*:
 - Open **Projects > Build > Build Steps > qmake > Additional arguments**.
 - Enter `CONFIG+=installer` as shown:
   ![Installer](../../assets/getting_started/qt_project_installer.png)
-

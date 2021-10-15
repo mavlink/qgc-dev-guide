@@ -31,7 +31,7 @@ We support Linux builds using a container found on the source tree of the reposi
 
 - macOS：v10.11或更高版本
 - Ubuntu：64位，gcc编译器
-- **Windows:** Vista or higher, [Visual Studio 2017 compiler](#vs) (64 bit)
+- **Windows:** Vista or higher, [Visual Studio 2019 compiler](#vs) (64 bit)
 - iOS：10.0及更高版本
 - Android：Jelly Bean（4.1）及更高版本。 标准QGC是针对ndk 19版本构建的。
 - **Qt version:** {{ book.qt_version }} **(only)** <!-- NOTE {{ book.qt_version }} is set in the variables section of gitbook file https://github.com/mavlink/qgc-dev-guide/blob/master/book.json --> > 
@@ -44,13 +44,15 @@ For more information see: [Qt 5 supported platform list](http://doc.qt.io/qt-5/s
 
 > **Note** Native [CentOS Builds](../getting_started/CentOS.md) are also supported, but are documented separately (as the tested environment is different).
 
-#### 安装 Visual Studio 2017(仅限Windows操作系统) {#vs}
+#### Install Visual Studio 2019 (Windows Only) {#vs}
 
-The Windows compiler can be found here: [Visual Studio 2017 compiler](https://visualstudio.microsoft.com/vs/older-downloads/) (64 bit)
+The Windows compiler can be found here: [Visual Studio 2019 compiler](https://visualstudio.microsoft.com/vs/older-downloads/) (64 bit)
 
 When installing, select *Desktop development with C++* as shown:
 
-![Visual Studio 2017 - Select Desktop Environment with C++](../../assets/getting_started/visual_studio_select_features.png)
+![Visual Studio 2019 - Select Desktop Environment with C++](../../assets/getting_started/visual_studio_select_features.png)
+
+> **Note** Visual Studio is ONLY used to get the compiler. Actually building *QGroundControl* should be done using [Qt Creator](#qt-creator) or [qmake](#qmake) as outlined below.
 
 #### 安装Qt
 
@@ -69,41 +71,43 @@ To install Qt:
     
     然后，按如下向导，安装组件:</li> </ol> 
     
-    - **Windows**: *MSVC 2017 64 bit*
+    - **Windows**: *MSVC 2019 64 bit*
     - **MacOS**: *macOS*
     - **Linux**: *Desktop gcc 64-bit*
     - All:
         
         - *Qt Charts* <!-- and *Qt Remote Objects (TP)* -->
         
-        - *Android ARMv7* (to build Android)
-            
-            1. 安装附加软件包（特定于平台）
-    - **Ubuntu:** `sudo apt-get install speech-dispatcher libudev-dev libsdl2-dev`
-    - **Fedora:** `sudo dnf install speech-dispatcher SDL2-devel SDL2 systemd-devel`
-    - **Arch Linux:** `pacman -Sy speech-dispatcher`
-    - **Android:** [Qt Android Setup](http://doc.qt.io/qt-5/androidgs.html)
+        - *Android ARMv7* (optional, used to build Android)
         
-        1. Install Optional/OS-Specific Functionality
+        ![QtCreator Select Components (Windows)](../../assets/getting_started/qt_creator_select_components.jpg)
+    
+    1. Install Additional Packages (Platform Specific) 
+        - **Ubuntu:** `sudo apt-get install speech-dispatcher libudev-dev libsdl2-dev`
+        - **Fedora:** `sudo dnf install speech-dispatcher SDL2-devel SDL2 systemd-devel`
+        - **Arch Linux:** `pacman -Sy speech-dispatcher`
+        - **Android:** [Qt Android Setup](http://doc.qt.io/qt-5/androidgs.html)
+    
+    2. Install Optional/OS-Specific Functionality
         
         > **Note** Optional features that are dependent on the operating system and user-installed libraries are linked/described below. These features can be forcibly enabled/disabled by specifying additional values to qmake.
     
     - **Video Streaming/Gstreamer:** - see [Video Streaming](https://github.com/mavlink/qgroundcontrol/blob/master/src/VideoReceiver/README.md).
     
-    #### 使用Qt Creator构建
+    #### Building using Qt Creator {#qt-creator}
     
-    1. 启动*Qt Creator*并打开**qgroundcontrol.pro**项目。
-    2. 根据您的需求选择合适的套件： 
-        - OSX：桌面Qt {{book.qt_version}} clang 64 bit>注意iOS构建必须使用XCode构建。
+    1. Launch *Qt Creator* and open the **qgroundcontrol.pro** project.
+    2. Select the appropriate kit for your needs: 
+        - **OSX:** Desktop Qt {{ book.qt_version }} clang 64 bit > **Note** iOS builds must be built using [XCode](http://doc.qt.io/qt-5/ios-support.html).
         - **Ubuntu:** Desktop Qt {{ book.qt_version }} GCC 64bit
-        - **Windows:** Desktop Qt {{ book.qt_version }} MSVC2017 **64bit**
-        - **Android：** Android平台需选择armeabi的Android-v7a（GCC 4.9，Qt {{ book.qt_version }}）
+        - **Windows:** Desktop Qt {{ book.qt_version }} MSVC2019 **64bit**
+        - **Android:** Android for armeabi-v7a (GCC 4.9, Qt {{ book.qt_version }})
     
-    3. 使用"hammer" (or "play") 图标构建:
+    3. Build using the "hammer" (or "play") icons:
         
-        ![QtCreator构建按键](../../assets/getting_started/qt_creator_build_qgc.png)
+        ![QtCreator Build Button](../../assets/getting_started/qt_creator_build_qgc.png)
     
-    #### Build using qmake on CLI
+    #### Build using qmake on CLI {#qmake}
     
     Example commands to build a default QGC and run it afterwards:
     
@@ -126,10 +130,10 @@ To install Qt:
     
     ### Additional Build Notes for all Supported OS
     
-    - **并行构建：** 对于非Windows系统下的构建，您可以使用`-j＃`选项来运行并行构建。
-    - **构建文件的位置：** 可以在`build_debug`或`build_release`目录中找到单个构建文件结果。 可以在`debug`或`release`目录中找到构建的可执行文件。
-    - **如果在运行*QGroundControl*时出现报错：** `/usr/lib/x86_64-linux-gnu/libstdc++.so.6: version 'GLIBCXX_3.4.20' not found.` ，则需将*gcc*更新到最新版本，或安装最新版本的*libstdc++.6* ：`sudo apt-get install libstdc ++ 6 ` 。
-    - **单元测试：** 如需运行[unit tests](../contribute/unit_tests.md),请使用`UNITTEST_BUILD`定义 `debug`模式，然后在运行测试之前将`deploy / qgroundcontrol-start.sh`脚本文件复制到 `debug`目录中。
+    - **Parallel builds:** For non Windows builds, you can use the `-j#` option to run parellel builds.
+    - **Location of built files:** Individual build file results can be found in the `build_debug` or `build_release` directories. The built executable can be found in the `debug` or `release` directory.
+    - **If you get this error when running *QGroundControl***: `/usr/lib/x86_64-linux-gnu/libstdc++.so.6: version 'GLIBCXX_3.4.20' not found.`, you need to either update to the latest *gcc*, or install the latest *libstdc++.6* using: `sudo apt-get install libstdc++6`.
+    - **Unit tests:** To run the [unit tests](../contribute/unit_tests.md), build in `debug` mode with `UNITTEST_BUILD` definition, and then copy `deploy/qgroundcontrol-start.sh` script into the `debug` directory before running the tests.
     
     ## Building QGC Installation Files
     
@@ -141,5 +145,5 @@ To install Qt:
     
     To do this in *Qt Creator*:
     
-    - 打开 **项目 > 构建 > 构建步骤 > qmake > 额外参数**。
-    - 输入`CONFIG+=installer`： ![安装器](../../assets/getting_started/qt_project_installer.png)
+    - Open **Projects > Build > Build Steps > qmake > Additional arguments**.
+    - Enter `CONFIG+=installer` as shown: ![Installer](../../assets/getting_started/qt_project_installer.png)

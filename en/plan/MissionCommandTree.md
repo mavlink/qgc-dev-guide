@@ -71,7 +71,7 @@ Since the json metadata provides information for all firmware/vehicle type combi
 The steps are as follows:
 * Add the root to the instance tree
 * Apply the vehicle type specific overrides to the instance tree
-* Apply the firmware type specific overries to the instance tree
+* Apply the firmware type specific overrides to the instance tree
 * Apply the firmware/vehicle type specific overrides to the instance tree
 
 The resulting Mission Command Tree is then used to build UI for the Plan View item editors. In reality it is used for more than just that, there are many other places where knowing more information about a specific command id is useful.

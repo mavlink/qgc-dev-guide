@@ -20,7 +20,7 @@ QGC 用户界面使用[Qt QML](http://doc.qt.io/qt-5/qtqml-index.html)实现。 
 
 ## 支持 {#support}
 
-Development questions can be raised in the [QGroundControl Developer](http://discuss.px4.io/c/qgroundcontrol/qgroundcontrol-developers) discuss category or the [#QGroundControl Slack channel](https://join.slack.com/t/px4/shared_invite/zt-si4xo5qs-R4baYFmMjlrT4rQK5yUnaA).
+Development questions can be raised in the [QGroundControl Developer](http://discuss.px4.io/c/qgroundcontrol/qgroundcontrol-developers) discuss category or the [#QGroundControl Slack channel](https://px4.slack.com/).
 
 > **Note** The [Gitter](https://gitter.im/mavlink/qgroundcontrol) channel will be closed in early March 2020.
 
@@ -57,7 +57,7 @@ The PX4 Developer Guide contains additional information about the (common) docs/
 
 The QGroundControl mission planner is hosted under the governance of the [Dronecode Project](https://www.dronecode.org/).
 
-<a href="https://www.dronecode.org/" style="padding:20px"><img src="https://mavlink.io/assets/site/logo_dronecode.png" alt="Dronecode Logo" width="110px"/></a>
+<a href="https://www.dronecode.org/" style="padding:20px" ><img src="https://mavlink.io/assets/site/logo_dronecode.png" alt="Dronecode Logo" width="110px"/></a>
 <a href="https://www.linuxfoundation.org/projects" style="padding:20px;"><img src="https://mavlink.io/assets/site/logo_linux_foundation.png" alt="Linux Foundation Logo" width="80px" /></a>
 
 <div style="padding:10px">&nbsp</div>

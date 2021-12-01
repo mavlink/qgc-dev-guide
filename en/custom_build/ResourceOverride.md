@@ -1,6 +1,6 @@
 # Resource Overrides
 
-A "resource" in QGC sourec code terminology is anything found in the [qgroundcontrol.qrc](https://github.com/mavlink/qgroundcontrol/blob/master/qgroundcontrol.qrc) and [qgcresources.qrc](https://github.com/mavlink/qgroundcontrol/blob/master/qgcresources.qrc) file. By overriding a resource you can replace it with your own version of it. This could be as simple as a single icon, or as complex as replacing an entire Vehicle Setup page of qml ui code.
+A "resource" in QGC source code terminology is anything found in the [qgroundcontrol.qrc](https://github.com/mavlink/qgroundcontrol/blob/master/qgroundcontrol.qrc) and [qgcresources.qrc](https://github.com/mavlink/qgroundcontrol/blob/master/qgcresources.qrc) file. By overriding a resource you can replace it with your own version of it. This could be as simple as a single icon, or as complex as replacing an entire Vehicle Setup page of qml ui code.
 
 Be aware that using resource overrides does not isolate you from upstream QGC changes like the plugin architecture does. In a sense you are directly modify the upstream QGC resources used by the main code.
 

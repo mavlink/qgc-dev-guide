@@ -11,5 +11,5 @@ Description of the high level communication flow which takes place during a vehi
 * MultiVehicleManager is notified of the `HEARTBEAT` and creates a new vehicle object based on the information in the `HEARTBEAT` message
 * The vehicle object instantiates the plugins that matches the vehicle
 * The ParameterLoader associated with the vehicle object sends a `PARAM_REQUEST_LIST` to the connected device to load parameters using the parameter protocol
-* Once the parameter load is complete, the MissionManager associated with the vehicle object requests the mission items from the connected device using the mission item protocol
+* Once the parameter load is complete, the MissionManager associated with the vehicle object requests the mission items from the connected device using the mission protocol
 * Once parameter load is complete, the VehicleComponents display their UI in the Setup view

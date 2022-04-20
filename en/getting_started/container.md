@@ -32,4 +32,27 @@ mkdir build
 docker run --rm -v ${PWD}:/project/source -v ${PWD}/build:/project/build qgc-linux-docker
 ```
 
-> **Note** Depending on your system resources, or the resources assigned to your Docker Daemon, this step can take some time.
+> **Note** If using the script to build the Linux image on a Windows host, you would need to reference the PWD differently.
+> On Windows the docker command is:
+> ```
+> docker run --rm -v %cd%:/project/source -v %cd%/build:/project/build qgc-linux-docker
+> ```
+
+Depending on your system resources, or the resources assigned to your Docker Daemon, the build step can take some time.
+
+
+## Troubleshooting
+
+### Windows: 'bash\r': No such file or directory
+
+This error indicates that a Linux script is being run with Windows line endings, which might occur if `git` was configured to use Windows line endings:
+```
+ > [4/7] RUN /tmp/qt/install-qt-linux.sh:
+#9 0.445 /usr/bin/env: 'bash\r': No such file or directory
+```
+
+One fix is to force Linux line endings using the command:
+```
+git config --global core.autocrlf false
+```
+Then update/recreate your local repository.

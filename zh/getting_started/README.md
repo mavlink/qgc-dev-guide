@@ -86,7 +86,7 @@ To install Qt:
         - **Ubuntu:** `sudo apt-get install speech-dispatcher libudev-dev libsdl2-dev patchelf`
         - **Fedora:** `sudo dnf install speech-dispatcher SDL2-devel SDL2 systemd-devel patchelf`
         - **Arch Linux:** `pacman -Sy speech-dispatcher patchelf`
-        - **Android:** [Qt Android Setup](http://doc.qt.io/qt-5/androidgs.html)
+        - **Android:** [Qt Android Setup](http://doc.qt.io/qt-5/androidgs.html) > **Note**: JDK11 is required (install if needed)!
     
     2. Install Optional/OS-Specific Functionality
         
@@ -97,13 +97,13 @@ To install Qt:
     #### Building using Qt Creator {#qt-creator}
     
     1. Launch *Qt Creator* and open the **qgroundcontrol.pro** project.
-    2. Select the appropriate kit for your needs: 
+    2. In the **Projects** section, select the appropriate kit for your needs: 
         - **OSX:** Desktop Qt {{ book.qt_version }} clang 64 bit > **Note** iOS builds must be built using [XCode](http://doc.qt.io/qt-5/ios-support.html).
         - **Ubuntu:** Desktop Qt {{ book.qt_version }} GCC 64bit
         - **Windows:** Desktop Qt {{ book.qt_version }} MSVC2019 **64bit**
         - **Android:** Android for armeabi-v7a (GCC 4.9, Qt {{ book.qt_version }})
-    
-    3. Build using the "hammer" (or "play") icons:
+    3. (Android only) Confirm JDK11 is being used by reviewing the information in the *JDK location* project setting (**Projects > Manage Kits > Devices > Android (tab) > Android Settings > JDK location**). Update the location if necessary.
+    4. Build using the "hammer" (or "play") icons:
         
         ![QtCreator Build Button](../../assets/getting_started/qt_creator_build_qgc.png)
     

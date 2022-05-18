@@ -22,6 +22,17 @@ docker build --file ./deploy/docker/Dockerfile-build-linux -t qgc-linux-docker .
 > **Note** The `-t` flag is essential.
   Keep in mind this is tagging the image for later reference since you can have multiple builds of the same Container
 
+<span></span>
+> **Note** If building on a Mac computer with an M1 chip you must also specify the build option `--platform linux/x86_64` as shown:
+> ```
+> docker build --platform linux/x86_64 --file ./deploy/docker/Dockerfile-build-linux -t qgc-linux-docker .
+> ```
+> Otherwise you will get a build error like:
+> ```
+> qemu-x86_64: Could not open '/lib64/ld-linux-x86-64.so.2': No such file or directory
+> ```
+
+
 ## Building QGC using the Container
 
 To use the Container to build QGC, you first need to define a directory to save the artifacts.

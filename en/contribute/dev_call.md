@@ -25,6 +25,6 @@ While the agenda below is the norm, we might
 > **Note** If you want to guarantee your Pull Request get's discussed on the next developer call, make sure you add the "dev-call" label on GitHub. We expect the author and the assigned reviewer to be on the call.
 
 ## Schedule
-* Time: Fridays 17h00 CET, 12h00 EST, 08h00 PST ([subscribe to the calendar](https://www.dronecode.org/calendar/))
+* Time: Bi-Weekly on Tuesdays at 17h00 CET, 12h00 EST, 08h00 PST ([subscribe to the calendar](https://www.dronecode.org/calendar/))
 * The call is hosted on Jitsi the open platform ([QGC Bi-Weekly](https://meet.jit.si/GCS-bi-weekly))
 * the Agenda is published on the [PX4 Discuss - weekly-dev-call](https://discuss.px4.io/c/weekly-dev-call/qgc-developer-call/48)

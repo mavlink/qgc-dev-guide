@@ -1,26 +1,25 @@
 # Building using Containers
 
-The community created a docker image that makes it much easier to build a Linux-based QGC application.
-This can give you a massive boost in productivity and help with testing.
+The community-created docker image makes it faster and easier to build QGC on Linux.
 
-## About the Container
+The container definition is located in the `./deploy/container` directory, and is based on Ubuntu 20.04.
+It pre-installs Qt and all the other dependencies at build time using the `install-qt-linux.sh` script, which is located in the same directory.
 
-The Container is located in the `./deploy/container` directory.
-It's based on ubuntu 20.04.
-It pre-installs all the dependencies at build time, including Qt, thanks to a script located in the same directory, `install-qt-linux.sh`.
-The main advantage of using the Container is the usage of the `CMake` build system and its many improvements over `qmake`
+This makes setting up the toolchain reproducable and easy.
+The container also uses the `CMake` build system, which has some improvements when compared to`qmake`
+
 
 ## Building the Container
 
-Before using the Container, you have to build the image.
-You can accomplish this using docker, running the following script from the root of the QGC source code directory.
+Before using the container, you must first build it from the definition using docker.
+Run the following script from the root of the QGC source code directory:
 
 ```
 docker build --file ./deploy/docker/Dockerfile-build-linux -t qgc-linux-docker .
 ```
 
 > **Note** The `-t` flag is essential.
-  Keep in mind this is tagging the image for later reference since you can have multiple builds of the same Container
+  Keep in mind this is tagging the image for later reference since you can have multiple builds of the same container
 
 <span></span>
 > **Note** If building on a Mac computer with an M1 chip you must also specify the build option `--platform linux/x86_64` as shown:
@@ -35,21 +34,34 @@ docker build --file ./deploy/docker/Dockerfile-build-linux -t qgc-linux-docker .
 
 ## Building QGC using the Container
 
-To use the Container to build QGC, you first need to define a directory to save the artifacts.
-We recommend you create a `build` directory on the source tree and then run the docker image using the tag provided above as follows, from the root directory:
+To use the container to build QGC, first define a directory to save the artifacts.
+We recommend you create a directory named `build` in the source tree and then run the docker image using the tag provided above.
+
+The commands below show how to (from the root directory), first create the `build` directory, and then use the docker image to build QGC:
 
 ```
 mkdir build
 docker run --rm -v ${PWD}:/project/source -v ${PWD}/build:/project/build qgc-linux-docker
 ```
 
-> **Note** If using the script to build the Linux image on a Windows host, you would need to reference the PWD differently.
-> On Windows the docker command is:
+Depending on your system resources, or the resources assigned to your Docker Daemon, the build step can take some time.
+
+## Using the Build
+
+QGC is built to `./build/staging/`.
+On Linux you can start it in a bash terminal from that folder using:
+
+```
+./qgroundcontrol-start.sh
+```
+
+
+> **Note** You might also use the container to build Linux QGC on a Windows host.
+> In this case you would use the build command:
 > ```
 > docker run --rm -v %cd%:/project/source -v %cd%/build:/project/build qgc-linux-docker
 > ```
-
-Depending on your system resources, or the resources assigned to your Docker Daemon, the build step can take some time.
+> You would then need to copy the `./build/staging/` directory to a Ubuntu computer in order to run it.
 
 
 ## Troubleshooting

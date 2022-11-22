@@ -83,7 +83,7 @@ To install Qt:
         ![QtCreator Select Components (Windows)](../../assets/getting_started/qt_creator_select_components.jpg)
     
     1. Install Additional Packages (Platform Specific) 
-        - **Ubuntu:** `sudo apt-get install speech-dispatcher libudev-dev libsdl2-dev patchelf`
+        - **Ubuntu:** `sudo apt-get install speech-dispatcher libudev-dev libsdl2-dev patchelf build-essential curl`
         - **Fedora:** `sudo dnf install speech-dispatcher SDL2-devel SDL2 systemd-devel patchelf`
         - **Arch Linux:** `pacman -Sy speech-dispatcher patchelf`
         - **Android:** [Qt Android Setup](http://doc.qt.io/qt-5/androidgs.html) > **Note**: JDK11 is required (install if needed)!

@@ -22,7 +22,8 @@ To get the source files:
    git submodule update --recursive
    ```
 
-> **Tip** Github source-code zip files cannot be used because these do not contain the appropriate submodule source code. You must use git!
+> **Tip** Github source-code zip files cannot be used because these do not contain the appropriate submodule source code.
+> You must use git!
 
 
 ## Build QGroundControl
@@ -34,13 +35,16 @@ We support Linux builds using a container found on the source tree of the reposi
 
 ### Native Builds
 
-*QGroundControl* builds are supported for macOS, Linux, Windows, iOS and Android. *QGroundControl* uses [Qt](http://www.qt.io) as its cross-platform support library and uses [QtCreator](http://doc.qt.io/qtcreator/index.html) as its default build environment.
+*QGroundControl* builds are supported for macOS, Linux, Windows, iOS and Android.
+*QGroundControl* uses [Qt](http://www.qt.io) as its cross-platform support library and uses [QtCreator](http://doc.qt.io/qtcreator/index.html) as its default build environment.
 
 - **macOS:** v10.11 or higher
 - **Ubuntu:** 64 bit, gcc compiler
 - **Windows:** Vista or higher, [Visual Studio 2019 compiler](#vs) (64 bit)
 - **iOS:** 10.0 and higher
-- **Android:** Jelly Bean (4.1) and higher. Standard QGC is built against ndk version 19.
+- **Android:** Jelly Bean (4.1) and higher.
+  - Standard QGC is built against ndk version 19.
+  - Java JDK 11 is required.
 - **Qt version:** {{ book.qt_version }} **(only)** <!-- NOTE {{ book.qt_version }} is set in the variables section of gitbook file https://github.com/mavlink/qgc-dev-guide/blob/master/book.json -->
   > **Warning** **Do not use any other version of Qt!**
     QGC has been thoroughly tested with the specified version of Qt ({{ book.qt_version }}).
@@ -90,15 +94,24 @@ To install Qt:
    - **Fedora:** `sudo dnf install speech-dispatcher SDL2-devel SDL2 systemd-devel patchelf`
    - **Arch Linux:** `pacman -Sy speech-dispatcher patchelf`
    - **Android:** [Qt Android Setup](http://doc.qt.io/qt-5/androidgs.html)
-     > **Note**: JDK11 is required (install if needed)!
+     > **Note** JDK11 is required (install if needed)!
 1. Install Optional/OS-Specific Functionality
 
    > **Note** Optional features that are dependent on the operating system and user-installed libraries are linked/described below.
      These features can be forcibly enabled/disabled by specifying additional values to qmake.
 
    - **Video Streaming/Gstreamer:** - see [Video Streaming](https://github.com/mavlink/qgroundcontrol/blob/master/src/VideoReceiver/README.md).
+   - **Airmap SDK:** - TBD.
+1. Disable platform-specific optional features that are enabled (but not installed), by default.
 
-
+   > **Note** This currently applies to Airmap on Linux, which is optional but enabled by default.
+   
+   - **Ubuntu:** 
+     - Airmap: Create a file named **user_config.pri** (in the repo root directory) containing the text `DEFINES += DISABLE_AIRMAP`.
+       This can be done in a bash terminal using the command:
+       ```
+       echo -e "DEFINES += DISABLE_AIRMAP\r\n" | tee user_config.pri
+       ```
 
 #### Building using Qt Creator {#qt-creator}
 
@@ -109,8 +122,8 @@ To install Qt:
    - **Ubuntu:** Desktop Qt {{ book.qt_version }} GCC 64bit
    - **Windows:** Desktop Qt {{ book.qt_version }} MSVC2019 **64bit**
    - **Android:** Android for armeabi-v7a (GCC 4.9, Qt {{ book.qt_version }})
-1. (Android only) Confirm JDK11 is being used by reviewing the information in the _JDK location_ project setting (**Projects > Manage Kits > Devices > Android (tab) > Android Settings > JDK location**).
-   Update the location if necessary.
+     - JDK11 is required.
+       You can confirm it is being used by reviewing the project setting: **Projects > Manage Kits > Devices > Android (tab) > Android Settings > _JDK location_**.
 1. Build using the "hammer" (or "play") icons:
 
    ![QtCreator Build Button](../../assets/getting_started/qt_creator_build_qgc.png)
@@ -132,10 +145,17 @@ Example commands to build a default QGC and run it afterwards:
    ```
    qmake ../
    ```
-1. Run make to compile and link. To accelerate the process things you can use the -j{number of threds} parameter.
+1. Run make to compile and link.
+   To accelerate the process things you can use the `-j{number of threads}` parameter.
    ```
    make -j12
    ```
+   > **Note** You can also specify build time flags here.
+   > For example, you could disable airmap inclusion using the command:
+   > ```
+   > DEFINES+=DISABLE_AIRMAP make build
+   > ```
+   
 1. Run the QGroundcontrol binary that was just built:
    ```
    ./staging/QGroundControl

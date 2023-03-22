@@ -50,6 +50,7 @@ The list may be a mix of both [SimpleItem](#mission_simple_item) and [ComplexIte
     "mission": {
         "cruiseSpeed": 15,
         "firmwareType": 12,
+        "globalPlanAltitudeMode": 1,
         "hoverSpeed": 5,
         "items": [
             {
@@ -88,6 +89,7 @@ Key | Description
 --- | ---
 `version` | The version for the mission object. Current version is 2.
 `firmwareType` | The firmware type for which this mission was created. This is one of the [MAV_AUTOPILOT](https://mavlink.io/en/messages/common.html#MAV_AUTOPILOT) enum values. 
+`globalPlanAltitudeMode` | The global plan-wide altitude mode setting. This is used by plan items that don't specify an `"AltitudeMode"`.
 `vehicleType` | The vehicle type for which this mission was created. This is one of the [MAV_TYPE](https://mavlink.io/en/messages/common.html#MAV_TYPE) enum values.
 `cruiseSpeed` | The default forward speed for Fixed wing or VTOL vehicles (i.e. when moving between waypoints).
 `hoverSpeed` | The default forward speed for multi-rotor vehicles.

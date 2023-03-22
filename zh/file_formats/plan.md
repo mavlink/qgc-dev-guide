@@ -42,9 +42,10 @@
 任务对象的结构如下所示。 items字段包含以逗号分隔的任务项列表（它必须包含至少一个任务项，如下所示）。 该列表可以是SimpleItem和ComplexItem对象的混合
 
 ```json
-     "mission": {
+    "mission": {
         "cruiseSpeed": 15,
         "firmwareType": 12,
+        "globalPlanAltitudeMode": 1,
         "hoverSpeed": 5,
         "items": [
             {
@@ -79,16 +80,16 @@
 
 需要以下值：
 
-| 键                     | 描述                                                                        |
-| --------------------- | ------------------------------------------------------------------------- |
-| `version`             | 任务对象的版本。 目前的版本是2。                                                         |
-| `firmwareType`        | 为此任务创建的固件类型。 这是MAV_AUTOPILOT枚举值之一。                                        |
-| `vehicleType
-`        | 为此任务创建的载具类型。 这是MAV_TYPE枚举值之一。                                             |
-| `cruiseSpeed`         | 固定翼或VTOL载具的默认前进速度（即在航点之间移动时）。                                             |
-| `hoverSpeed	`         | 多旋翼飞行器的默认前进速度。                                                            |
-| `items`               | 与任务相关的任务物品对象列表。 该列表可以包含SimpleItem和ComplexItem对象。                          |
-| `plannedHomePosition` | 原始的Home点将显示在地图上，可用于未连接载具时进行任务规划。 Home点显示的数组值 (从上到)为: 纬度、经度和平均海拔（AMSL） 高度。 |
+| 键                        | 描述                                                                                                                                                                                            |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `version`                | 任务对象的版本。 目前的版本是2。                                                                                                                                                                             |
+| `firmwareType`           | 为此任务创建的固件类型。 这是MAV_AUTOPILOT枚举值之一。                                                                                                                                                            |
+| `globalPlanAltitudeMode` | The global plan-wide altitude mode setting. This is used by plan items that don't specify an `"AltitudeMode"`.                                                                                |
+| `vehicleType`            | The vehicle type for which this mission was created. This is one of the [MAV_TYPE](https://mavlink.io/en/messages/common.html#MAV_TYPE) enum values.                                          |
+| `cruiseSpeed`            | The default forward speed for Fixed wing or VTOL vehicles (i.e. when moving between waypoints).                                                                                               |
+| `hoverSpeed`             | The default forward speed for multi-rotor vehicles.                                                                                                                                           |
+| `items`                  | The list of mission item objects associated with the mission . The list may contain either/both [SimpleItem](#mission_simple_item) and [ComplexItem](#mission_complex_item) objects.          |
+| `plannedHomePosition`    | The planned home position is shown on the map and used for mission planning when no vehicle is connected. The array values shown above are (from top): latitude, longitude and AMSL altitude. |
 
 简单和复杂项目的格式如下。
 

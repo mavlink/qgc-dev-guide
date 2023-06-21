@@ -121,9 +121,10 @@ To install Qt:
      > **Note** iOS builds must be built using [XCode](http://doc.qt.io/qt-5/ios-support.html).
    - **Ubuntu:** Desktop Qt {{ book.qt_version }} GCC 64bit
    - **Windows:** Desktop Qt {{ book.qt_version }} MSVC2019 **64bit**
-   - **Android:** Android for armeabi-v7a (GCC 4.9, Qt {{ book.qt_version }})
+   - **Android:** Android for Multi-Abi (GCC 4.9, Qt {{ book.qt_version }})
      - JDK11 is required.
        You can confirm it is being used by reviewing the project setting: **Projects > Manage Kits > Devices > Android (tab) > Android Settings > _JDK location_**.
+     - Supports **armv7a**, **x86**, **arm64-v8** and **x86_64** 
 1. Build using the "hammer" (or "play") icons:
 
    ![QtCreator Build Button](../../assets/getting_started/qt_creator_build_qgc.png)

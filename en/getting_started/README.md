@@ -86,7 +86,7 @@ To install Qt:
    - **Linux**: *Desktop gcc 64-bit*
    - All:
      - *Qt Charts* <!-- and *Qt Remote Objects (TP)* -->
-     - *Android ARMv7* (optional, used to build Android)
+     - *Android* (optional, used to build Android)
 
    ![QtCreator Select Components (Windows)](../../assets/getting_started/qt_creator_select_components.jpg)
 1. Install Additional Packages (Platform Specific)

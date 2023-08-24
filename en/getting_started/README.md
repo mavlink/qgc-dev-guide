@@ -42,7 +42,7 @@ We support Linux builds using a container found on the source tree of the reposi
 - **Ubuntu:** 64 bit, gcc compiler
 - **Windows:** Vista or higher, [Visual Studio 2019 compiler](#vs) (64 bit)
 - **iOS:** 10.0 and higher
-- **Android:** Jelly Bean (4.1) and higher.
+- **Android:** Android 5.0 and later.
   - Standard QGC is built against ndk version 19.
   - Java JDK 11 is required.
 - **Qt version:** {{ book.qt_version }} **(only)** <!-- NOTE {{ book.qt_version }} is set in the variables section of gitbook file https://github.com/mavlink/qgc-dev-guide/blob/master/book.json -->

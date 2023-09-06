@@ -2,7 +2,7 @@
 
 QGC communicates with flight stacks using [MAVLink](https://mavlink.io/en/), a very lightweight messaging protocol that has been designed for the drone ecosystem.
 
-QGC includes the [all.xml](https://mavlink.io/en/messages/all.html) dialect by default from QGC 4.2.8, which includes all other dialects in the [mavlink/mavlink](https://github.com/mavlink/mavlink/tree/master/message_definitions/v1.0 ) repository, and allows it to communicate with both PX4 and Ardupilot.
+QGC includes the [all.xml](https://mavlink.io/en/messages/all.html) dialect by default. The `all.xml` includes all other dialects in the [mavlink/mavlink](https://github.com/mavlink/mavlink/tree/master/message_definitions/v1.0 ) repository, and allows it to communicate with both PX4 and Ardupilot. Previous versions of QGC, since v4.2.8, used the `ArduPilotMega.xml` dialect.
 
 In order to add support for a new set of messages you should add them to [development.xml](https://mavlink.io/en/messages/development.html), [ArduPilotMega.xml](https://mavlink.io/en/messages/ardupilotmega.html), or [common.xml](https://mavlink.io/en/messages/common.html) (for PX4), or fork *QGroundControl* and include your own dialect.
 
